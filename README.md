@@ -3,7 +3,7 @@
 react component tax and bill styles
 
 ## example view
-<img src="./github/example.png" alt="example" />
+<img src="./github/example.jpg" alt="example" />
 
 ## Usage
 
@@ -18,7 +18,7 @@ npm start
 
 ## Example
 
-http://localhost:8018/examples/index.md
+http://localhost:8018/examples/testOne.md
 
 ## Test
   ```js
