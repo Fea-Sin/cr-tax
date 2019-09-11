@@ -1,7 +1,235 @@
-@crMindTree: cr-mind-tree;
+@app: cr-tax;
+@import '../src/utils/utils.less';
 
-.@{crMindTree} {
-  &-text {
-    color: red;
+.@{app} {
+  &-con {
+    width: 100%;
+    height: 100%;
+    color: #D49366;
   }
+  &-main {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: rgba(246,249,255,0.59);
+    border:4px solid rgba(227,231,240,1);
+    padding-bottom: 61px;
+  }
+  &-footer {
+
+  }
+  &-input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #D49366;
+    color: #3E7AFA;
+    text-indent: 10px;
+    background-color: transparent;
+  }
+  &-top {
+    height: 123px;
+
+    &-titleBox {
+      width: 193px;
+      margin: 0 auto;
+      color: #D49366;
+
+      &-title {
+        font-size: 20px;
+        line-height: 24px;
+        margin-top: 33px;
+        text-align: center;
+      }
+      &-line {
+        height: 5px;
+        border-top: 1px solid #DA9363;
+        border-bottom: 1px solid #DA9363;
+        margin-top: 6px;
+      }
+      &-sub {
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        margin-top: 6px;
+      }
+    }
+    &-left {
+      padding-top: 93px;
+      &-box {
+        font-size: 14px;
+        line-height: 19px;
+
+        &-input {
+          margin-left: 8px;
+        }
+      }
+    }
+    &-right {
+      float: right;
+      padding-top: 25px;
+      &-box {
+        margin-top: 21px;
+        font-size: 14px;
+
+        &-calender {
+          margin-left: -15px;
+          color: #999999;
+          font-size: 14px;
+        }
+        &-input {
+          margin-left: 8px;
+        }     
+      }
+    }
+  }
+  &-dataBox {
+    &-input {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #D49366;
+      color: #3E7AFA;
+      text-indent: 5px;
+      background-color: transparent;
+      width: 456px;
+      margin-left: 8px;
+    }
+    &-center {
+      text-align: center;
+    }
+    &-interval {
+      margin-top: -1px;
+    }
+    &-table {
+      border-collapse: collapse;
+      width: 100%;
+
+      td, th {
+        border: 1px solid rgba(218,147,99,1);
+      }
+      &-title {
+        width: 54px;
+        font-size: 14px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      &-blank {
+        width: 387px;
+        height: 128px;
+        background-color: rgba(243,244,247,1);
+      }
+      &-BZ {
+        width: 387px;
+        height: 128px;
+        text-align: center;
+        // color: #3E7AFA;
+      }
+      &-cellBox {
+        &-title {
+          display: inline-block;
+          width: 90px;
+          font-size: 13px;
+          .justifyText();
+          padding-left: 12px;
+        }
+        &-star {
+          position: relative;
+          padding-left: 0.5em;
+        }
+        &-star::before {
+          content: '*';
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }    
+    &-purchaser { 
+    }
+    &-data {
+      font-size: 14px;
+      text-align: center;
+
+      &-tr {
+        background-color: rgba(255,247,237,1);
+        line-height: 36px;
+      }
+      &-dataTr {
+        line-height: 36px;
+        color: #3E7AFA;
+      }
+      &-HW {
+        width: 227px;
+      }
+      &-GG {
+        width: 170px;
+      }
+      &-DW {
+        width: 67px;
+      }
+      &-SL {
+        width: 119px;
+      }
+      &-DJ {
+        width: 119px;
+      }
+      &-JE {
+        width: 119px;
+      }
+      &-SHL {
+        width: 99px;
+      } 
+      &-SE {
+        width: 160px;
+      }                 
+    }
+    &-seller {
+      font-size: 14px;
+      &-tr {
+        line-height: 36px;
+      }
+
+      &-HJBT {
+        width: 227px;
+      }
+      &-HJB {
+        width: 411px;
+        background-color: rgba(243,244,247,1);
+        color: #3E7AFA;
+        text-indent: 10px;
+      }
+      &-HJST {
+        width: 55px;
+      }
+      &-HJS {
+        width: 385px;
+        background-color: rgba(243,244,247,1);
+        color: #3E7AFA;
+        text-indent: 10px;        
+      }     
+    }
+  }
+
+  &-footer {
+    height: 60px;
+    line-height: 60px;
+    font-size: 14px;
+    color: #666666;
+  }
+
+  // andt styles
+  .ant-select .ant-select-selection {
+    border: none;
+  }
+  .ant-select .ant-select-selection {
+    outline: 0 !important;
+    box-shadow: none !important;
+    background-color: transparent;
+  }
+  .ant-select .ant-select-selection-selected-value {
+    color: #3E7AFA;
+  }
+  .ant-select .ant-select-arrow {
+    color: #D49366;
+  }
+
 }
