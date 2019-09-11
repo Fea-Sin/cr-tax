@@ -1,13 +1,11 @@
-# cr-comp
+# cr-tax
 
-react component
+react component tax and bill styles
 
+## example view
+<img src="./github/example.png" alt="example" />
 
 ## Usage
-
-```jsx
-use cr-comp create your react component
-```
 
 ## API
 
