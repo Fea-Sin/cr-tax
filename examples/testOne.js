@@ -103,7 +103,6 @@ function render(container) {
           taxSales={taxSalesB}
           taxDataList={taxDataListB}
           mode={'ZZSDZPTFP'}
-          
         />
       </div>
     </div>, container
