@@ -26,7 +26,7 @@ const taxHeader = {
 }
 const taxPurchase = {
   name: '南京智慧科技有限公司',
-  taxNumber: '142701602922440',
+  taxNumber: '142704654502922440',
   addressPhone: '南京南路 123456',
   bank: '',
 }
@@ -35,8 +35,8 @@ const taxSales = {
   totalS: '¥2,013.76',
   name: '衡水华业工业有限公司',
   taxNumber: '789754654444464',
-  addressPhone: '运城市运万路幸福庄0350-2020505',
-  bank: '农行运城北城支行566001040002242',
+  addressPhone: '运城市运万路幸福庄0350-7878505',
+  bank: '农行运城北城支行56600104454502242',
   remark: '',
 }
 const taxSalesB = {
@@ -44,8 +44,8 @@ const taxSalesB = {
   totalS: '¥2,013.76',
   name: '衡水华业工业有限公司',
   taxNumber: '789754654444464',
-  addressPhone: '运城市运万路幸福庄0350-2020505',
-  bank: '农行运城北城支行566001040002242',
+  addressPhone: '运城市运万路幸福庄0350-44520505',
+  bank: '农行运城北城支行56600104545002242',
   remark: '',
 }
 const taxDataList = [{
