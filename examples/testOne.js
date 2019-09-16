@@ -27,18 +27,67 @@ const taxHeader = {
 const taxPurchase = {
   name: '南京智慧科技有限公司',
   taxNumber: '142701602922440',
-  addressPhone: 'test 123456',
+  addressPhone: '南京南路 123456',
   bank: '',
 }
 const taxSales = {
   totalB: '贰仟零壹拾叁元柒角陆分',
   totalS: '¥2,013.76',
-  name: '南京云帐房有限公司',
+  name: '衡水华业工业有限公司',
   taxNumber: '789754654444464',
-  addressPhone: '',
-  bank: '',
+  addressPhone: '运城市运万路幸福庄0350-2020505',
+  bank: '农行运城北城支行566001040002242',
   remark: '',
 }
+const taxSalesB = {
+  totalB: '贰仟零壹拾叁元柒角陆分',
+  totalS: '¥2,013.76',
+  name: '衡水华业工业有限公司',
+  taxNumber: '789754654444464',
+  addressPhone: '运城市运万路幸福庄0350-2020505',
+  bank: '农行运城北城支行566001040002242',
+  remark: '',
+}
+const taxDataList = [{
+  name: '*钢件*电池阴极金具',
+  type: 'ER602EGK6001',
+  unit: '个',
+  number: '3,000.00',
+  price: '3,000.00',
+  sum: '3,000.00',
+  rate: 0.16,
+  tax: '435435.16',
+}, {
+  name: '*钢件*电池阴极金具',
+  type: 'ER602EGK6001',
+  unit: '个',
+  number: '3,000.00',
+  price: '3,000.00',
+  sum: '3,000.00',
+  rate: 0.16,
+  tax: '435435.16',
+}, {}, {}, {}]
+
+const taxDataListB = [{
+  name: '*锻件*通行费',
+  type: 'ER602EGK6001',
+  unit: '个',
+  number: '20180108',
+  price: '20180108',
+  sum: '3,000.00',
+  rate: 0.16,
+  tax: '435435.16',
+}, {
+  name: '*锻件*通行费',
+  type: 'ER602EGK6001',
+  unit: '个',
+  number: '20180901',
+  price: '20180901',
+  sum: '3,000.00',
+  rate: 0.16,
+  tax: '435435.16',
+}, {}, {}, {}]
+
 
 function render(container) {
   ReactDOM.render(
@@ -47,7 +96,14 @@ function render(container) {
         <Testone
           taxHeader={taxHeader}
           taxPurchase={taxPurchase}
-          taxSales={taxSales}
+          // taxSales={taxSales}
+          // taxDataList={taxDataList}
+          // mode={'ZZSZYFP'}
+          ticketType={1}
+          taxSales={taxSalesB}
+          taxDataList={taxDataListB}
+          mode={'ZZSDZPTFP'}
+          
         />
       </div>
     </div>, container
