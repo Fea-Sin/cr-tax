@@ -98,16 +98,16 @@ function render(container) {
           taxPurchase={taxPurchase}
           ticketType={1}
 
-          // taxSales={taxSales}
-          // taxDataList={taxDataList}
-          // mode={'ZZSZYFP'}
+          taxSales={taxSales}
+          taxDataList={taxDataList}
+          mode={'ZZSZYFP'}
           
           // taxSales={taxSalesB}
           // taxDataList={taxDataListB}
           // mode={'ZZSDZPTFP'}
           
-          mode={'JDCXSTYFP'}
-          prefixCls={'cr-tax-c'}
+          // mode={'JDCXSTYFP'}
+          // prefixCls={'cr-tax-c'}
         />
       </div>
     </div>, container
