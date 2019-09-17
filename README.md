@@ -8,6 +8,8 @@ react component tax and bill styles
 ## Usage
 
 ## API
+name | type | description
+taxHeader | object | { code: 发票代码; number: 发票号码; date: 开票日期 }
 
 ## Development
 

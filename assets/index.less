@@ -1,4 +1,5 @@
 @app: cr-tax;
+@appC: cr-tax-c;
 @import '../src/utils/utils.less';
 
 /**
@@ -474,5 +475,251 @@
   .ant-select .ant-select-arrow {
     color: #D49366;
   }
+
+}
+
+/**
+ * 机动车销售统一发票
+ *----------------------
+ */
+ .@{appC} {
+  &-con-C {
+    width: 100%;
+    height: 100%;
+    color: #BD6540;
+  }
+  &-main {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: rgba(246,249,255,0.59);
+    border:4px solid rgba(227,231,240,1);
+    padding-bottom: 61px;
+  }
+  &-footer {
+
+  }
+  &-input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #D49366;
+    color: #333333;
+    text-indent: 10px;
+    background-color: transparent;
+  }
+  &-top {
+    height: 123px;
+
+    &-titleBox{
+      width: 193px;
+      margin: 0 auto;
+
+      &-title {
+        font-size: 20px;
+        line-height: 24px;
+        margin-top: 33px;
+        text-align: center;
+      }
+      &-line {
+        height: 5px;
+        border-top: 1px solid #BD6540;
+        border-bottom: 1px solid #BD6540;
+        margin-top: 6px;
+      }
+      &-sub {
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        margin-top: 6px;
+      }
+    }
+    &-left {
+      padding-top: 93px;
+      &-box {
+        font-size: 14px;
+        line-height: 19px;
+
+        &-input {
+          margin-left: 8px;
+        }
+      }
+    }
+    &-right {
+      float: right;
+      padding-top: 25px;
+      &-box {
+        margin-top: 21px;
+        font-size: 14px;
+
+        &-calender {
+          margin-left: -15px;
+          color: #999999;
+          font-size: 14px;
+        }
+        &-input {
+          margin-left: 8px;
+        }     
+      }
+    }
+  }
+  &-dataBox {
+    font-size: 14px;
+
+    &-input {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #BD6540;
+      color: #333333;
+      text-indent: 5px;
+      background-color: transparent;
+      width: 456px;
+      margin-left: 8px;
+    }
+    &-center {
+      text-align: center;
+    }
+    &-interval {
+      margin-top: -1px;
+    }
+    &-table {
+      border-collapse: collapse;
+      width: 100%;
+
+      td, th {
+        border: 1px solid rgba(189,101,64,1);
+      }
+      &-titleB {
+        width: 171px;
+        font-size: 14px;
+      }
+      &-title {
+        width: 53px;
+        font-size: 14px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      &-blank {
+        width: 460px;
+        height: 113px;
+        background-color: rgba(243,244,247,1);
+      }
+      &-BZ {
+        width: 387px;
+        height: 128px;
+        text-align: center;
+        // color: #3E7AFA;
+      }
+      &-cellBox {
+        &-title {
+          display: inline-block;
+          width: 90px;
+          font-size: 13px;
+          .justifyText();
+          padding-left: 12px;
+        }
+        &-star {
+          position: relative;
+          padding-left: 0.5em;
+        }
+        &-star::before {
+          content: '*';
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+    &-dataA {
+
+      &-title {
+        height: 37px;
+        line-height: 37px;
+        border-bottom: 1px solid #BD6540;
+        text-align: right;
+        padding-right: 19px;
+      }
+      &-title-last {
+        border-bottom: none;
+      }
+      &-text {
+        height: 37px;
+        line-height: 37px;
+        border-bottom: 1px solid #BD6540;
+      }
+      &-text-last {
+        border-bottom: none;
+      }
+      &-input {
+        width: 100%;
+        height: 35px;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        text-indent: 20px;
+        color: #333333   
+      }
+      &-input-disable {
+        background-color: rgba(243,244,247,1);
+      }
+    }
+    &-dataB {
+      &-td-one {
+        width: 171px;
+      }
+      &-td-two {
+        width: 156px;
+      }
+      &-td-three {
+        width: 125px;
+      }
+      &-td-four {
+        width: 169px;
+      }
+      &-td-five {
+        width: 171px;
+      }
+      &-td-six {
+        width: 288px;
+      }
+      &-titleA {
+        padding-left: 20px;
+        padding-right: 19px;
+        height: 57px;
+      }
+      &-titleB {
+        text-align: right;
+        padding-right: 19px;
+      }
+      &-titleC {
+        height: 37px;
+        line-height: 37px;
+        text-align: right;
+        padding-right: 19px;
+      }
+      &-cell {
+        display: inline-block;
+        height: 37px;
+        line-height: 37px;
+      }
+      &-cellA {
+        width: 271px;
+        border-right: 1px solid #BD6540;
+      }
+      &-cellB {
+        width: 68px;
+        text-align: right;
+        padding-right: 19px;
+      }
+      &-cellC {
+        width: 33.33%;
+        text-align: center;
+      }
+      &-cellC-border {
+        border-right: 1px solid #BD6540;
+      }
+    }
+
+  }
+
 
 }

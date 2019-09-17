@@ -96,13 +96,18 @@ function render(container) {
         <Testone
           taxHeader={taxHeader}
           taxPurchase={taxPurchase}
+          ticketType={1}
+
           // taxSales={taxSales}
           // taxDataList={taxDataList}
           // mode={'ZZSZYFP'}
-          ticketType={1}
-          taxSales={taxSalesB}
-          taxDataList={taxDataListB}
-          mode={'ZZSDZPTFP'}
+          
+          // taxSales={taxSalesB}
+          // taxDataList={taxDataListB}
+          // mode={'ZZSDZPTFP'}
+          
+          mode={'JDCXSTYFP'}
+          prefixCls={'cr-tax-c'}
         />
       </div>
     </div>, container

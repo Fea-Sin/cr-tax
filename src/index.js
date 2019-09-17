@@ -2,6 +2,7 @@ import React, { PureComponent, Component } from 'react';
 import PropTypes from 'prop-types';
 import ZZSZY from './zzszyfp';
 import ZZSDZ from './zzsdzptfp';
+import JDCXS from './jdcxstyfp';
 
 
 class Comp extends PureComponent {
@@ -47,7 +48,13 @@ class Comp extends PureComponent {
       )
     } else if (mode === 'JDCXSTYFP') {
       return (
-        <div>机动车销售统一发票</div>
+        <JDCXS
+          prefixCls={prefixCls}
+          taxHeader={taxHeader}
+          taxPurchase={taxPurchase}
+          taxSales={taxSales}
+          taxDataList={taxDataList}
+        />         
       )
     } else {
         <ZZSZY
