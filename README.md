@@ -6,6 +6,7 @@ react component tax and bill styles
 <img src="./github/example1.jpg" alt="example" />
 
 ## Usage
+how can i use
 
 ## API
 name | type | description
