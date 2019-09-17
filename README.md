@@ -21,7 +21,7 @@ npm start
 
 ## Example
 
-http://localhost:8018/examples/testOne.md
+http://localhost:8018/examples/testOne.html
 
 ## Test
   ```js
