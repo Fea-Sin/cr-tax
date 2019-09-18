@@ -22,7 +22,7 @@ class Comp extends PureComponent {
   }
 
   render () {
-    const { prefixCls, taxHeader, taxPurchase, taxSales, taxDataList, ticketType, mode } = this.props
+    const { prefixCls, taxHeader, taxPurchase, taxSales, taxDataList, ticketType, mode, mainData } = this.props
 
     if (mode === 'ZZSZYFP') {
       return (
@@ -54,6 +54,7 @@ class Comp extends PureComponent {
           taxPurchase={taxPurchase}
           taxSales={taxSales}
           taxDataList={taxDataList}
+          mainData={mainData}
         />         
       )
     } else {

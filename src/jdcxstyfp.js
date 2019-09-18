@@ -30,7 +30,7 @@ class Comp extends PureComponent {
   }
 
   render () {
-    const { prefixCls, taxHeader, taxPurchase, taxSales, taxDataList, ticketType } = this.props
+    const { prefixCls, taxHeader, mainData } = this.props
     return (
       <div className={`${prefixCls} ${prefixCls}-con-C`}>
         <div className={`${prefixCls}-main`}>
@@ -85,7 +85,7 @@ class Comp extends PureComponent {
                     </td>
                     <td>
                       <div className={`${prefixCls}-dataBox-dataA-text`}>
-                        <input className={`${prefixCls}-dataBox-dataA-input ${prefixCls}-dataBox-dataA-input-disable`} value={'143787097090790'} disabled />
+                        <input className={`${prefixCls}-dataBox-dataA-input ${prefixCls}-dataBox-dataA-input-disable`} value={mainData.machineCode} disabled />
                       </div>  
                       <div className={`${prefixCls}-dataBox-dataA-text`}>
                         <input className={`${prefixCls}-dataBox-dataA-input ${prefixCls}-dataBox-dataA-input-disable`} value={'000989384'} disabled />
@@ -269,7 +269,7 @@ class Comp extends PureComponent {
                       </div>
                       <div className={`${prefixCls}-dataBox-dataB-cell ${prefixCls}-dataBox-dataB-cellC ${prefixCls}-dataBox-dataB-cellC-border`}>限乘人数</div>
                       <div className={`${prefixCls}-dataBox-dataB-cell ${prefixCls}-dataBox-dataB-cellC`}>
-                        <input className={`${prefixCls}-dataBox-dataA-input`} value={''} disabled />
+                        <input className={`${prefixCls}-dataBox-dataA-input`} value={mainData.maxNumber} disabled />
                       </div>
                     </td>
                   </tr>                                   

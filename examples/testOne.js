@@ -13,9 +13,9 @@ reactContainer.style.cssText = `
                                 // margin-bottom: 10px;
                                `
 const boxStyle = {
-  width: 1150,
-  height: 'auto',
-  margin: '0 auto',
+  // width: 1150,
+  // height: 'auto',
+  // margin: '0 auto',
   // border: '1px solid green',
 }
 
@@ -70,24 +70,54 @@ const taxDataList = [{
 
 const taxDataListB = [{
   name: '*锻件*通行费',
-  type: 'ER602EGK6001',
-  unit: '个',
-  number: '20180108',
-  price: '20180108',
+  carNumber: 'ER602EGK6001',
+  type: '个',
+  dateStart: '20180108',
+  dateEnd: '20180108',
   sum: '3,000.00',
   rate: 0.16,
   tax: '435435.16',
 }, {
   name: '*锻件*通行费',
-  type: 'ER602EGK6001',
-  unit: '个',
-  number: '20180901',
-  price: '20180901',
+  carNumber: 'ER602EGK6001',
+  type: '个',
+  dateStart: '20180901',
+  dateEnd: '20180901',
   sum: '3,000.00',
   rate: 0.16,
   tax: '435435.16',
 }, {}, {}, {}]
 
+const mainData = {
+  machineCode: '0001',
+  machineNumber: '0002',
+  encipher: '0003',
+  purchase: '南京智慧科技有限公司',
+  purchaseTaxNumber: '45455656',
+  carType: '轿车',
+  factory: '梅赛德斯',
+  origin: '德国',
+  certificate: '0004',
+  importNumber: '0005',
+  inspectionNumber: '0006',
+  engineNumber: '0007',
+  carNumber: '0008',
+  totalB: '壹百万',
+  totalS: '¥1,000',
+  sales: '0009',
+  phone: '00010',
+  salesTaxNumber: '00011',
+  account: '00012',
+  address: '00013',
+  bank: '00014',
+  rate: '00015',
+  tax: '00016',
+  chargeTaxCode: '00017',
+  notTaxCount: '00018',
+  taxCertificate: '00019',
+  weight: '00020',
+  maxNumber: '00021'
+}
 
 function render(container) {
   ReactDOM.render(
@@ -98,16 +128,17 @@ function render(container) {
           taxPurchase={taxPurchase}
           ticketType={1}
 
-          taxSales={taxSales}
-          taxDataList={taxDataList}
-          mode={'ZZSZYFP'}
+          // taxSales={taxSales}
+          // taxDataList={taxDataList}
+          // mode={'ZZSZYFP'}
           
-          // taxSales={taxSalesB}
-          // taxDataList={taxDataListB}
-          // mode={'ZZSDZPTFP'}
+          taxSales={taxSalesB}
+          taxDataList={taxDataListB}
+          mode={'ZZSDZPTFP'}
           
           // mode={'JDCXSTYFP'}
           // prefixCls={'cr-tax-c'}
+          // mainData={mainData}
         />
       </div>
     </div>, container
