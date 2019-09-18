@@ -6,7 +6,64 @@ react component tax and bill styles
 <img src="./github/example1.jpg" alt="example" />
 
 ## Usage
-how can i use
+
+```bash
+cnpm install --save cr-tax
+# or
+npm install --save cr-tax
+```
+
+```js
+import React, { PureComponent } from 'react';
+import Testone from 'cr-tax';
+import 'cr-tax/assets/index.css';
+
+const taxHeader = {
+  number: '2897454',
+  code: '4646456',
+  date: '20190911',
+}
+const taxPurchase = {
+  name: '南京智慧科技有限公司',
+  taxNumber: '142704654502922440',
+  addressPhone: '南京南路 123456',
+  bank: '',
+}
+const taxSales = {
+  totalB: '贰仟零壹拾叁元柒角陆分',
+  totalS: '¥2,013.76',
+  name: '衡水华业工业有限公司',
+  taxNumber: '789754654444464',
+  addressPhone: '运城市运万路幸福庄0350-7878505',
+  bank: '农行运城北城支行56600104454502242',
+  remark: '',
+}
+const taxDataList = [{
+  name: '*钢件*电池阴极金具',
+  type: 'ER602EGK6001',
+  unit: '个',
+  number: '3,000.00',
+  price: '3,000.00',
+  sum: '3,000.00',
+  rate: 0.16,
+  tax: '435435.16',
+}]
+
+class AppB extends PureComponent {
+  render () {
+    return (
+      <Tax
+        mode={'ZZSZYFP'}
+        taxHeader={taxHeader}
+        taxPurchase={taxPurchase}
+        ticketType={1}
+        taxDataList={taxDataList}
+        taxSales={taxSales}
+      />
+    )
+  }
+}
+```
 
 ## API
 
