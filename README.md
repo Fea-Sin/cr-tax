@@ -15,7 +15,7 @@ npm install --save cr-tax
 
 ```js
 import React, { PureComponent } from 'react';
-import Testone from 'cr-tax';
+import Tax from 'cr-tax';
 import 'cr-tax/assets/index.css';
 
 const taxHeader = {
