@@ -15,7 +15,10 @@ how can i use
 name | type | description
 -----| -----| ------------
 taxHeader | object | 发票头部信息 { code: 发票代码; number: 发票号码; date: 开票日期 }
-taxPurchase | object | 购货单位信息 { name: 名称; taxNumber: 纳税人识别号; addressPhone: 地址、电话; bank: 开户行及账户 }
+taxPurchase | object | 购货单位信息 { name: *名称; taxNumber: 纳税人识别号; addressPhone: 地址、电话; bank: 开户行及账户 }
+taxDataList | array[object] | 货物数据列表 [{ name: *货物或应税劳务名称; type: 规格型号; unit: 单位; number: 数量; price: 单价; sum: *金额; rate: *税率; tax: 税额 }]
+taxSales | object | 销货单位及价税合计信息 { totalB: 价税合计(大写); totalS: (小写); name: *名称; taxNumber: 纳税人识别号; addressPhone: 地址、电话; bank: 开户行及账户; remark: 备注 }
+ticketType | number | 开票类型 1: 代开发票; 2: 自开发票
 
 ### 增值税电子普通发票
 
