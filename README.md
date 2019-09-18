@@ -9,9 +9,16 @@ react component tax and bill styles
 how can i use
 
 ## API
+
+### 增值税专用发票
+
 name | type | description
 -----| -----| ------------
 taxHeader | object | { code: 发票代码; number: 发票号码; date: 开票日期 }
+
+### 增值税电子普通发票
+
+### 机动车销售统一发票
 
 ## Development
 
