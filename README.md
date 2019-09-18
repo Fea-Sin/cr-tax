@@ -14,7 +14,8 @@ how can i use
 
 name | type | description
 -----| -----| ------------
-taxHeader | object | { code: 发票代码; number: 发票号码; date: 开票日期 }
+taxHeader | object | 发票头部信息 { code: 发票代码; number: 发票号码; date: 开票日期 }
+taxPurchase | object | 购货单位信息 { name: 名称; taxNumber: 纳税人识别号; addressPhone: 地址、电话; bank: 开户行及账户 }
 
 ### 增值税电子普通发票
 
