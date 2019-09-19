@@ -3,7 +3,7 @@
 react component tax and bill styles
 
 ## example view
-<img src="./github/example2.jpg" alt="example" />
+<img src="./github/example2.png" alt="example" />
 
 ## Usage
 
