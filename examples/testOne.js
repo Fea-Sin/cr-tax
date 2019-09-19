@@ -131,13 +131,13 @@ function render(container) {
           // taxDataList={taxDataList}
           // mode={'ZZSZYFP'}
           
-          // taxSales={taxSalesB}
-          // taxDataList={taxDataListB}
-          // mode={'ZZSDZPTFP'}
+          taxSales={taxSalesB}
+          taxDataList={taxDataListB}
+          mode={'ZZSDZPTFP'}
           
-          mode={'JDCXSTYFP'}
-          prefixCls={'cr-tax-c'}
-          mainData={mainData}
+          // mode={'JDCXSTYFP'}
+          // prefixCls={'cr-tax-c'}
+          // mainData={mainData}
         />
       </div>
     </div>, container

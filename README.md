@@ -3,7 +3,7 @@
 react component tax and bill styles
 
 ## example view
-<img src="./github/example1.jpg" alt="example" />
+<img src="./github/example2.jpg" alt="example" />
 
 ## Usage
 
@@ -117,7 +117,6 @@ http://localhost:8018/examples/testOne.html
   ```
 
 
-
 ## License
 
-cr-comp is released under the MIT license.
+cr-tax is released under the MIT license.
