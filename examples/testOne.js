@@ -123,20 +123,20 @@ function render(container) {
     <div>
       <div style={boxStyle}>
         <Testone
-          taxHeader={taxHeader}
-          taxPurchase={taxPurchase}
-          ticketType={1}
+          // taxHeader={taxHeader}
+          // taxPurchase={taxPurchase}
+          // ticketType={1}
 
           // taxSales={taxSales}
           // taxDataList={taxDataList}
           // mode={'ZZSZYFP'}
           
-          taxSales={taxSalesB}
-          taxDataList={taxDataListB}
-          mode={'ZZSDZPTFP'}
+          // taxSales={taxSalesB}
+          // taxDataList={taxDataListB}
+          // mode={'ZZSDZPTFP'}
           
-          // mode={'JDCXSTYFP'}
-          // prefixCls={'cr-tax-c'}
+          mode={'JDCXSTYFP'}
+          prefixCls={'cr-tax-c'}
           // mainData={mainData}
         />
       </div>

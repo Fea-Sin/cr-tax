@@ -67,7 +67,7 @@ class Comp extends PureComponent {
                   <div className={`${prefixCls}-top-left-box`}>
                     <span>*发票代码:</span>
                     <span className={`${prefixCls}-top-left-box-input`}>
-                      <input className={`${prefixCls}-input`} value={taxHeader.code} disabled />
+                      <input className={`${prefixCls}-input`} value={taxHeader && taxHeader.code} disabled />
                     </span>
                   </div>
                 </div>
@@ -84,13 +84,13 @@ class Comp extends PureComponent {
                   <div className={`${prefixCls}-top-right-box`}>
                     <span>发票号码:</span>
                     <span className={`${prefixCls}-top-right-box-input`}>
-                      <input className={`${prefixCls}-input`} value={taxHeader.number} disabled />
+                      <input className={`${prefixCls}-input`} value={taxHeader && taxHeader.number} disabled />
                     </span>
                   </div>
                   <div className={`${prefixCls}-top-right-box`}>
                     <span>开票日期:</span>
                     <span className={`${prefixCls}-top-right-box-input`}>
-                      <input className={`${prefixCls}-input`} value={taxHeader.date} disabled />
+                      <input className={`${prefixCls}-input`} value={taxHeader && taxHeader.date} disabled />
                       <Icon className={`${prefixCls}-top-right-box-calender`} type="calendar" />
                     </span>
                   </div>               
@@ -111,7 +111,7 @@ class Comp extends PureComponent {
                             <span className={`${prefixCls}-dataBox-table-cellBox-star`}>名</span>称
                           </span>
                           <span>
-                            <input className={`${prefixCls}-dataBox-input`} value={taxPurchase.name} disabled />
+                            <input className={`${prefixCls}-dataBox-input`} value={taxPurchase && taxPurchase.name} disabled />
                           </span>
                         </div>
                         <div className={`${prefixCls}-dataBox-table-cellBox`}>
@@ -119,7 +119,7 @@ class Comp extends PureComponent {
                             纳税人识别号
                           </span>
                           <span>
-                            <input className={`${prefixCls}-dataBox-input`} value={taxPurchase.taxNumber} disabled />
+                            <input className={`${prefixCls}-dataBox-input`} value={taxPurchase && taxPurchase.taxNumber} disabled />
                           </span>
                         </div>
                         <div className={`${prefixCls}-dataBox-table-cellBox`}>
@@ -127,7 +127,7 @@ class Comp extends PureComponent {
                             地址、电话
                           </span>
                           <span>
-                            <input className={`${prefixCls}-dataBox-input`} value={taxPurchase.addressPhone} disabled />
+                            <input className={`${prefixCls}-dataBox-input`} value={taxPurchase && taxPurchase.addressPhone} disabled />
                           </span>
                         </div> 
                         <div className={`${prefixCls}-dataBox-table-cellBox`}>
@@ -135,7 +135,7 @@ class Comp extends PureComponent {
                             开户行及账户
                           </span>
                           <span>
-                            <input className={`${prefixCls}-dataBox-input`} value={taxPurchase.bank} disabled />
+                            <input className={`${prefixCls}-dataBox-input`} value={taxPurchase && taxPurchase.bank} disabled />
                           </span>
                         </div>                                                                  
                       </div>                                                                                
@@ -173,13 +173,13 @@ class Comp extends PureComponent {
                       {'价税合计(大写)'}
                     </td>
                     <td className={`${prefixCls}-dataBox-seller-HJB`}>
-                      {taxSales.totalB}
+                      {taxSales && taxSales.totalB}
                     </td>
                     <td className={`${prefixCls}-dataBox-seller-HJST ${prefixCls}-dataBox-center`}>
                     {'(小写)'}
                     </td>
                     <td className={`${prefixCls}-dataBox-seller-HJS`}>
-                      {taxSales.totalS}
+                      {taxSales && taxSales.totalS}
                     </td>
                   </tr>                       
                 </tbody>              
@@ -195,7 +195,7 @@ class Comp extends PureComponent {
                             <span className={`${prefixCls}-dataBox-table-cellBox-star`}>名</span>称
                           </span>
                           <span>
-                            <input className={`${prefixCls}-dataBox-input`} value={taxSales.name} disabled />
+                            <input className={`${prefixCls}-dataBox-input`} value={taxSales && taxSales.name} disabled />
                           </span>
                         </div>
                         <div className={`${prefixCls}-dataBox-table-cellBox`}>
@@ -203,7 +203,7 @@ class Comp extends PureComponent {
                             纳税人识别号
                           </span>
                           <span>
-                            <input className={`${prefixCls}-dataBox-input`} value={taxSales.taxNumber} disabled />
+                            <input className={`${prefixCls}-dataBox-input`} value={taxSales && taxSales.taxNumber} disabled />
                           </span>
                         </div>
                         <div className={`${prefixCls}-dataBox-table-cellBox`}>
@@ -211,7 +211,7 @@ class Comp extends PureComponent {
                             地址、电话
                           </span>
                           <span>
-                            <input className={`${prefixCls}-dataBox-input`} value={taxSales.addressPhone} disabled />
+                            <input className={`${prefixCls}-dataBox-input`} value={taxSales && taxSales.addressPhone} disabled />
                           </span>
                         </div> 
                         <div className={`${prefixCls}-dataBox-table-cellBox`}>
@@ -219,13 +219,13 @@ class Comp extends PureComponent {
                             开户行及账户
                           </span>
                           <span>
-                            <input className={`${prefixCls}-dataBox-input`} value={taxSales.bank} disabled />
+                            <input className={`${prefixCls}-dataBox-input`} value={taxSales && taxSales.bank} disabled />
                           </span>
                         </div>                                                                  
                       </div>                                                                                
                     </td>
                     <td className={`${prefixCls}-dataBox-table-title`}>备注</td>
-                    <td className={`${prefixCls}-dataBox-table-BZ`}>{taxSales.remark}</td>
+                    <td className={`${prefixCls}-dataBox-table-BZ`}>{taxSales && taxSales.remark}</td>
                   </tr> 
                 </tbody>             
               </table>             
