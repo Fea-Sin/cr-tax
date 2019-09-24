@@ -35,25 +35,19 @@ class Comp extends PureComponent {
       return (
         <tr className={`${prefixCls}-dataBox-data-dataTr`} key={index}>
           <td>{item.name}</td>
-          <td>{item.type}</td>
-          <td>{item.unit}</td>
-          <td>{item.number}</td>
+          <td>{item.billNumber}</td>
+          <td>{item.modelUnit}</td>
+          <td>{item.modelCount}</td>
+          <td>{item.modelPrice}</td>
           <td>{item.price}</td>
-          <td>{item.sum}</td>
           <td>
             {
-              item.rate
-              ? (
-                  <Select defaultValue={item.rate} style={{ width: 80 }}>
-                    <Option value={0.16}>0.16</Option>
-                    <Option value={0.15}>0.15</Option>
-                    <Option value={0.10}>0.10</Option>
-                  </Select>
-                )
+              item.taxRate
+              ? (<div>{item.taxRate}</div>)
               : (<div>&nbsp;</div>)
             }
           </td>
-          <td className={`${prefixCls}-dataBox-data-SE-Data`}>{item.tax}</td>
+          <td className={`${prefixCls}-dataBox-data-SE-Data`}>{item.billTaxValue}</td>
         </tr>       
       )
     })

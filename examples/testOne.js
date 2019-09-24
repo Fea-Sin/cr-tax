@@ -49,22 +49,13 @@ const taxSalesB = {
 }
 const taxDataList = [{
   name: '*钢件*电池阴极金具',
-  type: 'ER602EGK6001',
-  unit: '个',
-  number: '3,000.00',
+  billNumber: 'ER602EGK6001',
+  modelUnit: '个',
+  modelCount: '3,000.00',
+  modelPrice: '3,000.00',
   price: '3,000.00',
-  sum: '3,000.00',
-  rate: 0.16,
-  tax: '435435.16',
-}, {
-  name: '*钢件*电池阴极金具',
-  type: 'ER602EGK6001',
-  unit: '个',
-  number: '3,000.00',
-  price: '3,000.00',
-  sum: '3,000.00',
-  rate: 0.16,
-  tax: '435435.16',
+  taxRate: 0.16,
+  billTaxValue: '435435.16',
 }, {}, {}, {}]
 
 const taxDataListB = [{
@@ -137,7 +128,7 @@ function render(container) {
           
           mode={'JDCXSTYFP'}
           prefixCls={'cr-tax-c'}
-          // mainData={mainData}
+          mainData={mainData}
         />
       </div>
     </div>, container
