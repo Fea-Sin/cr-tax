@@ -17,6 +17,8 @@ class Comp extends PureComponent {
   }
 
   radioChange = e => {
+    // 禁用切换
+    return false
     this.setState({
       ticketType: e.target.value,
     })
@@ -30,7 +32,7 @@ class Comp extends PureComponent {
   }
 
   render () {
-    const { prefixCls, taxHeader, taxPurchase, taxSales, taxDataList, ticketType } = this.props
+    const { prefixCls, taxHeader, taxPurchase, taxSales, taxDataList, ticketType, direction } = this.props
     const dataTr = taxDataList.map((item, index) => {
       return (
         <tr className={`${prefixCls}-dataBox-data-dataTr`} key={index}>
@@ -227,13 +229,38 @@ class Comp extends PureComponent {
           </div>
         </div>
         <div className={`${prefixCls}-footer`}>
-          <span>开票类型:</span>
-          <span style={{ marginLeft: 8 }}>
-            <Radio.Group value={this.state.ticketType || ticketType} onChange={this.radioChange}>
-              <Radio value={1}>代开发票</Radio>
-              <Radio value={2} style={{ marginLeft: 0 }}>自开发票</Radio>
-            </Radio.Group>
-          </span>
+          {
+            direction === 'in'
+            ? (
+              <div>
+                <span>认证状态:</span>
+                <span style={{ marginLeft: 8 }}>
+                  <Radio.Group value={this.state.ticketType || ticketType} onChange={this.radioChange}>
+                    <Radio value={1}>已认证</Radio>
+                    <Radio value={2} style={{ marginLeft: 0 }}>未认证</Radio>
+                  </Radio.Group>
+                </span>
+                <span className={`${prefixCls}-footer-ticketDate`}>
+                  <span>认证日期:</span>
+                  <span className={`${prefixCls}-top-right-box-input`}>
+                    <input className={`${prefixCls}-input ${prefixCls}-footer-input`} value={taxHeader && taxHeader.identiDate || ''} disabled />
+                    <Icon className={`${prefixCls}-top-right-box-calender`} type="calendar" />
+                  </span>                  
+                </span>
+              </div>
+            )
+            : (
+              <div>
+                <span>开票类型:</span>
+                <span style={{ marginLeft: 8 }}>
+                  <Radio.Group value={this.state.ticketType || ticketType} onChange={this.radioChange}>
+                    <Radio value={1}>代开发票</Radio>
+                    <Radio value={2} style={{ marginLeft: 0 }}>自开发票</Radio>
+                  </Radio.Group>
+                </span>                
+              </div>
+            )
+          }
         </div>
       </div>
     )

@@ -22,7 +22,7 @@ class Comp extends PureComponent {
   }
 
   render () {
-    const { prefixCls, taxHeader, taxPurchase, taxSales, taxDataList, ticketType, mode, mainData } = this.props
+    const { prefixCls, taxHeader, taxPurchase, taxSales, taxDataList, ticketType, mode, mainData, direction } = this.props
 
     if (mode === 'ZZSZYFP') {
       return (
@@ -33,6 +33,7 @@ class Comp extends PureComponent {
           taxSales={taxSales}
           taxDataList={taxDataList}
           ticketType={ticketType}
+          direction={direction}
         />
       )
     } else if (mode === 'ZZSDZPTFP') {
@@ -44,6 +45,7 @@ class Comp extends PureComponent {
           taxSales={taxSales}
           taxDataList={taxDataList}
           ticketType={ticketType}
+          direction={direction}
         />        
       )
     } else if (mode === 'JDCXSTYFP') {
@@ -77,12 +79,14 @@ Comp.propTypes = {
   taxSales: PropTypes.object,
   taxDataList: PropTypes.arrayOf(PropTypes.object),
   ticketType: PropTypes.number,
-  mode: PropTypes.oneOf(['ZZSZYFP', 'ZZSDZPTFP', 'JDCXSTYFP'])
+  mode: PropTypes.oneOf(['ZZSZYFP', 'ZZSDZPTFP', 'JDCXSTYFP']),
+  direction: PropTypes.oneOf(['in', 'out']),
 }
 Comp.defaultProps = {
   prefixCls: 'cr-tax',
   taxDataList: [{}],
-  ticketType: 1,
+  ticketType: 2,
   mode: 'ZZSZYFP',
+  direction: 'in',
 }
 export default Comp

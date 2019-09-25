@@ -117,18 +117,19 @@ function render(container) {
           // taxHeader={taxHeader}
           // taxPurchase={taxPurchase}
           // ticketType={1}
+          direction='in'
 
           // taxSales={taxSales}
           // taxDataList={taxDataList}
           // mode={'ZZSZYFP'}
           
-          // taxSales={taxSalesB}
-          // taxDataList={taxDataListB}
-          // mode={'ZZSDZPTFP'}
+          taxSales={taxSalesB}
+          taxDataList={taxDataListB}
+          mode={'ZZSDZPTFP'}
           
-          mode={'JDCXSTYFP'}
-          prefixCls={'cr-tax-c'}
-          mainData={mainData}
+          // mode={'JDCXSTYFP'}
+          // prefixCls={'cr-tax-c'}
+          // mainData={mainData}
         />
       </div>
     </div>, container
