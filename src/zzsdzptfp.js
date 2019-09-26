@@ -43,13 +43,7 @@ class Comp extends PureComponent {
           <td>
             {
               item.rate
-              ? (
-                  <Select defaultValue={item.rate} style={{ width: 80 }}>
-                    <Option value={0.16}>0.16</Option>
-                    <Option value={0.15}>0.15</Option>
-                    <Option value={0.10}>0.10</Option>
-                  </Select>
-                )
+              ? (<div>{item.rate}</div>)
               : (<div>&nbsp;</div>)
             }
           </td>

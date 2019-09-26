@@ -56,7 +56,7 @@ const taxDataList = [{
   price: '3,000.00',
   taxRate: 0.16,
   billTaxValue: '435435.16',
-}, {}, {}, {}]
+}, {}, {}, {}, {}, {}, {}]
 
 const taxDataListB = [{
   name: '*锻件*通行费',
@@ -76,7 +76,7 @@ const taxDataListB = [{
   sum: '3,000.00',
   rate: 0.16,
   tax: '435435.16',
-}, {}, {}, {}]
+}, {}]
 
 const mainData = {
   machineCode: '0001',
