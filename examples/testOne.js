@@ -56,7 +56,7 @@ const taxDataList = [{
   price: '3,000.00',
   taxRate: 0.16,
   billTaxValue: '435435.16',
-}, {}, {}, {}, {}, {}, {}]
+}, {}, {}]
 
 const taxDataListB = [{
   name: '*锻件*通行费',
@@ -119,13 +119,13 @@ function render(container) {
           // ticketType={1}
           direction='in'
 
-          // taxSales={taxSales}
-          // taxDataList={taxDataList}
-          // mode={'ZZSZYFP'}
+          taxSales={taxSales}
+          taxDataList={taxDataList}
+          mode={'ZZSZYFP'}
           
-          taxSales={taxSalesB}
-          taxDataList={taxDataListB}
-          mode={'ZZSDZPTFP'}
+          // taxSales={taxSalesB}
+          // taxDataList={taxDataListB}
+          // mode={'ZZSDZPTFP'}
           
           // mode={'JDCXSTYFP'}
           // prefixCls={'cr-tax-c'}

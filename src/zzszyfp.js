@@ -101,7 +101,7 @@ class Comp extends PureComponent {
                   <tr>
                     <td className={`${prefixCls}-dataBox-table-title`}>购货单位</td>
                     <td>
-                      <div style={{ marginTop: '-10px' }}>
+                      <div style={{ marginTop: '5px' }}>
                         <div className={`${prefixCls}-dataBox-table-cellBox`}>
                           <span className={`${prefixCls}-dataBox-table-cellBox-title`}>
                             <span className={`${prefixCls}-dataBox-table-cellBox-star`}>名</span>称
@@ -131,7 +131,7 @@ class Comp extends PureComponent {
                             开户行及账户
                           </span>
                           <span>
-                            <input className={`${prefixCls}-dataBox-input`} value={taxPurchase && taxPurchase.bank || ''} disabled />
+                            <input className={`${prefixCls}-dataBox-input ${prefixCls}-dataBox-noLine`} value={taxPurchase && taxPurchase.bank || ''} disabled />
                           </span>
                         </div>                                                                  
                       </div>                                                                                
@@ -185,7 +185,7 @@ class Comp extends PureComponent {
                   <tr>
                     <td className={`${prefixCls}-dataBox-table-title`}>销货单位</td>
                     <td>
-                      <div style={{ marginTop: '-10px' }}>
+                      <div style={{ marginTop: '5px' }}>
                         <div className={`${prefixCls}-dataBox-table-cellBox`}>
                           <span className={`${prefixCls}-dataBox-table-cellBox-title`}>
                             <span className={`${prefixCls}-dataBox-table-cellBox-star`}>名</span>称
@@ -215,7 +215,7 @@ class Comp extends PureComponent {
                             开户行及账户
                           </span>
                           <span>
-                            <input className={`${prefixCls}-dataBox-input`} value={taxSales && taxSales.bank || ''} disabled />
+                            <input className={`${prefixCls}-dataBox-input ${prefixCls}-dataBox-noLine`} value={taxSales && taxSales.bank || ''} disabled />
                           </span>
                         </div>                                                                  
                       </div>                                                                                

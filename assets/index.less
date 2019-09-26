@@ -30,7 +30,7 @@
   &-input {
     outline: none;
     border: none;
-    border-bottom: 1px solid #D49366;
+    border-bottom: 1px solid #E6D0B3 !important;
     color: #3E7AFA;
     text-indent: 10px;
     background-color: transparent;
@@ -92,15 +92,20 @@
     }
   }
   &-dataBox {
+    border: 1px solid #D49366;
     &-input {
       outline: none;
       border: none;
-      border-bottom: 1px solid #D49366;
+      border-bottom: 1px solid #E6D0B3 !important;
       color: #3E7AFA;
       text-indent: 5px;
       background-color: transparent;
       width: 456px;
       margin-left: 8px;
+      line-height: 28px;
+    }
+    &-noLine {
+      border-bottom: none !important;
     }
     &-center {
       text-align: center;
@@ -111,9 +116,11 @@
     &-table {
       border-collapse: collapse;
       width: 100%;
+      // border: 1px solid #E27220 !important;
+      border: none;
 
       td, th {
-        border: 1px solid rgba(218,147,99,1);
+        border: 1px solid #E6D0B3 !important;
       }
       &-title {
         width: 54px;
@@ -139,6 +146,7 @@
           font-size: 13px;
           .justifyText();
           padding-left: 12px;
+          line-height: 28px;
         }
         &-star {
           position: relative;
@@ -201,7 +209,7 @@
       }
 
       &-HJBT {
-        width: 227px;
+        width: 226px;
       }
       &-HJB {
         width: 411px;
@@ -448,7 +456,7 @@
       }
 
       &-HJBT {
-        width: 227px;
+        width: 226px;
       }
       &-HJB {
         width: 411px;
