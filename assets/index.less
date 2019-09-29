@@ -92,7 +92,8 @@
     }
   }
   &-dataBox {
-    border: 1px solid #D49366;
+    // border: 1px solid #D49366;
+
     &-input {
       outline: none;
       border: none;
@@ -120,7 +121,7 @@
       border: none;
 
       td, th {
-        border: 1px solid #E6D0B3 !important;
+        border: 1px solid #D49366 !important;
       }
       &-title {
         width: 54px;
@@ -173,6 +174,7 @@
       &-dataTr {
         line-height: 36px;
         color: #3E7AFA;
+
       }
       &-HW {
         width: 227px;
@@ -200,7 +202,12 @@
       }
       &-SE-Data {
         background-color: rgba(243,244,247,1);
-      }               
+      }
+      &-innerTable {
+        td, th {
+          border: 1px solid #E6D0B3 !important;
+        }        
+      }             
     }
     &-seller {
       font-size: 14px;
@@ -209,7 +216,7 @@
       }
 
       &-HJBT {
-        width: 226px;
+        width: 227px;
       }
       &-HJB {
         width: 411px;
@@ -419,10 +426,24 @@
       &-tr {
         background-color: rgba(255,247,237,1);
         line-height: 36px;
+
+        th&-start {
+          border-left: 1px solid #D49366 !important;
+        }
+        th&-end {
+          border-right: 1px solid #D49366 !important;
+        }        
       }
       &-dataTr {
         line-height: 36px;
         color: #3E7AFA;
+
+        td&-start {
+          border-left: 1px solid #D49366 !important;
+        }
+        td&-end {
+          border-right: 1px solid #D49366 !important;
+        }
       }
       &-HW {
         width: 227px;
@@ -456,7 +477,7 @@
       }
 
       &-HJBT {
-        width: 226px;
+        width: 227px;
       }
       &-HJB {
         width: 411px;

@@ -36,7 +36,7 @@ class Comp extends PureComponent {
     const dataTr = taxDataList.map((item, index) => {
       return (
         <tr className={`${prefixCls}-dataBox-data-dataTr`} key={index}>
-          <td>{item.name}</td>
+          <td className={`${prefixCls}-dataBox-data-dataTr-start`}>{item.name}</td>
           <td>{item.billNumber}</td>
           <td>{item.modelUnit}</td>
           <td>{item.modelCount}</td>
@@ -49,7 +49,7 @@ class Comp extends PureComponent {
               : (<div>&nbsp;</div>)
             }
           </td>
-          <td className={`${prefixCls}-dataBox-data-SE-Data`}>{item.billTaxValue}</td>
+          <td className={`${prefixCls}-dataBox-data-SE-Data ${prefixCls}-dataBox-data-dataTr-end`}>{item.billTaxValue}</td>
         </tr>       
       )
     })
@@ -143,17 +143,17 @@ class Comp extends PureComponent {
               </table>
             </div>
             <div className={`${prefixCls}-dataBox-data ${prefixCls}-dataBox-interval`}>
-              <table className={`${prefixCls}-dataBox-table`}>
+              <table className={`${prefixCls}-dataBox-table ${prefixCls}-dataBox-data-innerTable`}>
                 <thead>
                   <tr className={`${prefixCls}-dataBox-data-tr`}>
-                    <th className={`${prefixCls}-dataBox-data-HW`}>*货物或应税劳务名称</th>
+                    <th className={`${prefixCls}-dataBox-data-HW ${prefixCls}-dataBox-data-tr-start`}>*货物或应税劳务名称</th>
                     <th className={`${prefixCls}-dataBox-data-GG`}>规格型号</th>
                     <th className={`${prefixCls}-dataBox-data-DW`}>单位</th>
                     <th className={`${prefixCls}-dataBox-data-SL`}>数量</th>
                     <th className={`${prefixCls}-dataBox-data-DJ`}>单价</th>
                     <th className={`${prefixCls}-dataBox-data-JE`}>*金额</th>
                     <th className={`${prefixCls}-dataBox-data-SHL`}>*税率</th>
-                    <th className={`${prefixCls}-dataBox-data-SE`}>税额</th>
+                    <th className={`${prefixCls}-dataBox-data-SE ${prefixCls}-dataBox-data-tr-end`}>税额</th>
                   </tr>
                 </thead>
                 <tbody>

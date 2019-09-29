@@ -34,7 +34,7 @@ class Comp extends PureComponent {
     const dataTr = taxDataList.map((item, index) => {
       return (
         <tr className={`${prefixCls}-dataBox-data-dataTr`} key={index}>
-          <td>{item.name}</td>
+          <td className={`${prefixCls}-dataBox-data-dataTr-start`}>{item.name}</td>
           <td>{item.carNumber}</td>
           <td>{item.type}</td>
           <td>{item.dateStart}</td>
@@ -47,7 +47,7 @@ class Comp extends PureComponent {
               : (<div>&nbsp;</div>)
             }
           </td>
-          <td>{item.tax}</td>
+          <td className={`${prefixCls}-dataBox-data-dataTr-end`}>{item.tax}</td>
         </tr>       
       )
     })
@@ -140,18 +140,18 @@ class Comp extends PureComponent {
                 </tbody>           
               </table>
             </div>
-            <div className={`${prefixCls}-dataBox-data ${prefixCls}-dataBox-interval`}>
+            <div className={`${prefixCls}-dataBox-data ${prefixCls}-dataBox-interval ${prefixCls}-dataBox-data-innerTable`}>
               <table className={`${prefixCls}-dataBox-table`}>
                 <thead>
                   <tr className={`${prefixCls}-dataBox-data-tr`}>
-                    <th className={`${prefixCls}-dataBox-data-HW`}>*项目名称</th>
+                    <th className={`${prefixCls}-dataBox-data-HW ${prefixCls}-dataBox-data-tr-start`}>*项目名称</th>
                     <th className={`${prefixCls}-dataBox-data-GG`}>车牌号</th>
                     <th className={`${prefixCls}-dataBox-data-DW`}>类型</th>
                     <th className={`${prefixCls}-dataBox-data-SL`}>通行日期起</th>
                     <th className={`${prefixCls}-dataBox-data-DJ`}>通行日期止</th>
                     <th className={`${prefixCls}-dataBox-data-JE`}>*金额</th>
                     <th className={`${prefixCls}-dataBox-data-SHL`}>*税率</th>
-                    <th className={`${prefixCls}-dataBox-data-SE`}>税额</th>
+                    <th className={`${prefixCls}-dataBox-data-SE ${prefixCls}-dataBox-data-tr-end`}>税额</th>
                   </tr>
                 </thead>
                 <tbody>
