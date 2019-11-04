@@ -39,7 +39,7 @@ class Comp extends PureComponent {
       return (
         <tr className={`${prefixCls}-dataBox-data-dataTr`} key={index}>
           <td className={`${prefixCls}-dataBox-data-dataTr-start`}>{item.name}</td>
-          <td>{item.billNumber}</td>
+          <td>{item.modelNumber}</td>
           <td>{item.modelUnit}</td>
           <td>{item.modelCount}</td>
           <td>{item.modelPrice}</td>
