@@ -31,7 +31,7 @@ const taxPurchase = {
 }
 const taxSales = {
   totalB: '贰仟零壹拾叁元柒角陆分',
-  totalS: '¥2,013.76',
+  totalS: '2013.76',
   name: '衡水华业工业有限公司',
   taxNumber: '789754654444464',
   addressPhone: '运城市运万路幸福庄0350-7878505',
@@ -40,7 +40,7 @@ const taxSales = {
 }
 const taxSalesB = {
   totalB: '贰仟零壹拾叁元柒角陆分',
-  totalS: '¥2,013.76',
+  totalS: '2013.76',
   name: '衡水华业工业有限公司',
   taxNumber: '789754654444464',
   addressPhone: '运城市运万路幸福庄0350-44520505',
@@ -117,11 +117,11 @@ function render(container) {
           // taxHeader={taxHeader}
           // taxPurchase={taxPurchase}
           // ticketType={1}
-          direction='out'
+          direction='in'
 
           taxSales={taxSales}
           taxDataList={taxDataList}
-          mode={'ZZSZYFP'}
+          // mode={'ZZSZYFP'}
           
           // taxSales={taxSalesB}
           // taxDataList={taxDataListB}
@@ -130,6 +130,8 @@ function render(container) {
           // mode={'JDCXSTYFP'}
           // prefixCls={'cr-tax-c'}
           // mainData={mainData}
+
+          mode={'ZZSPTFP'}
         />
       </div>
     </div>, container

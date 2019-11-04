@@ -6,6 +6,7 @@ import { Row, Col, Icon, Select, Radio } from 'antd';
 import 'antd/dist/antd.css';
 import Numeral from './utils/Numeral';
 
+
 const { Option } = Select;
 
 class Comp extends PureComponent {
@@ -71,7 +72,7 @@ class Comp extends PureComponent {
               </Col>
               <Col span={8}>
                 <div className={`${prefixCls}-top-titleBox`}>
-                  <div className={`${prefixCls}-top-titleBox-title`}>增值税专用发票</div>
+                  <div className={`${prefixCls}-top-titleBox-title`}>增值税普通发票</div>
                   <div className={`${prefixCls}-top-titleBox-line`}></div>
                   <div className={`${prefixCls}-top-titleBox-sub`}>发票联</div>
                 </div>
