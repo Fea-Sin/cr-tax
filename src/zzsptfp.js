@@ -42,8 +42,8 @@ class Comp extends PureComponent {
           <td>{item.modelNumber}</td>
           <td>{item.modelUnit}</td>
           <td>{item.modelCount}</td>
-          <td>{item.modelPrice}</td>
-          <td>{item.price}</td>
+          <td>{item.modelPrice && Numeral(item.modelPrice).format('0,0.00')}</td>
+          <td>{item.price && Numeral(item.price).format('0,0.00')}</td>
           <td>
             {
               item.taxRate
@@ -51,7 +51,7 @@ class Comp extends PureComponent {
               : (<div>&nbsp;</div>)
             }
           </td>
-          <td className={`${prefixCls}-dataBox-data-SE-Data ${prefixCls}-dataBox-data-dataTr-end`}>{item.billTaxValue}</td>
+          <td className={`${prefixCls}-dataBox-data-SE-Data ${prefixCls}-dataBox-data-dataTr-end`}>{item.billTaxValue && Numeral(item.billTaxValue).format('0,0.00')}</td>
         </tr>       
       )
     })
@@ -178,7 +178,7 @@ class Comp extends PureComponent {
                       <span style={{fontSize: 13}}>（小写）</span>
                     </td>
                     <td className={`${prefixCls}-dataBox-seller-HJS`}>
-                      {taxSales && Numeral(taxSales.totalS).format() || ''}
+                      {taxSales && taxSales.totalS && Numeral(taxSales.totalS).format()}
                     </td>
                   </tr>                       
                 </tbody>              
