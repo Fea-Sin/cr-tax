@@ -48,7 +48,7 @@ const taxSalesB = {
   remark: '',
 }
 const taxDataList = [{
-  name: '*钢件*电池阴极金具',
+  name: '*钢件*电池阴',
   billNumber: 'ER602EGK6001',
   modelUnit: '个',
   modelCount: '3',
@@ -59,7 +59,7 @@ const taxDataList = [{
 }, {}, {}]
 
 const taxDataListB = [{
-  name: '*锻件*通行费',
+  name: '*锻件*通行费通行费通行费通行费通行费通行费',
   carNumber: 'ER602EGK6001',
   type: '个',
   dateStart: '20180108',
@@ -121,11 +121,11 @@ function render(container) {
 
           taxSales={taxSales}
           taxDataList={taxDataList}
-          mode={'ZZSZYFP'}
+          // mode={'ZZSZYFP'}
           
-          // taxSales={taxSalesB}
-          // taxDataList={taxDataListB}
-          // mode={'ZZSDZPTFP'}
+          taxSales={taxSalesB}
+          taxDataList={taxDataListB}
+          mode={'ZZSDZPTFP'}
           
           // mode={'JDCXSTYFP'}
           // prefixCls={'cr-tax-c'}

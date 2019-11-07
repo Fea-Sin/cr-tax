@@ -34,7 +34,9 @@ class Comp extends PureComponent {
     const dataTr = taxDataList.map((item, index) => {
       return (
         <tr className={`${prefixCls}-dataBox-data-dataTr`} key={index}>
-          <td className={`${prefixCls}-dataBox-data-dataTr-start`}>{item.name}</td>
+          <td className={`${prefixCls}-dataBox-data-dataTr-start`}>
+            <span className={`${prefixCls}-dataBox-data-dataTr-text`}>{item.name}</span>
+          </td>
           <td>{item.carNumber}</td>
           <td>{item.type}</td>
           <td>{item.dateStart}</td>
