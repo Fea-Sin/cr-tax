@@ -59,7 +59,7 @@ const taxDataList = [{
 }, {}, {}]
 
 const taxDataListB = [{
-  name: '*锻件*通行费通行费通行费通行费通行费通行费',
+  name: '*锻件*通行费通行费通行费',
   carNumber: 'ER602EGK6001',
   type: '个',
   dateStart: '20180108',
@@ -123,15 +123,15 @@ function render(container) {
           taxDataList={taxDataList}
           // mode={'ZZSZYFP'}
           
-          taxSales={taxSalesB}
-          taxDataList={taxDataListB}
-          mode={'ZZSDZPTFP'}
+          // taxSales={taxSalesB}
+          // taxDataList={taxDataListB}
+          // mode={'ZZSDZPTFP'}
           
           // mode={'JDCXSTYFP'}
           // prefixCls={'cr-tax-c'}
           // mainData={mainData}
 
-          // mode={'ZZSPTFP'}
+          mode={'ZZSPTFP'}
         />
       </div>
     </div>, container
