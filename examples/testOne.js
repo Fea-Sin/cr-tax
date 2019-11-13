@@ -1,7 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Testone from 'cr-tax'
-import '../assets/index.less'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Testone from 'cr-tax';
+import '../assets/index.less';
+import { GSTYJD } from 'cr-tax';
 
 const reactContainer = document.getElementById('__react-content');
 const bodyContainer = document.getElementsByTagName('body')
@@ -113,7 +114,7 @@ function render(container) {
   ReactDOM.render(
     <div>
       <div style={boxStyle}>
-        <Testone
+        {/* <Testone
           // taxHeader={taxHeader}
           // taxPurchase={taxPurchase}
           // ticketType={1}
@@ -132,7 +133,8 @@ function render(container) {
           // mainData={mainData}
 
           mode={'ZZSPTFP'}
-        />
+        /> */}
+        <GSTYJD />
       </div>
     </div>, container
   )

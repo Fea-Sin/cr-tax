@@ -4,6 +4,7 @@ import ZZSZY from './zzszyfp';
 import ZZSDZ from './zzsdzptfp';
 import JDCXS from './jdcxstyfp';
 import ZZSPT from './zzsptfp';
+import GSTYJD from './GSTYJD';
 
 
 class Comp extends PureComponent {
@@ -101,5 +102,9 @@ Comp.defaultProps = {
   ticketType: 2,
   mode: 'ZZSZYFP',
   direction: 'in',
+}
+
+export {
+  GSTYJD
 }
 export default Comp
