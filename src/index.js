@@ -5,6 +5,7 @@ import ZZSDZ from './zzsdzptfp';
 import JDCXS from './jdcxstyfp';
 import ZZSPT from './zzsptfp';
 import GSTYJD from './GSTYJD';
+import PTFPJP from './PTFPJP';
 
 
 class Comp extends PureComponent {
@@ -105,6 +106,7 @@ Comp.defaultProps = {
 }
 
 export {
-  GSTYJD
+  GSTYJD,
+  PTFPJP,
 }
 export default Comp

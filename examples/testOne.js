@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Testone from 'cr-tax';
 import '../assets/index.less';
-import { GSTYJD } from 'cr-tax';
+import { GSTYJD, PTFPJP } from 'cr-tax';
 
 const reactContainer = document.getElementById('__react-content');
 const bodyContainer = document.getElementsByTagName('body')
@@ -134,7 +134,7 @@ function render(container) {
 
           mode={'ZZSPTFP'}
         /> */}
-        <GSTYJD />
+        <PTFPJP />
       </div>
     </div>, container
   )
