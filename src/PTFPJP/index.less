@@ -1,5 +1,63 @@
 @PTFPJP: tax-ptfpjp;
 
 .@{PTFPJP} {
-  color: red;
+  // color: red;
+  width: 100%;
+
+  &-container {
+    width: 780px;
+    margin: 0 auto;
+    background-color: rgba(246,249,255,0.59);
+    padding-left: 91px;
+    padding-right: 91px;
+  }
+  &-header {
+    width: 194px;
+    margin: 0 auto;
+    padding-top: 30px;
+    text-align: center;
+    color: #B38D4A;
+
+    &-deco {
+      border: none;
+      width: 100%;
+      border-top: 1px solid #B38D4A;
+      height: 3px;
+      border-bottom: 1px solid #B38D4A;
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+    &-title {
+      color: #B38D4A;
+      font-size: 18px;
+    }
+  }
+  &-columBox {
+    width: 100%;
+    .clearfix();
+
+    &-colum {
+      width: 50%;
+      float: left;
+      // border: 1px solid green;
+    }
+    &-cellBox {
+      width: 100%;
+      .clearfix();
+
+      &-cell1 {
+        width: 86px;
+        float: left;
+        .justifyText()
+      }
+      &-cell2 {
+        width: 190px;
+        float: left;
+        padding-left: 10px;
+      }
+      &-input {
+        .tax-input(@width: 180px)
+      }
+    }
+  }
 }

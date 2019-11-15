@@ -128,11 +128,11 @@ function render(container) {
           // taxDataList={taxDataListB}
           // mode={'ZZSDZPTFP'}
           
-          // mode={'JDCXSTYFP'}
-          // prefixCls={'cr-tax-c'}
-          // mainData={mainData}
+          mode={'JDCXSTYFP'}
+          prefixCls={'cr-tax-c'}
+          mainData={mainData}
 
-          mode={'ZZSPTFP'}
+          // mode={'ZZSPTFP'}
         /> */}
         <PTFPJP />
       </div>
