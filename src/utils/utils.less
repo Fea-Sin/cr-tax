@@ -71,11 +71,11 @@
 
 // tax 文本框
 // ----------------
-.tax-input(@width: 100px; @lineColor: #E6D0B3) {
+.tax-input(@width: 100px; @lineColor: #E6D0B3; @color: #3E7AFA; @borderH: 1px) {
   outline: none;
   border: none;
-  border-bottom: 1px solid  @lineColor;
-  color: #3E7AFA;
+  border-bottom: @borderH solid  @lineColor;
+  color: @color;
   text-indent: 10px;
   background-color: transparent;
   width: @width;

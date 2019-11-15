@@ -109,6 +109,17 @@ const mainData = {
   weight: '00020',
   maxNumber: '00021'
 }
+const taxList = [{
+  name: '餐饮费',
+  unit: '300.00',
+  count: '847',
+  money: '1300.00'
+}, {
+  name: '餐饮费',
+  unit: '800.00',
+  count: '847',
+  money: '89900.00'
+}]
 
 function render(container) {
   ReactDOM.render(
@@ -134,7 +145,7 @@ function render(container) {
 
           // mode={'ZZSPTFP'}
         /> */}
-        <PTFPJP />
+        <PTFPJP taxList={taxList} />
       </div>
     </div>, container
   )

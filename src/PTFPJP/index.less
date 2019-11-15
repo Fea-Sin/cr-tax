@@ -1,7 +1,6 @@
 @PTFPJP: tax-ptfpjp;
 
 .@{PTFPJP} {
-  // color: red;
   width: 100%;
 
   &-container {
@@ -10,6 +9,7 @@
     background-color: rgba(246,249,255,0.59);
     padding-left: 91px;
     padding-right: 91px;
+    padding-bottom: 34px;
   }
   &-header {
     width: 194px;
@@ -17,6 +17,7 @@
     padding-top: 30px;
     text-align: center;
     color: #B38D4A;
+    padding-bottom: 16px;
 
     &-deco {
       border: none;
@@ -35,6 +36,7 @@
   &-columBox {
     width: 100%;
     .clearfix();
+    // border: 1px solid green;
 
     &-colum {
       width: 50%;
@@ -44,20 +46,83 @@
     &-cellBox {
       width: 100%;
       .clearfix();
+      margin-top: 18px;
 
       &-cell1 {
         width: 86px;
         float: left;
-        .justifyText()
+        .justifyText();
+        color: #B38D4A;
       }
       &-cell2 {
         width: 190px;
         float: left;
         padding-left: 10px;
+        position: relative;
+      }
+      &-cell3 {
+        width: 104px;
+        float: left;
+        .justifyText();
+        color: #B38D4A;
       }
       &-input {
-        .tax-input(@width: 180px)
+        .tax-input(@width: 180px; @color: #333333);
+      }
+      &-input2 {
+        .tax-input(@width: 180px; @color: #333333; @lineColor: #F0F1F3; @borderH: 2px);
+      }
+      &-deco {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 14px;
       }
     }
+    &-columPadding {
+      padding-left: 21px;
+    }
+    &-cellTop {
+      margin-top: 101px;
+    }
   }
+  &-tableBox {
+    padding-top: 10px;
+
+    &-table {
+      border-collapse: collapse;
+      width: 100%;
+      border: none;
+      &-borderTop {
+        border-top: 1px solid #B38D4A !important;
+      }
+      &-borderLeft {
+        border-left: 1px solid #B38D4A !important;
+      }
+      &-borderRight {
+        border-right: 1px solid #B38D4A !important;
+      }
+      &-borderBottom {
+        border-bottom: 1px solid #B38D4A !important;
+      }
+      &-trbg {
+        background-color: rgba(247,244,235,1);
+      }
+    }
+    &-line {
+      height: 1px;
+      border-top: 1px solid #B38D4A;
+      margin-top: -1px;
+    }
+    th {
+      font-weight: normal;
+    }
+    td, th {
+      border: 1px solid #DCD0B1;
+      line-height: 37px;
+      text-align: center;
+    }
+
+  }
+
 }
