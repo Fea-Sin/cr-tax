@@ -15,9 +15,9 @@ class App extends PureComponent {
       return (
         <tr key={index}>
           <td className={`${prefixCls}-tableBox-table-borderLeft`}>{item.name}</td>
-          <td>{item.unit}</td>
-          <td>{item.count}</td>
-          <td className={`${prefixCls}-tableBox-table-borderRight`}>{item.money}</td>
+          <td>{item.modelPrice}</td>
+          <td>{item.modelCount}</td>
+          <td className={`${prefixCls}-tableBox-table-borderRight`}>{item.sum}</td>
         </tr>
       )
     })
@@ -38,7 +38,7 @@ class App extends PureComponent {
                     <span style={{color:'#FF3E2F'}}>*</span>发票代码
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    <input className={`${prefixCls}-columBox-cellBox-input`} />
+                    <input value={taxConfig.billCode} disabled className={`${prefixCls}-columBox-cellBox-input`} />
                   </div>
                 </div>
                 <div className={`${prefixCls}-columBox-cellBox`}>
@@ -46,7 +46,7 @@ class App extends PureComponent {
                     <span style={{color:'#FF3E2F'}}>*</span>发票号码
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    <input className={`${prefixCls}-columBox-cellBox-input`} />
+                    <input value={taxConfig.billNumber} disabled className={`${prefixCls}-columBox-cellBox-input`} />
                   </div>
                 </div> 
                 <div className={`${prefixCls}-columBox-cellBox`}>
@@ -54,7 +54,7 @@ class App extends PureComponent {
                     机打号码
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    <input className={`${prefixCls}-columBox-cellBox-input2`} />
+                    <input value={taxConfig.machineNumber} disabled className={`${prefixCls}-columBox-cellBox-input2`} />
                   </div>
                 </div>
                 <div className={`${prefixCls}-columBox-cellBox`}>
@@ -62,7 +62,7 @@ class App extends PureComponent {
                     <span style={{color:'#FF3E2F'}}>*</span>销售方名称
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    <input value={taxConfig.salesName} className={`${prefixCls}-columBox-cellBox-input`} disabled />
+                    <input value={taxConfig.sellName} disabled className={`${prefixCls}-columBox-cellBox-input`} />
                   </div>
                 </div> 
                 <div className={`${prefixCls}-columBox-cellBox`}>
@@ -70,7 +70,7 @@ class App extends PureComponent {
                     纳税人识别号
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    <input className={`${prefixCls}-columBox-cellBox-input`} />
+                    <input value={taxConfig.sellTaxpayerNumber} disabled className={`${prefixCls}-columBox-cellBox-input`} />
                   </div>
                 </div> 
                 <div className={`${prefixCls}-columBox-cellBox`}>
@@ -78,7 +78,7 @@ class App extends PureComponent {
                     开票日期
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    <input className={`${prefixCls}-columBox-cellBox-input`} />
+                    <input value={taxConfig.billDate} disabled className={`${prefixCls}-columBox-cellBox-input`} />
                     <Icon className={`${prefixCls}-columBox-cellBox-deco`} type="calendar" />
                   </div>
                 </div>
@@ -87,7 +87,7 @@ class App extends PureComponent {
                     购买方名称
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    <input className={`${prefixCls}-columBox-cellBox-input`} />
+                    <input value={taxConfig.buyName} disabled className={`${prefixCls}-columBox-cellBox-input`} />
                   </div>
                 </div>
                 <div className={`${prefixCls}-columBox-cellBox`}>
@@ -95,7 +95,7 @@ class App extends PureComponent {
                     纳税人识别号
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    <input className={`${prefixCls}-columBox-cellBox-input`} />
+                    <input value={taxConfig.buyTaxpayerNumber} disabled className={`${prefixCls}-columBox-cellBox-input`} />
                   </div>
                 </div>                                                                                                 
               </div>
@@ -105,7 +105,7 @@ class App extends PureComponent {
                     机器编码
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    <input className={`${prefixCls}-columBox-cellBox-input2`} />
+                    <input value={taxConfig.machineId} disabled className={`${prefixCls}-columBox-cellBox-input2`} />
                   </div>
                 </div>
                 <div className={`${prefixCls}-columBox-cellBox ${prefixCls}-columBox-cellTop`}>
@@ -113,7 +113,7 @@ class App extends PureComponent {
                     收款员
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    <input className={`${prefixCls}-columBox-cellBox-input2`} />
+                    <input value={taxConfig.receivingTeller} disabled className={`${prefixCls}-columBox-cellBox-input2`} />
                   </div>
                 </div>                                
               </div>
@@ -139,7 +139,7 @@ class App extends PureComponent {
                     合计金额(小写)
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    <input className={`${prefixCls}-columBox-cellBox-input2`} />
+                    <input value={taxConfig.lowerSum} disabled className={`${prefixCls}-columBox-cellBox-input2`} />
                   </div>
                 </div>
                 <div className={`${prefixCls}-columBox-cellBox`}>
@@ -147,7 +147,7 @@ class App extends PureComponent {
                     合计金额(大写)
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    <input className={`${prefixCls}-columBox-cellBox-input2`} />
+                    <input value={taxConfig.upperSum} disabled className={`${prefixCls}-columBox-cellBox-input2`} />
                   </div>
                 </div>
               </div>

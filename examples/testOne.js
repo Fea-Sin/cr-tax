@@ -110,18 +110,29 @@ const mainData = {
   maxNumber: '00021'
 }
 const taxList = [{
-  name: '餐饮费',
-  unit: '300.00',
-  count: '847',
-  money: '1300.00'
+  name: '餐饮费0',
+  modelPrice: '300.00',
+  modelCount: '847',
+  sum: '1300.00'
 }, {
-  name: '餐饮费',
-  unit: '800.00',
-  count: '847',
-  money: '89900.00'
+  name: '餐饮费1',
+  modelPrice: '800.00',
+  modelCount: '847',
+  sum: '89900.00'
 }]
 const taxConfig = {
-  salesName: '北京山水集团有限公司'
+  billCode: '001',
+  billNumber: '002',
+  machineNumber: '003',
+  machineId: '004',
+  sellName: '北京山水集团有限公司',
+  sellTaxpayerNumber: '005',
+  billDate: '006',
+  receivingTeller: '007',
+  buyName: '008',
+  buyTaxpayerNumber: '009',
+  lowerSum: '100',
+  upperSum: '101',
 }
 
 function render(container) {
