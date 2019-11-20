@@ -11,6 +11,18 @@ class App extends PureComponent {
 
   render () {
     const { prefixCls, taxList=[], taxConfig={} } = this.props
+    const dataTr = taxList.map((item, index) => {
+      return (
+        <tr key={index}>
+          <td>{item.name}</td>
+          <td>{item.modelNumber}</td>
+          <td>{item.modelUnit}</td>
+          <td>{item.modelCount}</td>
+          <td>{item.modelPrice}</td>
+          <td>{item.sum}</td>
+        </tr>
+      )
+    })
 
     return (
         <div className={`${prefixCls}`}>
@@ -22,10 +34,10 @@ class App extends PureComponent {
                     <div className={`${prefixCls}-header-left-cellBox`}>
                       <div className={`${prefixCls}-header-cell`}>
                         <span className={`${prefixCls}-header-cell-title`}>
-                          发票代码：
+                          开票日期：
                         </span>
                         <span className={`${prefixCls}-header-cell-span`}>
-                          <input className={`${prefixCls}-header-cell-input`} />
+                          <input value={taxConfig.billDate} disabled className={`${prefixCls}-header-cell-input`} />
                           <Icon className={`${prefixCls}-header-left-deco`} type="calendar" />
                         </span>
                       </div>
@@ -43,7 +55,7 @@ class App extends PureComponent {
                       <div className={`${prefixCls}-header-middle-cellBox-cell`}>
                         <span className={`${prefixCls}-header-cell-title`}>行业分类：</span>
                         <span className={`${prefixCls}-header-cell-span`}>
-                          <input className={`${prefixCls}-header-cell-input`} />
+                          <input value={taxConfig.industryType} disabled className={`${prefixCls}-header-cell-input`} />
                         </span>
                       </div>
                     </div>
@@ -58,7 +70,7 @@ class App extends PureComponent {
                           发票代码：
                         </span>
                         <span className={`${prefixCls}-header-cell-span`}>
-                          <input className={`${prefixCls}-header-cell-input`} />
+                          <input value={taxConfig.billCode} disabled className={`${prefixCls}-header-cell-input`} />
                         </span>
                       </div>
                       <div className={`${prefixCls}-header-cell`}>
@@ -67,7 +79,7 @@ class App extends PureComponent {
                           发票号码：
                         </span>
                         <span className={`${prefixCls}-header-cell-span`}>
-                          <input className={`${prefixCls}-header-cell-input`} />
+                          <input value={taxConfig.billNumber} disabled className={`${prefixCls}-header-cell-input`} />
                         </span>
                       </div>
                     </div>
@@ -83,13 +95,13 @@ class App extends PureComponent {
                       <span className={`${prefixCls}-tableBox-title`}>机打代码</span>
                     </td>
                     <td className={`${prefixCls}-tableBox-tableA-two`}>
-                      <input className={`${prefixCls}-tableBox-inputA`} />
+                      <input value={taxConfig.machineCode} disabled className={`${prefixCls}-tableBox-inputA`} />
                     </td>
                     <td className={`${prefixCls}-tableBox-tableA-three`}>
                       <span className={`${prefixCls}-tableBox-title`}>机器编码</span>
                     </td>
                     <td>
-                      <input className={`${prefixCls}-tableBox-inputB`} />
+                      <input value={taxConfig.machineId} disabled className={`${prefixCls}-tableBox-inputB`} />
                     </td>
                   </tr>
                   <tr>
@@ -97,13 +109,13 @@ class App extends PureComponent {
                       <span className={`${prefixCls}-tableBox-title`}>机打号码</span>
                     </td>
                     <td className={`${prefixCls}-tableBox-tableA-two`}>
-                      <input className={`${prefixCls}-tableBox-inputA`} />
+                      <input value={taxConfig.machineNumber} disabled className={`${prefixCls}-tableBox-inputA`} />
                     </td>
                     <td className={`${prefixCls}-tableBox-tableA-three`}>
                       <span className={`${prefixCls}-tableBox-title`}>税控码</span>
                     </td>
                     <td>
-                      <input className={`${prefixCls}-tableBox-inputA`} />
+                      <input value={taxConfig.taxControlCode} disabled className={`${prefixCls}-tableBox-inputA`} />
                     </td>
                   </tr>
                   <tr>
@@ -114,7 +126,7 @@ class App extends PureComponent {
                       </span>
                     </td>
                     <td colSpan='3' className={`${prefixCls}-tableBox-tableA-two`}>
-                      <input className={`${prefixCls}-tableBox-inputB`} />
+                      <input value={taxConfig.payCompany} disabled className={`${prefixCls}-tableBox-inputB`} />
                     </td>
                   </tr>
                 </tbody>
@@ -135,14 +147,7 @@ class App extends PureComponent {
                       金额
                     </th>                    
                   </tr>
-                  <tr>
-                    <td>名称</td>
-                    <td>001</td>
-                    <td>个</td>
-                    <td>100</td>
-                    <td>56.00</td>
-                    <td>5,600.00</td>
-                  </tr>
+                  {dataTr}
                 </tbody>
               </table>
               <table className={`${prefixCls}-table ${prefixCls}-tableBox-tableA ${prefixCls}-tableBox-line`}>
@@ -152,13 +157,13 @@ class App extends PureComponent {
                       <span className={`${prefixCls}-tableBox-title`}>大写金额</span>
                     </td>
                     <td className={`${prefixCls}-tableBox-tableA-two`}>
-                      <input className={`${prefixCls}-tableBox-inputA`} />
+                      <input value={taxConfig.upperSum} disabled className={`${prefixCls}-tableBox-inputA`} />
                     </td>
                     <td className={`${prefixCls}-tableBox-tableA-three`}>
                       <span className={`${prefixCls}-tableBox-title`}>小写金额</span>
                     </td>
                     <td>
-                      <input className={`${prefixCls}-tableBox-inputA`} />
+                      <input value={taxConfig.lowerSum} disabled className={`${prefixCls}-tableBox-inputA`} />
                     </td>
                   </tr>
                   <tr>
@@ -169,13 +174,13 @@ class App extends PureComponent {
                       </span>
                     </td>
                     <td className={`${prefixCls}-tableBox-tableA-two`}>
-                      <input className={`${prefixCls}-tableBox-inputB`} />
+                      <input value={taxConfig.receivingCompany} disabled className={`${prefixCls}-tableBox-inputB`} />
                     </td>
                     <td className={`${prefixCls}-tableBox-tableA-three`}>
                       <span className={`${prefixCls}-tableBox-title`}>收款单位税号</span>
                     </td>
                     <td>
-                      <input className={`${prefixCls}-tableBox-inputB`} />
+                      <input value={taxConfig.receivingCompanyTaxNumber} disabled className={`${prefixCls}-tableBox-inputB`} />
                     </td>
                   </tr>
                   <tr>
@@ -185,7 +190,7 @@ class App extends PureComponent {
                       </span>
                     </td>
                     <td colSpan='3' className={`${prefixCls}-tableBox-tableA-two`}>
-                      <input className={`${prefixCls}-tableBox-inputB`} />
+                      <input value={taxConfig.remark} disabled className={`${prefixCls}-tableBox-inputB`} />
                     </td>
                   </tr>
                 </tbody>

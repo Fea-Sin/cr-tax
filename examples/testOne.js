@@ -135,9 +135,29 @@ const taxConfig = {
   upperSum: '101',
 }
 const taxConfigGS = {
-
+  billCode: '001',
+  billNumber: '002',
+  industryType: '003',
+  billDate: '004',
+  machineCode: '005',
+  machineId: '006',
+  machineNumber: '007',
+  taxControlCode: '008',
+  payCompany: '009',
+  upperSum: '010',
+  lowerSum: '011',
+  receivingCompany: '012',
+  receivingCompanyTaxNumber: '013',
+  remark: '014',
 }
-const taxListGS = []
+const taxListGS = [{
+  name: '名称',
+  modelNumber: '规格',
+  modelUnit: '吨',
+  modelCount: '100',
+  modelPrice: '96.00',
+  sum: '9,600.00'
+}]
 
 function render(container) {
   ReactDOM.render(
@@ -164,7 +184,7 @@ function render(container) {
           mode={'ZZSPTFP'}
         /> */}
         {/* <PTFPJP taxList={taxList} taxConfig={taxConfig} /> */}
-        <GSTYJD taxList={taxList} taxConfig={taxConfigGS} />
+        <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} />
       </div>
     </div>, container
   )
