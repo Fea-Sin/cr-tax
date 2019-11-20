@@ -134,6 +134,10 @@ const taxConfig = {
   lowerSum: '100',
   upperSum: '101',
 }
+const taxConfigGS = {
+
+}
+const taxListGS = []
 
 function render(container) {
   ReactDOM.render(
@@ -153,13 +157,14 @@ function render(container) {
           // taxDataList={taxDataListB}
           // mode={'ZZSDZPTFP'}
           
-          mode={'JDCXSTYFP'}
-          prefixCls={'cr-tax-c'}
-          mainData={mainData}
+          // mode={'JDCXSTYFP'}
+          // prefixCls={'cr-tax-c'}
+          // mainData={mainData}
 
-          // mode={'ZZSPTFP'}
+          mode={'ZZSPTFP'}
         /> */}
-        <PTFPJP taxList={taxList} taxConfig={taxConfig} />
+        {/* <PTFPJP taxList={taxList} taxConfig={taxConfig} /> */}
+        <GSTYJD taxList={taxList} taxConfig={taxConfigGS} />
       </div>
     </div>, container
   )

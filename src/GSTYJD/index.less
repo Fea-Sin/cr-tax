@@ -1,5 +1,144 @@
 @GSTYJD: tax-gstyjd;
 
 .@{GSTYJD} {
-  color: green;
+  width: 100%;
+
+  &-container {
+    width: 1150px;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,1);
+    // box-shadow:0px 0px 6px 0px rgba(0,0,0,0.1),0px 0px 4px 0px rgba(200,203,218,1);
+    border: 4px solid #E3E7F0;
+    padding: 30px;
+  }
+  &-header {
+
+    &-cell {
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      &-title {
+        font-size: 14px;
+        color: #9B8344;
+        display: inline-block;
+      }
+      &-input {
+        .tax-input(@width: 180px; @lineColor: #9B8344; @color: #333333)
+      }
+      &-span {
+        display: inline-block;
+        position: relative;
+        top: -5px;
+      }
+    }
+    
+    &-middle {
+
+      &-con {
+        width: 193px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      &-title {
+        color: #9B8344;
+        font-size: 20px;
+      }
+      &-deco {
+        width: 100%;
+        height: 3px;
+        border: none;
+        border-top: 1px solid #7A6746;
+        border-bottom: 1px solid #7A6746;
+        margin-top: 6px;
+        margin-bottom: 6px;
+      }
+      &-text {
+        font-size: 16px;
+        color: #9B8344;
+      }
+      &-cellBox {
+        margin-top: 26px;
+        padding-left: 45px;
+      }
+    }
+    &-right {
+
+      &-cellBox {
+        padding-top: 51px;
+        padding-left: 102px;
+      }
+    }
+    &-left {
+      &-cellBox {
+        padding-top: 85px;
+      }
+      &-deco {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 14px;
+      }
+    }
+  }
+  &-tableBox {
+    padding-top: 3px;
+
+    &-title {
+      color: #9B8344;
+      font-size: 14px;
+    }
+    &-inputA {
+      .tax-table-input(@bgColor: rgba(243,244,247,1); @color: #333333;)
+    }
+    &-inputB {
+      .tax-table-input(@color: #333333;)
+    }
+
+    &-tableA {
+      &-one {
+        width: 96px;
+      }
+      &-two {
+        width: 447px;
+      }
+      &-three {
+        width: 124px;
+      }
+    }
+    &-tableB {
+      th {
+        font-weight: normal;
+        color: #9B8344;
+        font-size: 14px;
+      }
+      &-XM {
+        width: 228px;
+      }
+      &-GG {
+        width: 158px;
+      }
+      &-DW {
+        width: 157px;
+      }
+      &-SL {
+        width: 158px;
+      }
+      &-DJ {
+        width: 158px;
+      }
+    }
+    &-line {
+      margin-top: -1px;
+    }
+  }
+  &-table {
+    border-collapse: collapse;
+    width: 100%;
+
+    td, th {
+      border: 1px solid #DCD0B1;
+      line-height: 37px;
+      text-align: center;
+    }
+  }
 }
