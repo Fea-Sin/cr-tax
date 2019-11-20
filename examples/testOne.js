@@ -120,6 +120,9 @@ const taxList = [{
   count: '847',
   money: '89900.00'
 }]
+const taxConfig = {
+  salesName: '北京山水集团有限公司'
+}
 
 function render(container) {
   ReactDOM.render(
@@ -145,7 +148,7 @@ function render(container) {
 
           // mode={'ZZSPTFP'}
         /> */}
-        <PTFPJP taxList={taxList} />
+        <PTFPJP taxList={taxList} taxConfig={taxConfig} />
       </div>
     </div>, container
   )

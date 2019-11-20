@@ -10,7 +10,7 @@ class App extends PureComponent {
   }
 
   render () {
-    const { prefixCls, taxList=[] } = this.props
+    const { prefixCls, taxList=[], taxConfig={} } = this.props
     const dataTr = taxList.map((item, index) => {
       return (
         <tr key={index}>
@@ -62,7 +62,7 @@ class App extends PureComponent {
                     <span style={{color:'#FF3E2F'}}>*</span>销售方名称
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    <input className={`${prefixCls}-columBox-cellBox-input`} />
+                    <input value={taxConfig.salesName} className={`${prefixCls}-columBox-cellBox-input`} disabled />
                   </div>
                 </div> 
                 <div className={`${prefixCls}-columBox-cellBox`}>
