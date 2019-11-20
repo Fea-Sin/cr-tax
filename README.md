@@ -2,8 +2,17 @@
 
 react component tax and bill styles
 
-## example view
+## Example View
 <img src="./github/example2.png" alt="example" />
+
+## All TaxTemplate
+
+- 增值税专用发票
+- 增值税普通发票
+- 增值税电子普通发票
+- 机动车销售统一发票
+- 增值税普通发票（卷票）
+- 国税通用机打发票
 
 ## Usage
 
