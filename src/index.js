@@ -25,7 +25,8 @@ class Comp extends PureComponent {
   }
 
   render () {
-    const { prefixCls, taxHeader, taxPurchase, taxSales, taxDataList, ticketType, mode, mainData, direction } = this.props
+    const { prefixCls, taxHeader, taxPurchase, taxSales,
+      taxDataList, ticketType, mode, mainData, direction, taxConfig } = this.props
 
     if (mode === 'ZZSZYFP') {
       return (
@@ -55,11 +56,7 @@ class Comp extends PureComponent {
       return (
         <JDCXS
           prefixCls={prefixCls}
-          taxHeader={taxHeader}
-          taxPurchase={taxPurchase}
-          taxSales={taxSales}
-          taxDataList={taxDataList}
-          mainData={mainData}
+          taxConfig={taxConfig}
         />         
       )
     } else if (mode === 'ZZSPTFP') {

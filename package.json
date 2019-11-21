@@ -1,6 +1,6 @@
 {
   "name": "cr-tax",
-  "version": "1.1.8",
+  "version": "1.2.0",
   "description": "a template about create react component",
   "scripts": {
     "start": "rc-tools run server",

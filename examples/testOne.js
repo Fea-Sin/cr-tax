@@ -158,33 +158,68 @@ const taxListGS = [{
   modelPrice: '96.00',
   sum: '9,600.00'
 }]
+const taxConfigJDC = {
+  billCode: '001',
+  billNumber: '002',
+  billDate: '003',
+  machineCode: '004',
+  machineNumber: '005',
+  machineId: '006',
+  taxControlCode: '007',
+  buyNameNumber: '008',
+  buyTaxpayerNumber: '009',
+  carType: '010',
+  factoryPlateModel: '011',
+  producingArea: '012',
+  qualifyCardNumber: '013',
+  importCardNumber: '014',
+  commodityInspectionNumber: '015',
+  engineNumber: '016',
+  vehicleIdentificationNumber: '017',
+  billTaxPriceUpper: '018',
+  billTaxPriceLower: '019',
+  sellCompanyName: '020',
+  sellCompanyAddrPhone: '021',
+  sellTaxpayerNumber: '022',
+  sellCompanyCode: '023',
+  sellCompanyAddr: '024',
+  sellCompanyBankNumber: '025',
+  taxRate: '026',
+  billTaxValue: '027',
+  taxAuthoritiesCode: '028',
+  billNoTaxValue: '029',
+  taxPaymentCardNumber: '030',
+  tonnage: '031',
+  limitedPeopleNumber: '032',
+}
 
 function render(container) {
   ReactDOM.render(
     <div>
       <div style={boxStyle}>
-        {/* <Testone
-          // taxHeader={taxHeader}
+        <Testone
+          taxHeader={taxHeader}
           // taxPurchase={taxPurchase}
           // ticketType={1}
           direction='in'
 
-          taxSales={taxSales}
-          taxDataList={taxDataList}
+          // taxSales={taxSales}
+          // taxDataList={taxDataList}
           // mode={'ZZSZYFP'}
           
           // taxSales={taxSalesB}
           // taxDataList={taxDataListB}
           // mode={'ZZSDZPTFP'}
           
-          // mode={'JDCXSTYFP'}
-          // prefixCls={'cr-tax-c'}
-          // mainData={mainData}
+          mode={'JDCXSTYFP'}
+          prefixCls={'cr-tax-c'}
+          mainData={mainData}
+          taxConfig={taxConfigJDC}
 
-          mode={'ZZSPTFP'}
-        /> */}
+          // mode={'ZZSPTFP'}
+        />
         {/* <PTFPJP taxList={taxList} taxConfig={taxConfig} /> */}
-        <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} />
+        {/* <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} /> */}
       </div>
     </div>, container
   )
