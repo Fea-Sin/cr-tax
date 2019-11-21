@@ -31,26 +31,26 @@ class Comp extends PureComponent {
   }
 
   render () {
-    const { prefixCls, taxHeader, taxPurchase, taxSales, taxDataList, ticketType, direction, taxConfig={} } = this.props
+    const { prefixCls, taxDataList=[], ticketType, direction, taxConfig={} } = this.props
     const dataTr = taxDataList.map((item, index) => {
       return (
         <tr className={`${prefixCls}-dataBox-data-dataTr`} key={index}>
           <td className={`${prefixCls}-dataBox-data-dataTr-start`}>
             <span className={`${prefixCls}-dataBox-data-dataTr-text`}>{item.name}</span>
           </td>
-          <td>{item.carNumber}</td>
-          <td>{item.type}</td>
-          <td>{item.dateStart}</td>
-          <td>{item.dateEnd}</td>
-          <td>{item.sum}</td>
+          <td>{item.modelNumber}</td>
+          <td>{item.modelUnit}</td>
+          <td>{item.modelCount}</td>
+          <td>{item.modelPrice}</td>
+          <td>{item.price}</td>
           <td>
             {
-              item.rate
-              ? (<div>{item.rate}</div>)
+              item.taxRate
+              ? (<div>{item.taxRate}</div>)
               : (<div>&nbsp;</div>)
             }
           </td>
-          <td className={`${prefixCls}-dataBox-data-dataTr-end`}>{item.tax}</td>
+          <td className={`${prefixCls}-dataBox-data-dataTr-end`}>{item.billTaxValue}</td>
         </tr>       
       )
     })
@@ -148,13 +148,13 @@ class Comp extends PureComponent {
                 <table className={`${prefixCls}-dataBox-table`}>
                   <thead>
                     <tr className={`${prefixCls}-dataBox-data-tr`}>
-                      <th className={`${prefixCls}-dataBox-data-HW ${prefixCls}-dataBox-data-tr-start`}>*项目名称</th>
-                      <th className={`${prefixCls}-dataBox-data-GG`}>车牌号</th>
-                      <th className={`${prefixCls}-dataBox-data-DW`}>类型</th>
-                      <th className={`${prefixCls}-dataBox-data-SL`}>通行日期起</th>
-                      <th className={`${prefixCls}-dataBox-data-DJ`}>通行日期止</th>
-                      <th className={`${prefixCls}-dataBox-data-JE`}>*金额</th>
-                      <th className={`${prefixCls}-dataBox-data-SHL`}>*税率</th>
+                      <th className={`${prefixCls}-dataBox-data-HW ${prefixCls}-dataBox-data-tr-start`}>货物或应税劳务名称</th>
+                      <th className={`${prefixCls}-dataBox-data-GG`}>规格型号</th>
+                      <th className={`${prefixCls}-dataBox-data-DW`}>单位</th>
+                      <th className={`${prefixCls}-dataBox-data-SL`}>数量</th>
+                      <th className={`${prefixCls}-dataBox-data-DJ`}>单价</th>
+                      <th className={`${prefixCls}-dataBox-data-JE`}>金额</th>
+                      <th className={`${prefixCls}-dataBox-data-SHL`}>税率</th>
                       <th className={`${prefixCls}-dataBox-data-SE ${prefixCls}-dataBox-data-tr-end`}>税额</th>
                     </tr>
                   </thead>
@@ -250,7 +250,7 @@ class Comp extends PureComponent {
                 <span className={`${prefixCls}-footer-ticketDate`}>
                   <span>认证日期:</span>
                   <span className={`${prefixCls}-top-right-box-input`}>
-                    <input className={`${prefixCls}-input ${prefixCls}-footer-input`} value={taxHeader && taxHeader.identiDate || ''} disabled />
+                    <input className={`${prefixCls}-input ${prefixCls}-footer-input`} value={taxConfig.billDate || ''} disabled />
                     <Icon className={`${prefixCls}-top-right-box-calender`} type="calendar" />
                   </span>                  
                 </span>

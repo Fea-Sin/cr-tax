@@ -25,16 +25,13 @@ class Comp extends PureComponent {
   }
 
   render () {
-    const { prefixCls, taxHeader, taxPurchase, taxSales,
-      taxDataList, ticketType, mode, mainData, direction, taxConfig } = this.props
+    const { prefixCls, taxDataList, ticketType, mode, direction, taxConfig } = this.props
 
     if (mode === 'ZZSZYFP') {
       return (
         <ZZSZY
           prefixCls={prefixCls}
-          taxHeader={taxHeader}
-          taxPurchase={taxPurchase}
-          taxSales={taxSales}
+          taxConfig={taxConfig}
           taxDataList={taxDataList}
           ticketType={ticketType}
           direction={direction}
@@ -44,13 +41,10 @@ class Comp extends PureComponent {
       return (
         <ZZSDZ
           prefixCls={prefixCls}
-          taxHeader={taxHeader}
-          taxPurchase={taxPurchase}
-          taxSales={taxSales}
+          taxConfig={taxConfig}
           taxDataList={taxDataList}
           ticketType={ticketType}
           direction={direction}
-          taxConfig={taxConfig}
         />        
       )
     } else if (mode === 'JDCXSTYFP') {
@@ -64,9 +58,7 @@ class Comp extends PureComponent {
       return (
         <ZZSPT
           prefixCls={prefixCls}
-          taxHeader={taxHeader}
-          taxPurchase={taxPurchase}
-          taxSales={taxSales}
+          taxConfig={taxConfig}
           taxDataList={taxDataList}
           ticketType={ticketType}
           direction={direction}
@@ -75,9 +67,7 @@ class Comp extends PureComponent {
     } else {
         <ZZSZY
           prefixCls={prefixCls}
-          taxHeader={taxHeader}
-          taxPurchase={taxPurchase}
-          taxSales={taxSales}
+          taxConfig={taxConfig}
           taxDataList={taxDataList}
           ticketType={ticketType}
         />      
@@ -87,9 +77,7 @@ class Comp extends PureComponent {
 
 Comp.propTypes = {
   prefixCls: PropTypes.string,
-  taxHeader: PropTypes.object,
-  taxPurchase: PropTypes.object,
-  taxSales: PropTypes.object,
+  taxConfig: PropTypes.object,
   taxDataList: PropTypes.arrayOf(PropTypes.object),
   ticketType: PropTypes.number,
   mode: PropTypes.oneOf(['ZZSZYFP', 'ZZSDZPTFP', 'JDCXSTYFP', 'ZZSPTFP']),

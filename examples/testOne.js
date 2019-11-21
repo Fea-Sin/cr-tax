@@ -61,22 +61,22 @@ const taxDataList = [{
 
 const taxDataListB = [{
   name: '*锻件*通行费通行费通行费',
-  carNumber: 'ER602EGK6001',
-  type: '个',
-  dateStart: '20180108',
-  dateEnd: '20180108',
-  sum: '3,000.00',
-  rate: 0.16,
-  tax: '435435.16',
+  modelNumber: 'ER602EGK6001',
+  modelUnit: '个',
+  modelCount: '20180108',
+  modelPrice: '20180108',
+  price: '3,000.00',
+  taxRate: 0.16,
+  billTaxValue: '435435.16',
 }, {
   name: '*锻件*通行费',
-  carNumber: 'ER602EGK6001',
-  type: '个',
-  dateStart: '20180901',
-  dateEnd: '20180901',
-  sum: '3,000.00',
-  rate: 0.16,
-  tax: '435435.16',
+  modelNumber: 'ER602EGK6001',
+  modelUnit: '个',
+  modelCount: '20180108',
+  modelPrice: '20180108',
+  price: '3,000.00',
+  taxRate: 0.16,
+  billTaxValue: '435435.16',
 }, {}]
 
 const taxList = [{
@@ -184,25 +184,21 @@ function render(container) {
     <div>
       <div style={boxStyle}>
         <Testone
-          taxHeader={taxHeader}
-          taxPurchase={taxPurchase}
-          // ticketType={1}
+          ticketType={1}
           direction='in'
-
-          // taxSales={taxSales}
-          // taxDataList={taxDataList}
-          // mode={'ZZSZYFP'}
-          
-          taxSales={taxSalesB}
-          taxDataList={taxDataListB}
-          mode={'ZZSDZPTFP'}
           taxConfig={taxConfigDZ}
+          taxDataList={taxDataList}
+          // mode={'ZZSZYFP'}
+
+          mode={'ZZSPTFP'}
+          
+          // taxDataList={taxDataListB}
+          // mode={'ZZSDZPTFP'}
+          // taxConfig={taxConfigDZ}
           
           // mode={'JDCXSTYFP'}
           // prefixCls={'cr-tax-c'}
           // taxConfig={taxConfigJDC}
-
-          // mode={'ZZSPTFP'}
         />
         {/* <PTFPJP taxList={taxList} taxConfig={taxConfig} /> */}
         {/* <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} /> */}
