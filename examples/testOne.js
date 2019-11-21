@@ -79,36 +79,6 @@ const taxDataListB = [{
   tax: '435435.16',
 }, {}]
 
-const mainData = {
-  machineCode: '0001',
-  machineNumber: '0002',
-  encipher: '0003',
-  purchase: '南京智慧科技有限公司',
-  purchaseTaxNumber: '45455656',
-  carType: '轿车',
-  factory: '梅赛德斯',
-  origin: '德国',
-  certificate: '0004',
-  importNumber: '0005',
-  inspectionNumber: '0006',
-  engineNumber: '0007',
-  carNumber: '0008',
-  totalB: '壹百万',
-  totalS: '¥1,000',
-  sales: '0009',
-  phone: '00010',
-  salesTaxNumber: '00011',
-  account: '00012',
-  address: '00013',
-  bank: '00014',
-  rate: '00015',
-  tax: '00016',
-  chargeTaxCode: '00017',
-  notTaxCount: '00018',
-  taxCertificate: '00019',
-  weight: '00020',
-  maxNumber: '00021'
-}
 const taxList = [{
   name: '餐饮费0',
   modelPrice: '300.00',
@@ -165,7 +135,7 @@ const taxConfigJDC = {
   machineCode: '004',
   machineNumber: '005',
   machineId: '006',
-  taxControlCode: '007',
+  taxControlCode: 'wNr749ZfMwFjYxzAcpRRJNiYYaOR8liHt+cD5OkIDXuUC2f2DoxvMNTbXH0Vg7UCB/n418AVkt1bAmuAhAK43jBl92OL1biemixeo4sc5lbsFDWYFmatdPiSrRAoX6AmKMSmPh9q+V/Xa5w4wVzm9EeixtW6IJfMEhqJlwnH6rlzgfuJIk88e9CIhCT5gxZPG0z+tnVd80fAtZRhuF/eDqtrPwUzHWK2VDsx7U1ASbO4I2hu6e4iKJ0Vqyb5nD4',
   buyNameNumber: '008',
   buyTaxpayerNumber: '009',
   carType: '010',
@@ -192,6 +162,22 @@ const taxConfigJDC = {
   tonnage: '031',
   limitedPeopleNumber: '032',
 }
+const taxConfigDZ = {
+  billNumber: '001',
+  billDate: '002',
+  billCode: '003',
+  buyCompanyName: '004',
+  buyTaxpayerNumber: '005',
+  buyCompanyAddrAphone: '006',
+  buyCompanyBankNumber: '007',
+  billTaxPriceUpper: '008',
+  billTaxPriceLower: '009',
+  sellCompanyName: '010',
+  sellTaxpayerNumber: '011',
+  sellCompanyAddrPhone: '012',
+  sellCompanyBankNumber: '013',
+  remark: '014',
+}
 
 function render(container) {
   ReactDOM.render(
@@ -199,7 +185,7 @@ function render(container) {
       <div style={boxStyle}>
         <Testone
           taxHeader={taxHeader}
-          // taxPurchase={taxPurchase}
+          taxPurchase={taxPurchase}
           // ticketType={1}
           direction='in'
 
@@ -207,14 +193,14 @@ function render(container) {
           // taxDataList={taxDataList}
           // mode={'ZZSZYFP'}
           
-          // taxSales={taxSalesB}
-          // taxDataList={taxDataListB}
-          // mode={'ZZSDZPTFP'}
+          taxSales={taxSalesB}
+          taxDataList={taxDataListB}
+          mode={'ZZSDZPTFP'}
+          taxConfig={taxConfigDZ}
           
-          mode={'JDCXSTYFP'}
-          prefixCls={'cr-tax-c'}
-          mainData={mainData}
-          taxConfig={taxConfigJDC}
+          // mode={'JDCXSTYFP'}
+          // prefixCls={'cr-tax-c'}
+          // taxConfig={taxConfigJDC}
 
           // mode={'ZZSPTFP'}
         />

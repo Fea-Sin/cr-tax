@@ -50,6 +50,7 @@ class Comp extends PureComponent {
           taxDataList={taxDataList}
           ticketType={ticketType}
           direction={direction}
+          taxConfig={taxConfig}
         />        
       )
     } else if (mode === 'JDCXSTYFP') {

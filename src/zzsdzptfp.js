@@ -31,7 +31,7 @@ class Comp extends PureComponent {
   }
 
   render () {
-    const { prefixCls, taxHeader, taxPurchase, taxSales, taxDataList, ticketType, direction } = this.props
+    const { prefixCls, taxHeader, taxPurchase, taxSales, taxDataList, ticketType, direction, taxConfig={} } = this.props
     const dataTr = taxDataList.map((item, index) => {
       return (
         <tr className={`${prefixCls}-dataBox-data-dataTr`} key={index}>
@@ -65,7 +65,7 @@ class Comp extends PureComponent {
                     <div className={`${prefixCls}-top-left-box`}>
                       <span>*发票代码:</span>
                       <span className={`${prefixCls}-top-left-box-input`}>
-                        <input className={`${prefixCls}-input`} value={taxHeader && taxHeader.code} disabled />
+                        <input className={`${prefixCls}-input`} value={taxConfig.billCode} disabled />
                       </span>
                     </div>
                   </div>
@@ -82,13 +82,13 @@ class Comp extends PureComponent {
                     <div className={`${prefixCls}-top-right-box`}>
                       <span>发票号码:</span>
                       <span className={`${prefixCls}-top-right-box-input`}>
-                        <input className={`${prefixCls}-input`} value={taxHeader && taxHeader.number} disabled />
+                        <input className={`${prefixCls}-input`} value={taxConfig.billNumber} disabled />
                       </span>
                     </div>
                     <div className={`${prefixCls}-top-right-box`}>
                       <span>开票日期:</span>
                       <span className={`${prefixCls}-top-right-box-input`}>
-                        <input className={`${prefixCls}-input`} value={taxHeader && taxHeader.date} disabled />
+                        <input className={`${prefixCls}-input`} value={taxConfig.billDate} disabled />
                         <Icon className={`${prefixCls}-top-right-box-calender`} type="calendar" />
                       </span>
                     </div>               
@@ -109,7 +109,7 @@ class Comp extends PureComponent {
                               <span className={`${prefixCls}-dataBox-table-cellBox-star`}>名</span>称
                             </span>
                             <span>
-                              <input className={`${prefixCls}-dataBox-input`} value={taxPurchase && taxPurchase.name} disabled />
+                              <input className={`${prefixCls}-dataBox-input`} value={taxConfig.buyCompanyName} disabled />
                             </span>
                           </div>
                           <div className={`${prefixCls}-dataBox-table-cellBox`}>
@@ -117,7 +117,7 @@ class Comp extends PureComponent {
                               纳税人识别号
                             </span>
                             <span>
-                              <input className={`${prefixCls}-dataBox-input`} value={taxPurchase && taxPurchase.taxNumber} disabled />
+                              <input className={`${prefixCls}-dataBox-input`} value={taxConfig.buyTaxpayerNumber} disabled />
                             </span>
                           </div>
                           <div className={`${prefixCls}-dataBox-table-cellBox`}>
@@ -125,7 +125,7 @@ class Comp extends PureComponent {
                               地址、电话
                             </span>
                             <span>
-                              <input className={`${prefixCls}-dataBox-input`} value={taxPurchase && taxPurchase.addressPhone} disabled />
+                              <input className={`${prefixCls}-dataBox-input`} value={taxConfig.buyCompanyAddrAphone} disabled />
                             </span>
                           </div> 
                           <div className={`${prefixCls}-dataBox-table-cellBox`}>
@@ -133,7 +133,7 @@ class Comp extends PureComponent {
                               开户行及账户
                             </span>
                             <span>
-                              <input className={`${prefixCls}-dataBox-input ${prefixCls}-dataBox-noLine`} value={taxPurchase && taxPurchase.bank} disabled />
+                              <input className={`${prefixCls}-dataBox-input ${prefixCls}-dataBox-noLine`} value={taxConfig.buyCompanyBankNumber} disabled />
                             </span>
                           </div>                                                                  
                         </div>                                                                                
@@ -171,13 +171,13 @@ class Comp extends PureComponent {
                         {'价税合计(大写)'}
                       </td>
                       <td className={`${prefixCls}-dataBox-seller-HJB`}>
-                        {taxSales && taxSales.totalB}
+                        {taxConfig.billTaxPriceUpper}
                       </td>
                       <td className={`${prefixCls}-dataBox-seller-HJST ${prefixCls}-dataBox-center`}>
                       {'(小写)'}
                       </td>
                       <td className={`${prefixCls}-dataBox-seller-HJS`}>
-                        {taxSales && taxSales.totalS}
+                        {taxConfig.billTaxPriceLower}
                       </td>
                     </tr>                       
                   </tbody>              
@@ -193,7 +193,7 @@ class Comp extends PureComponent {
                               <span className={`${prefixCls}-dataBox-table-cellBox-star`}>名</span>称
                             </span>
                             <span>
-                              <input className={`${prefixCls}-dataBox-input`} value={taxSales && taxSales.name} disabled />
+                              <input className={`${prefixCls}-dataBox-input`} value={taxConfig.sellCompanyName} disabled />
                             </span>
                           </div>
                           <div className={`${prefixCls}-dataBox-table-cellBox`}>
@@ -201,7 +201,7 @@ class Comp extends PureComponent {
                               纳税人识别号
                             </span>
                             <span>
-                              <input className={`${prefixCls}-dataBox-input`} value={taxSales && taxSales.taxNumber} disabled />
+                              <input className={`${prefixCls}-dataBox-input`} value={taxConfig.sellTaxpayerNumber} disabled />
                             </span>
                           </div>
                           <div className={`${prefixCls}-dataBox-table-cellBox`}>
@@ -209,7 +209,7 @@ class Comp extends PureComponent {
                               地址、电话
                             </span>
                             <span>
-                              <input className={`${prefixCls}-dataBox-input`} value={taxSales && taxSales.addressPhone} disabled />
+                              <input className={`${prefixCls}-dataBox-input`} value={taxConfig.sellCompanyAddrPhone} disabled />
                             </span>
                           </div> 
                           <div className={`${prefixCls}-dataBox-table-cellBox`}>
@@ -217,13 +217,17 @@ class Comp extends PureComponent {
                               开户行及账户
                             </span>
                             <span>
-                              <input className={`${prefixCls}-dataBox-input ${prefixCls}-dataBox-noLine`} value={taxSales && taxSales.bank} disabled />
+                              <input className={`${prefixCls}-dataBox-input ${prefixCls}-dataBox-noLine`} value={taxConfig.sellCompanyBankNumber} disabled />
                             </span>
                           </div>                                                                  
                         </div>                                                                                
                       </td>
                       <td className={`${prefixCls}-dataBox-table-title`}>备注</td>
-                      <td className={`${prefixCls}-dataBox-table-BZ`}>{taxSales && taxSales.remark}</td>
+                      <td className={`${prefixCls}-dataBox-table-BZ`}>
+                        <div className={`${prefixCls}-text`}>
+                          {taxConfig.remark}
+                        </div>
+                      </td>
                     </tr> 
                   </tbody>             
                 </table>             
