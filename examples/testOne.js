@@ -83,23 +83,23 @@ const taxList = [{
   name: '餐饮费0',
   modelPrice: '300.00',
   modelCount: '847',
-  sum: '1300.00'
+  sum: '1300'
 }, {
   name: '餐饮费1',
   modelPrice: '800.00',
   modelCount: '847',
-  sum: '89900.00'
+  sum: '89900'
 }]
 const taxConfig = {
   billCode: '001',
   billNumber: '002',
   machineNumber: '003',
   machineId: '004',
-  sellName: '北京山水集团有限公司',
+  sellName: '山西溪唐小烹餐饮管理有限公司',
   sellTaxpayerNumber: '005',
   billDate: '006',
   receivingTeller: '007',
-  buyName: '008',
+  buyName: '山西玉龙机电设备有限公司',
   buyTaxpayerNumber: '009',
   lowerSum: '100',
   upperSum: '101',
@@ -139,7 +139,7 @@ const taxConfigJDC = {
   buyNameNumber: '008',
   buyTaxpayerNumber: '009',
   carType: '010',
-  factoryPlateModel: '011',
+  factoryPlateModel: '豪沃牌ZZ4257V324HE1B',
   producingArea: '012',
   qualifyCardNumber: '013',
   importCardNumber: '014',
@@ -151,12 +151,12 @@ const taxConfigJDC = {
   sellCompanyName: '020',
   sellCompanyAddrPhone: '021',
   sellTaxpayerNumber: '022',
-  sellCompanyCode: '023',
+  sellCompanyCode: '招商银行股份有限公司南京江宁支行 125909132810101',
   sellCompanyAddr: '024',
-  sellCompanyBankNumber: '025',
+  sellCompanyBankNumber: '招商银行股份有限公司南京江宁支行 125909132810101',
   taxRate: '026',
   billTaxValue: '027',
-  taxAuthoritiesCode: '028',
+  taxAuthoritiesCode: '国家税务总局南京市江宁区税务局 132011500',
   billNoTaxValue: '029',
   taxPaymentCardNumber: '030',
   tonnage: '031',
@@ -184,21 +184,21 @@ function render(container) {
     <div>
       <div style={boxStyle}>
         <Testone
-          ticketType={1}
-          direction='in'
-          taxConfig={taxConfigDZ}
-          taxDataList={taxDataList}
+          // ticketType={1}
+          // direction='in'
+          // taxConfig={taxConfigDZ}
+          // taxDataList={taxDataList}
           // mode={'ZZSZYFP'}
 
-          mode={'ZZSPTFP'}
+          // mode={'ZZSPTFP'}
           
           // taxDataList={taxDataListB}
           // mode={'ZZSDZPTFP'}
           // taxConfig={taxConfigDZ}
           
-          // mode={'JDCXSTYFP'}
-          // prefixCls={'cr-tax-c'}
-          // taxConfig={taxConfigJDC}
+          mode={'JDCXSTYFP'}
+          prefixCls={'cr-tax-c'}
+          taxConfig={taxConfigJDC}
         />
         {/* <PTFPJP taxList={taxList} taxConfig={taxConfig} /> */}
         {/* <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} /> */}

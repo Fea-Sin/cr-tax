@@ -7,9 +7,10 @@
     width: 780px;
     margin: 0 auto;
     background-color: rgba(246,249,255,0.59);
-    padding-left: 91px;
-    padding-right: 91px;
+    padding-left: 89px;
+    padding-right: 89px;
     padding-bottom: 34px;
+    border:4px solid rgba(227,231,240,1);
   }
   &-header {
     width: 194px;
@@ -71,6 +72,9 @@
       }
       &-input2 {
         .tax-input(@width: 180px; @color: #333333; @lineColor: #F0F1F3; @borderH: 2px);
+      }
+      &-line-text {
+        .tax-line-text(@width: 308px; @color: #333333)
       }
       &-deco {
         position: absolute;

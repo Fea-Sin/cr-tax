@@ -132,7 +132,10 @@ class Comp extends PureComponent {
                       厂牌型号
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-four`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.factoryPlateModel} disabled />
+                      {/* <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.factoryPlateModel} disabled /> */}
+                      <div className={`${prefixCls}-text`}>
+                        {taxConfig.factoryPlateModel}
+                      </div>
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
                       *产地
@@ -214,7 +217,10 @@ class Comp extends PureComponent {
                       账号
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.sellCompanyCode} disabled />
+                      {/* <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.sellCompanyCode} disabled /> */}
+                      <div className={`${prefixCls}-text`}>
+                        {taxConfig.sellCompanyCode}
+                      </div>
                     </td>
                   </tr>
                   <tr>
@@ -228,7 +234,10 @@ class Comp extends PureComponent {
                       开户银行
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.sellCompanyBankNumber} disabled />
+                      {/* <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.sellCompanyBankNumber} disabled /> */}
+                      <div className={`${prefixCls}-text`}>
+                        {taxConfig.sellCompanyBankNumber}
+                      </div>
                     </td>
                   </tr>
                   <tr>
@@ -248,7 +257,10 @@ class Comp extends PureComponent {
                       主管税务机关及代码
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.taxAuthoritiesCode} disabled />
+                      {/* <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.taxAuthoritiesCode} disabled /> */}
+                      <div className={`${prefixCls}-text`}>
+                        {taxConfig.taxAuthoritiesCode}
+                      </div>
                     </td>
                   </tr>
                   <tr>

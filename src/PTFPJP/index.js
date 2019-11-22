@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from 'antd';
+import Numeral from '../utils/Numeral';
 
 class App extends PureComponent {
   constructor(props) {
@@ -17,7 +18,7 @@ class App extends PureComponent {
           <td className={`${prefixCls}-tableBox-table-borderLeft`}>{item.name}</td>
           <td>{item.modelPrice}</td>
           <td>{item.modelCount}</td>
-          <td className={`${prefixCls}-tableBox-table-borderRight`}>{item.sum}</td>
+          <td className={`${prefixCls}-tableBox-table-borderRight`}>{item.sum && Numeral(item.sum).format('0,0.00')}</td>
         </tr>
       )
     })
@@ -26,7 +27,7 @@ class App extends PureComponent {
           <div className={`${prefixCls}-container`}>
             <div className={`${prefixCls}-header`}>
               <div className={`${prefixCls}-header-title`}>
-                增值税普通发票(卷式)
+                增值税普通发票(卷票)
               </div>
               <div className={`${prefixCls}-header-deco`}></div>
               <div>发票联</div>
@@ -62,7 +63,8 @@ class App extends PureComponent {
                     <span style={{color:'#FF3E2F'}}>*</span>销售方名称
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    <input value={taxConfig.sellName} disabled className={`${prefixCls}-columBox-cellBox-input`} />
+                    {/* <input value={taxConfig.sellName} disabled className={`${prefixCls}-columBox-cellBox-input`} /> */}
+                    <div className={`${prefixCls}-columBox-cellBox-line-text`}>{taxConfig.sellName}</div>
                   </div>
                 </div> 
                 <div className={`${prefixCls}-columBox-cellBox`}>
@@ -87,7 +89,8 @@ class App extends PureComponent {
                     购买方名称
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    <input value={taxConfig.buyName} disabled className={`${prefixCls}-columBox-cellBox-input`} />
+                    {/* <input value={taxConfig.buyName} disabled className={`${prefixCls}-columBox-cellBox-input`} /> */}
+                    <div className={`${prefixCls}-columBox-cellBox-line-text`}>{taxConfig.buyName}</div>
                   </div>
                 </div>
                 <div className={`${prefixCls}-columBox-cellBox`}>
@@ -139,7 +142,7 @@ class App extends PureComponent {
                     合计金额(小写)
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    <input value={taxConfig.lowerSum} disabled className={`${prefixCls}-columBox-cellBox-input2`} />
+                    <input value={taxConfig.lowerSum && Numeral(taxConfig.lowerSum).format()} disabled className={`${prefixCls}-columBox-cellBox-input2`} />
                   </div>
                 </div>
                 <div className={`${prefixCls}-columBox-cellBox`}>
