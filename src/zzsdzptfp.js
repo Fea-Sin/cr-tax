@@ -5,6 +5,7 @@ import OuiDom from './utils/ouiDomUtils';
 import { Row, Col, Icon, Select, Radio } from 'antd';
 import 'antd/dist/antd.css';
 import { Scrollbars } from 'react-custom-scrollbars';
+import Numeral from './utils/Numeral';
 
 const { Option } = Select;
 
@@ -42,7 +43,7 @@ class Comp extends PureComponent {
           <td>{item.modelUnit}</td>
           <td>{item.modelCount}</td>
           <td>{item.modelPrice}</td>
-          <td>{item.price}</td>
+          <td>{item.price && Numeral(item.price).format('0,0.00')}</td>
           <td>
             {
               item.taxRate
@@ -50,7 +51,7 @@ class Comp extends PureComponent {
               : (<div>&nbsp;</div>)
             }
           </td>
-          <td className={`${prefixCls}-dataBox-data-dataTr-end`}>{item.billTaxValue}</td>
+          <td className={`${prefixCls}-dataBox-data-dataTr-end`}>{item.billTaxValue && Numeral(item.billTaxValue).format('0,0.00')}</td>
         </tr>       
       )
     })
@@ -72,7 +73,7 @@ class Comp extends PureComponent {
                 </Col>
                 <Col span={8}>
                   <div className={`${prefixCls}-top-titleBox`}>
-                    <div className={`${prefixCls}-top-titleBox-title`}>增值税电子通用发票（通行费）</div>
+                    <div className={`${prefixCls}-top-titleBox-title`}>增值税电子普通发票</div>
                     <div className={`${prefixCls}-top-titleBox-line`}></div>
                     <div className={`${prefixCls}-top-titleBox-sub`}>发票联</div>
                   </div>
@@ -168,16 +169,17 @@ class Comp extends PureComponent {
                   <tbody>
                     <tr className={`${prefixCls}-dataBox-seller-tr`}>
                       <td className={`${prefixCls}-dataBox-seller-HJBT ${prefixCls}-dataBox-center`}>
-                        {'价税合计(大写)'}
+                        <span>价税合计</span>
+                        <span style={{fontSize: 13}}>（大写）</span>
                       </td>
                       <td className={`${prefixCls}-dataBox-seller-HJB`}>
                         {taxConfig.billTaxPriceUpper}
                       </td>
                       <td className={`${prefixCls}-dataBox-seller-HJST ${prefixCls}-dataBox-center`}>
-                      {'(小写)'}
+                        <span style={{fontSize: 13}}>（小写）</span>
                       </td>
                       <td className={`${prefixCls}-dataBox-seller-HJS`}>
-                        {taxConfig.billTaxPriceLower}
+                        {taxConfig.billTaxPriceLower && Numeral(taxConfig.billTaxPriceLower).format()}
                       </td>
                     </tr>                       
                   </tbody>              

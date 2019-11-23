@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Icon, Row, Col } from 'antd';
+import Numeral from '../utils/Numeral';
 
 class App extends PureComponent {
   constructor(props) {
@@ -19,7 +20,7 @@ class App extends PureComponent {
           <td>{item.modelUnit}</td>
           <td>{item.modelCount}</td>
           <td>{item.modelPrice}</td>
-          <td>{item.sum}</td>
+          <td>{item.sum && Numeral(item.sum).format('0,0.00')}</td>
         </tr>
       )
     })
@@ -163,7 +164,7 @@ class App extends PureComponent {
                       <span className={`${prefixCls}-tableBox-title`}>小写金额</span>
                     </td>
                     <td>
-                      <input value={taxConfig.lowerSum} disabled className={`${prefixCls}-tableBox-inputA`} />
+                      <input value={taxConfig.lowerSum && Numeral(taxConfig.lowerSum).format()} disabled className={`${prefixCls}-tableBox-inputA`} />
                     </td>
                   </tr>
                   <tr>

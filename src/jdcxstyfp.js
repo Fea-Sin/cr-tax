@@ -66,7 +66,6 @@ class Comp extends PureComponent {
                     <span>发票号码:</span>
                     <span className={`${prefixCls}-top-right-box-input`}>
                       <input className={`${prefixCls}-input`} value={taxConfig.billNumber} disabled />
-                      <Icon className={`${prefixCls}-top-right-box-calender`} type="calendar" />
                     </span>
                   </div>               
                 </div>

@@ -139,7 +139,8 @@ class App extends PureComponent {
               <div className={`${prefixCls}-columBox-colum`}>
                 <div className={`${prefixCls}-columBox-cellBox`}>
                   <div className={`${prefixCls}-columBox-cellBox-cell3`}>
-                    合计金额(小写)
+                    <span>合计金额</span>
+                    <span style={{fontSize: 13}}>(小写)</span>
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
                     <input value={taxConfig.lowerSum && Numeral(taxConfig.lowerSum).format()} disabled className={`${prefixCls}-columBox-cellBox-input2`} />
@@ -147,7 +148,8 @@ class App extends PureComponent {
                 </div>
                 <div className={`${prefixCls}-columBox-cellBox`}>
                   <div className={`${prefixCls}-columBox-cellBox-cell3`}>
-                    合计金额(大写)
+                    <span>合计金额</span>
+                    <span style={{fontSize: 13}}>(大写)</span>
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
                     <input value={taxConfig.upperSum} disabled className={`${prefixCls}-columBox-cellBox-input2`} />
