@@ -183,7 +183,7 @@ function render(container) {
   ReactDOM.render(
     <div>
       <div style={boxStyle}>
-        {/* <Testone
+        <Testone
           // ticketType={1}
           // direction='in'
           // taxConfig={taxConfigDZ}
@@ -192,16 +192,16 @@ function render(container) {
 
           // mode={'ZZSPTFP'}
           
-          taxDataList={taxDataListB}
-          mode={'ZZSDZPTFP'}
-          taxConfig={taxConfigDZ}
+          // taxDataList={taxDataListB}
+          // mode={'ZZSDZPTFP'}
+          // taxConfig={taxConfigDZ}
           
-          // mode={'JDCXSTYFP'}
-          // prefixCls={'cr-tax-c'}
-          // taxConfig={taxConfigJDC}
-        /> */}
+          mode={'JDCXSTYFP'}
+          prefixCls={'cr-tax-c'}
+          taxConfig={taxConfigJDC}
+        />
         {/* <PTFPJP taxList={taxList} taxConfig={taxConfig} /> */}
-        <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} />
+        {/* <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} /> */}
       </div>
     </div>, container
   )

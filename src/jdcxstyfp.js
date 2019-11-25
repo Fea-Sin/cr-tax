@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import OuiDom from './utils/ouiDomUtils';
 import { Row, Col, Icon, Select, Radio } from 'antd';
 import 'antd/dist/antd.css';
+import Numeral from './utils/Numeral';
 
 const { Option } = Select;
 
@@ -188,7 +189,8 @@ class Comp extends PureComponent {
                       *小写
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input ${prefixCls}-dataBox-dataA-input-disable`} value={taxConfig.billTaxPriceLower} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input ${prefixCls}-dataBox-dataA-input-disable`} 
+                        value={taxConfig.billTaxPriceLower && Numeral(taxConfig.billTaxPriceLower).format()} disabled />
                     </td>
                   </tr>
                   <tr>
@@ -216,9 +218,8 @@ class Comp extends PureComponent {
                       账号
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      {/* <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.sellCompanyCode} disabled /> */}
                       <div className={`${prefixCls}-text`}>
-                        {taxConfig.sellCompanyCode}
+                        {taxConfig.sellCompanyCode && (taxConfig.sellCompanyCode).split(' ')[1]}
                       </div>
                     </td>
                   </tr>
@@ -233,9 +234,8 @@ class Comp extends PureComponent {
                       开户银行
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      {/* <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.sellCompanyBankNumber} disabled /> */}
                       <div className={`${prefixCls}-text`}>
-                        {taxConfig.sellCompanyBankNumber}
+                        {taxConfig.sellCompanyBankNumber && (taxConfig.sellCompanyBankNumber).split(' ')[0]}
                       </div>
                     </td>
                   </tr>
@@ -250,7 +250,7 @@ class Comp extends PureComponent {
                       *增值税税额
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-four`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.billTaxValue} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.billTaxValue && Numeral(taxConfig.billTaxValue).format('0,0.00')} disabled />
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
                       主管税务机关及代码
@@ -267,7 +267,7 @@ class Comp extends PureComponent {
                       *不含税价
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-two`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.billNoTaxValue} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.billNoTaxValue && Numeral(taxConfig.billNoTaxValue).format('0,0.00')} disabled />
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-three ${prefixCls}-dataBox-dataB-titleC`}>
                       完税凭证号码
