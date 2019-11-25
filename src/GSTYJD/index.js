@@ -18,7 +18,13 @@ class App extends PureComponent {
           <td>{item.name}</td>
           <td>{item.modelNumber}</td>
           <td>{item.modelUnit}</td>
-          <td>{item.modelCount}</td>
+          <td>
+            {
+              item.modelCount
+              ? (<div>{item.modelCount}</div>)
+              : (<div>&nbsp;</div>)
+            }
+          </td>
           <td>{item.modelPrice}</td>
           <td>{item.sum && Numeral(item.sum).format('0,0.00')}</td>
         </tr>

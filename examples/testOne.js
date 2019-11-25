@@ -84,12 +84,7 @@ const taxList = [{
   modelPrice: '300.00',
   modelCount: '847',
   sum: '1300'
-}, {
-  name: '餐饮费1',
-  modelPrice: '800.00',
-  modelCount: '847',
-  sum: '89900'
-}]
+}, {}]
 const taxConfig = {
   billCode: '001',
   billNumber: '002',
@@ -127,7 +122,7 @@ const taxListGS = [{
   modelCount: '100',
   modelPrice: '96.00',
   sum: '9,600.00'
-}]
+}, {}]
 const taxConfigJDC = {
   billCode: '001',
   billNumber: '002',
@@ -183,7 +178,7 @@ function render(container) {
   ReactDOM.render(
     <div>
       <div style={boxStyle}>
-        <Testone
+        {/* <Testone
           // ticketType={1}
           // direction='in'
           // taxConfig={taxConfigDZ}
@@ -199,9 +194,9 @@ function render(container) {
           mode={'JDCXSTYFP'}
           prefixCls={'cr-tax-c'}
           taxConfig={taxConfigJDC}
-        />
+        /> */}
         {/* <PTFPJP taxList={taxList} taxConfig={taxConfig} /> */}
-        {/* <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} /> */}
+        <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} />
       </div>
     </div>, container
   )

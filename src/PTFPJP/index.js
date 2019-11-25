@@ -17,7 +17,13 @@ class App extends PureComponent {
         <tr key={index}>
           <td className={`${prefixCls}-tableBox-table-borderLeft`}>{item.name}</td>
           <td>{item.modelPrice}</td>
-          <td>{item.modelCount}</td>
+          <td>
+            {
+              item.modelCount
+              ? (<div>{item.modelCount}</div>)
+              : (<div>&nbsp;</div>)
+            }
+          </td>
           <td className={`${prefixCls}-tableBox-table-borderRight`}>{item.sum && Numeral(item.sum).format('0,0.00')}</td>
         </tr>
       )
