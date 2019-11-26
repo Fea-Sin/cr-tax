@@ -49,7 +49,7 @@ const taxSalesB = {
   remark: '',
 }
 const taxDataList = [{
-  name: '*钢件*电池阴',
+  name: '*钢件*电池运城市运万路幸福庄0350-44520505',
   billNumber: 'ER602EGK6001',
   modelUnit: '个',
   modelCount: '3',
@@ -60,7 +60,7 @@ const taxDataList = [{
 }, {}, {}]
 
 const taxDataListB = [{
-  name: '*锻件*通行费通行费通行费',
+  name: '*钢件*电池运城市运万路幸福庄0350-44520505',
   modelNumber: 'ER602EGK6001',
   modelUnit: '个',
   modelCount: '20180108',
@@ -96,7 +96,7 @@ const taxConfig = {
   receivingTeller: '007',
   buyName: '山西玉龙机电设备有限公司',
   buyTaxpayerNumber: '009',
-  lowerSum: '100',
+  lowerSum: '-1600',
   upperSum: '101',
 }
 const taxConfigGS = {
@@ -110,7 +110,7 @@ const taxConfigGS = {
   taxControlCode: '008',
   payCompany: '009',
   upperSum: '010',
-  lowerSum: '011',
+  lowerSum: '-7895',
   receivingCompany: '012',
   receivingCompanyTaxNumber: '013',
   remark: '014',
@@ -142,7 +142,7 @@ const taxConfigJDC = {
   engineNumber: '016',
   vehicleIdentificationNumber: '017',
   billTaxPriceUpper: '018',
-  billTaxPriceLower: '019',
+  billTaxPriceLower: '-1956',
   sellCompanyName: '020',
   sellCompanyAddrPhone: '021',
   sellTaxpayerNumber: '022',
@@ -150,9 +150,9 @@ const taxConfigJDC = {
   sellCompanyAddr: '024',
   sellCompanyBankNumber: '招商银行股份有限公司南京江宁支行 125909132810101',
   taxRate: '026',
-  billTaxValue: '027',
+  billTaxValue: '-2700',
   taxAuthoritiesCode: '国家税务总局南京市江宁区税务局 132011500',
-  billNoTaxValue: '029',
+  billNoTaxValue: '-2946',
   taxPaymentCardNumber: '030',
   tonnage: '031',
   limitedPeopleNumber: '032',
@@ -166,7 +166,7 @@ const taxConfigDZ = {
   buyCompanyAddrAphone: '006',
   buyCompanyBankNumber: '007',
   billTaxPriceUpper: '008',
-  billTaxPriceLower: '009',
+  billTaxPriceLower: '-7894',
   sellCompanyName: '010',
   sellTaxpayerNumber: '011',
   sellCompanyAddrPhone: '012',
@@ -179,11 +179,11 @@ function render(container) {
     <div>
       <div style={boxStyle}>
         <Testone
-          ticketType={1}
-          direction='in'
-          taxConfig={taxConfigDZ}
-          taxDataList={taxDataList}
-          mode={'ZZSZYFP'}
+          // ticketType={1}
+          // direction='in'
+          // taxConfig={taxConfigDZ}
+          // taxDataList={taxDataList}
+          // mode={'ZZSZYFP'}
 
           // mode={'ZZSPTFP'}
           
@@ -191,9 +191,9 @@ function render(container) {
           // mode={'ZZSDZPTFP'}
           // taxConfig={taxConfigDZ}
           
-          // mode={'JDCXSTYFP'}
-          // prefixCls={'cr-tax-c'}
-          // taxConfig={taxConfigJDC}
+          mode={'JDCXSTYFP'}
+          prefixCls={'cr-tax-c'}
+          taxConfig={taxConfigJDC}
         />
         {/* <PTFPJP taxList={taxList} taxConfig={taxConfig} /> */}
         {/* <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} /> */}

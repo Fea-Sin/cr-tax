@@ -170,7 +170,10 @@ class App extends PureComponent {
                       <span className={`${prefixCls}-tableBox-title`}>小写金额</span>
                     </td>
                     <td>
-                      <input value={taxConfig.lowerSum && Numeral(taxConfig.lowerSum).format()} disabled className={`${prefixCls}-tableBox-inputA`} />
+                      <input 
+                        // value={taxConfig.lowerSum && Numeral(taxConfig.lowerSum).format()}
+                        value={`¥${taxConfig.lowerSum && Numeral(taxConfig.lowerSum).format('0,0.00')}`}
+                        disabled className={`${prefixCls}-tableBox-inputA`} />
                     </td>
                   </tr>
                   <tr>

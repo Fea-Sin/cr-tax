@@ -189,7 +189,7 @@ class Comp extends PureComponent {
                         <span style={{fontSize: 13}}>（小写）</span>
                       </td>
                       <td className={`${prefixCls}-dataBox-seller-HJS`}>
-                        {taxConfig.billTaxPriceLower && Numeral(taxConfig.billTaxPriceLower).format()}
+                        {`¥${taxConfig.billTaxPriceLower && Numeral(taxConfig.billTaxPriceLower).format('0,0.00')}`}
                       </td>
                     </tr>                       
                   </tbody>              

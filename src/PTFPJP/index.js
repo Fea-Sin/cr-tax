@@ -69,7 +69,6 @@ class App extends PureComponent {
                     <span style={{color:'#FF3E2F'}}>*</span>销售方名称
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    {/* <input value={taxConfig.sellName} disabled className={`${prefixCls}-columBox-cellBox-input`} /> */}
                     <div className={`${prefixCls}-columBox-cellBox-line-text`}>{taxConfig.sellName}</div>
                   </div>
                 </div> 
@@ -95,7 +94,6 @@ class App extends PureComponent {
                     购买方名称
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    {/* <input value={taxConfig.buyName} disabled className={`${prefixCls}-columBox-cellBox-input`} /> */}
                     <div className={`${prefixCls}-columBox-cellBox-line-text`}>{taxConfig.buyName}</div>
                   </div>
                 </div>
@@ -149,7 +147,10 @@ class App extends PureComponent {
                     <span style={{fontSize: 13}}>(小写)</span>
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    <input value={taxConfig.lowerSum && Numeral(taxConfig.lowerSum).format()} disabled className={`${prefixCls}-columBox-cellBox-input2`} />
+                    <input 
+                      // value={taxConfig.lowerSum && Numeral(taxConfig.lowerSum).format()}
+                      value={`¥${taxConfig.lowerSum && Numeral(taxConfig.lowerSum).format('0,0.00')}`}
+                      disabled className={`${prefixCls}-columBox-cellBox-input2`} />
                   </div>
                 </div>
                 <div className={`${prefixCls}-columBox-cellBox`}>
