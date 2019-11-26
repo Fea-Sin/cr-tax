@@ -55,7 +55,7 @@ const taxDataList = [{
   modelCount: '3',
   modelPrice: '3000',
   price: '56125489',
-  taxRate: 0.16,
+  taxRate: 0,
   billTaxValue: '435435.16',
 }, {}, {}]
 
@@ -178,12 +178,12 @@ function render(container) {
   ReactDOM.render(
     <div>
       <div style={boxStyle}>
-        {/* <Testone
-          // ticketType={1}
-          // direction='in'
-          // taxConfig={taxConfigDZ}
-          // taxDataList={taxDataList}
-          // mode={'ZZSZYFP'}
+        <Testone
+          ticketType={1}
+          direction='in'
+          taxConfig={taxConfigDZ}
+          taxDataList={taxDataList}
+          mode={'ZZSZYFP'}
 
           // mode={'ZZSPTFP'}
           
@@ -191,12 +191,12 @@ function render(container) {
           // mode={'ZZSDZPTFP'}
           // taxConfig={taxConfigDZ}
           
-          mode={'JDCXSTYFP'}
-          prefixCls={'cr-tax-c'}
-          taxConfig={taxConfigJDC}
-        /> */}
+          // mode={'JDCXSTYFP'}
+          // prefixCls={'cr-tax-c'}
+          // taxConfig={taxConfigJDC}
+        />
         {/* <PTFPJP taxList={taxList} taxConfig={taxConfig} /> */}
-        <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} />
+        {/* <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} /> */}
       </div>
     </div>, container
   )

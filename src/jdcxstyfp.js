@@ -219,7 +219,7 @@ class Comp extends PureComponent {
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
                       <div className={`${prefixCls}-text`}>
-                        {taxConfig.sellCompanyCode && (taxConfig.sellCompanyCode).split(' ')[1]}
+                        {taxConfig.sellCompanyCode && taxConfig.sellCompanyCode}
                       </div>
                     </td>
                   </tr>
@@ -235,7 +235,7 @@ class Comp extends PureComponent {
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
                       <div className={`${prefixCls}-text`}>
-                        {taxConfig.sellCompanyBankNumber && (taxConfig.sellCompanyBankNumber).split(' ')[0]}
+                        {taxConfig.sellCompanyBankNumber && taxConfig.sellCompanyBankNumber}
                       </div>
                     </td>
                   </tr>
@@ -250,7 +250,7 @@ class Comp extends PureComponent {
                       *增值税税额
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-four`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.billTaxValue && Numeral(taxConfig.billTaxValue).format('0,0.00')} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.billTaxValue && Numeral(taxConfig.billTaxValue).format()} disabled />
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
                       主管税务机关及代码
@@ -267,7 +267,7 @@ class Comp extends PureComponent {
                       *不含税价
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-two`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.billNoTaxValue && Numeral(taxConfig.billNoTaxValue).format('0,0.00')} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.billNoTaxValue && Numeral(taxConfig.billNoTaxValue).format()} disabled />
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-three ${prefixCls}-dataBox-dataB-titleC`}>
                       完税凭证号码

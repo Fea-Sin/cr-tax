@@ -27,6 +27,13 @@ class Comp extends PureComponent {
     })
   }
 
+  getTaxRate = (val) => {
+    if (val === 0) {
+      return '0'
+    }
+    return val
+  }
+
   componentDidMount() {
 
   }
@@ -49,8 +56,8 @@ class Comp extends PureComponent {
           <td>{item.price && Numeral(item.price).format('0,0.00')}</td>
           <td>
             {
-              item.taxRate
-              ? (<div>{item.taxRate}</div>)
+              this.getTaxRate(item.taxRate)
+              ? (<div>{Numeral(item.taxRate).format('0,0.00')}</div>)
               : (<div>&nbsp;</div>)
             }
           </td>
@@ -152,7 +159,7 @@ class Comp extends PureComponent {
                 <table className={`${prefixCls}-dataBox-table ${prefixCls}-dataBox-data-innerTable`}>
                   <thead>
                     <tr className={`${prefixCls}-dataBox-data-tr`}>
-                      <th className={`${prefixCls}-dataBox-data-HW ${prefixCls}-dataBox-data-tr-start`}>*货物或应税劳务名称</th>
+                      <th className={`${prefixCls}-dataBox-data-HW ${prefixCls}-dataBox-data-tr-start`}>*货物或应税劳务、服务名称</th>
                       <th className={`${prefixCls}-dataBox-data-GG`}>规格型号</th>
                       <th className={`${prefixCls}-dataBox-data-DW`}>单位</th>
                       <th className={`${prefixCls}-dataBox-data-SL`}>数量</th>
@@ -228,7 +235,9 @@ class Comp extends PureComponent {
                         </div>                                                                                
                       </td>
                       <td className={`${prefixCls}-dataBox-table-title`}>备注</td>
-                      <td className={`${prefixCls}-dataBox-table-BZ`}>{taxConfig.remark || ''}</td>
+                      <td className={`${prefixCls}-dataBox-table-BZ`}>
+                        <span style={{color: '#3E7AFA'}}>{taxConfig.remark || ''}</span>
+                      </td>
                     </tr> 
                   </tbody>             
                 </table>             
