@@ -250,7 +250,7 @@ class Comp extends PureComponent {
             ? (
               <div>
                 <span>认证状态:</span>
-                <span style={{ marginLeft: 8 }}>
+                <span style={{ marginLeft: 8 }} className={`${prefixCls}-footer-status`}>
                   <Radio.Group value={this.state.ticketType || ticketType} onChange={this.radioChange}>
                     <Radio value={1} disabled>已认证</Radio>
                     <Radio value={2} style={{ marginLeft: 0 }} disabled>未认证</Radio>

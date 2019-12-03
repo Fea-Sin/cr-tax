@@ -179,11 +179,11 @@ function render(container) {
     <div>
       <div style={boxStyle}>
         <Testone
-          // ticketType={1}
-          // direction='in'
-          // taxConfig={taxConfigDZ}
-          // taxDataList={taxDataList}
-          // mode={'ZZSZYFP'}
+          ticketType={1}
+          direction='in'
+          taxConfig={taxConfigDZ}
+          taxDataList={taxDataList}
+          mode={'ZZSZYFP'}
 
           // mode={'ZZSPTFP'}
           
@@ -191,9 +191,9 @@ function render(container) {
           // mode={'ZZSDZPTFP'}
           // taxConfig={taxConfigDZ}
           
-          mode={'JDCXSTYFP'}
-          prefixCls={'cr-tax-c'}
-          taxConfig={taxConfigJDC}
+          // mode={'JDCXSTYFP'}
+          // prefixCls={'cr-tax-c'}
+          // taxConfig={taxConfigJDC}
         />
         {/* <PTFPJP taxList={taxList} taxConfig={taxConfig} /> */}
         {/* <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} /> */}
