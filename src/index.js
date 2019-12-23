@@ -6,6 +6,7 @@ import JDCXS from './jdcxstyfp';
 import ZZSPT from './zzsptfp';
 import GSTYJD from './GSTYJD';
 import PTFPJP from './PTFPJP';
+import ZZSDZTXF from './zzsdzptfptxf';
 
 
 class Comp extends PureComponent {
@@ -64,6 +65,16 @@ class Comp extends PureComponent {
           direction={direction}
         />         
       )
+    } else if (mode === 'ZZSDZTXF') {
+      return (
+        <ZZSDZTXF
+          prefixCls={prefixCls}
+          taxConfig={taxConfig}
+          taxDataList={taxDataList}
+          ticketType={ticketType}
+          direction={direction}
+        />         
+      )
     } else {
         <ZZSZY
           prefixCls={prefixCls}
@@ -80,7 +91,7 @@ Comp.propTypes = {
   taxConfig: PropTypes.object,
   taxDataList: PropTypes.arrayOf(PropTypes.object),
   ticketType: PropTypes.number,
-  mode: PropTypes.oneOf(['ZZSZYFP', 'ZZSDZPTFP', 'JDCXSTYFP', 'ZZSPTFP']),
+  mode: PropTypes.oneOf(['ZZSZYFP', 'ZZSDZPTFP', 'JDCXSTYFP', 'ZZSPTFP', 'ZZSDZTXF']),
   direction: PropTypes.oneOf(['in', 'out']),
 }
 Comp.defaultProps = {

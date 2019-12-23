@@ -187,13 +187,15 @@ function render(container) {
 
           // mode={'ZZSPTFP'}
           
-          // taxDataList={taxDataListB}
+          taxDataList={taxDataListB}
+          taxConfig={taxConfigDZ}
           // mode={'ZZSDZPTFP'}
-          // taxConfig={taxConfigDZ}
+
+          mode={'ZZSDZTXF'}
           
-          mode={'JDCXSTYFP'}
-          prefixCls={'cr-tax-c'}
-          taxConfig={taxConfigJDC}
+          // mode={'JDCXSTYFP'}
+          // prefixCls={'cr-tax-c'}
+          // taxConfig={taxConfigJDC}
         />
         {/* <PTFPJP taxList={taxList} taxConfig={taxConfig} /> */}
         {/* <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} /> */}
