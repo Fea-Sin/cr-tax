@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Testone from 'cr-tax';
 import '../assets/index.less';
-import { GSTYJD, PTFPJP, HGJKZZS } from 'cr-tax';
+import { GSTYJD, PTFPJP, HGJKZZS, WPSR } from 'cr-tax';
 
 const reactContainer = document.getElementById('__react-content');
 const bodyContainer = document.getElementsByTagName('body')
@@ -175,6 +175,8 @@ const taxConfigDZ = {
 }
 const taxListHG = [{}, {}]
 const taxConfigHG = {}
+const taxListWP = [{}, {}]
+const taxConfigWP = {}
 
 function render(container) {
   ReactDOM.render(
@@ -201,7 +203,8 @@ function render(container) {
         /> */}
         {/* <PTFPJP taxList={taxList} taxConfig={taxConfig} /> */}
         {/* <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} /> */}
-        <HGJKZZS taxList={taxListHG} taxConfig={taxConfigHG} />
+        {/* <HGJKZZS taxList={taxListHG} taxConfig={taxConfigHG} /> */}
+        <WPSR taxList={taxListWP} taxConfig={taxConfigWP} />
       </div>
     </div>, container
   )

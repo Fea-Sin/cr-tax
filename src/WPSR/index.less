@@ -1,0 +1,144 @@
+@WPSR: tax-wpsr;
+
+.@{WPSR} {
+  width: 100%;
+  font-size: 14px;
+
+  &-container {
+    width: 1150px;
+    margin: 0 auto;
+    border: 4px solid #E3E7F0;
+    padding: 30px;
+  }
+  &-header {
+    &-cell {
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      &-title {
+        font-size: 14px;
+        color: #000000;
+        display: inline-block;
+      }
+      &-input {
+        .tax-input(@width: 180px; @lineColor: #4A4A4A; @color: #333333)
+      }
+      &-span {
+        display: inline-block;
+        position: relative;
+        top: -5px;
+      }
+    }
+    &-left {
+      margin-top: 20px;
+    }
+    &-middle {
+      width: 193px;
+      margin: 0 auto;
+
+      &-title {
+        font-size: 20px;
+        color: #000;
+        text-align: center;
+      }
+      &-line {
+        height: 5px;
+        border-top: 1px solid #4A4A4A;
+        border-bottom: 1px solid #4A4A4A;
+      }
+      &-box {
+        margin-top: 26px;
+      }
+    }
+    &-right {
+      margin-top: 20px;
+      margin-left: 137px;
+    }    
+  }
+  &-tableBox {
+    position: relative;
+    top: -4px;
+
+    &-input {
+      .tax-table-input(@color: #333333;)
+    }
+  }
+  &-table {
+    border-collapse: collapse;
+    width: 100%;
+
+    td, th {
+      border: 1px solid #4A4A4A;
+      line-height: 37px;
+      text-align: center;
+    }    
+  }
+  &-tableA {
+    &-FKDW {
+      width: 95px;
+    }
+    &-FKDWIN {
+
+    }
+  }
+  &-tableB {
+    margin-top: -1px;
+
+    &-DXJE {
+      width: 95px;
+
+      &-text {
+        width: 63px;
+        display: inline-block;
+        text-align: right;
+      }
+    }
+    &-DXJEIN {
+      width: 447px;
+    }
+    &-XXJE {
+      width: 123px;
+
+      &-text {
+        width: 84px;
+        display: inline-block;
+        text-align: right;
+      }
+    }
+  }
+  &-tableC {
+    margin-top: -1px;
+
+    td, th {
+      border: 1px solid #CCCCCC;
+    } 
+    th {
+      background-color: rgba(244,244,246,1);
+      border-top: 1px solid #4A4A4A;
+    }
+    &-XM {
+      width: 219px;
+    }
+    &-GG {
+      width: 108px;
+    }
+    &-DW {
+      width: 108px;
+    }
+    &-SL1 {
+      width: 150px;
+    }
+    &-JE {
+      width: 198px;
+    }
+    &-SL2 {
+      width: 98px;
+    }
+    &-trLast {
+      border-right: 1px solid #4A4A4A !important;
+    }
+    &-trFirst {
+      border-left: 1px solid #4A4A4A !important;
+    }
+  }
+}

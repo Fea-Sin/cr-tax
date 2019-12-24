@@ -8,6 +8,7 @@ import GSTYJD from './GSTYJD';
 import PTFPJP from './PTFPJP';
 import ZZSDZTXF from './zzsdzptfptxf';
 import HGJKZZS from './HGJKZZS';
+import WPSR from './WPSR';
 
 
 class Comp extends PureComponent {
@@ -107,5 +108,6 @@ export {
   GSTYJD,
   PTFPJP,
   HGJKZZS,
+  WPSR,
 }
 export default Comp
