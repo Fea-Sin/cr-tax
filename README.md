@@ -13,6 +13,8 @@ react component tax and bill styles
 - 机动车销售统一发票
 - 增值税普通发票（卷票）
 - 国税通用机打发票
+- 增值税电子普通发票（通行费）
+- 海关进口增值税专用缴费书
 
 ## Usage
 

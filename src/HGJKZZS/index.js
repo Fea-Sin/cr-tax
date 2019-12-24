@@ -1,18 +1,22 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Icon, Row, Col } from 'antd';
+import Footer from '../components/Footer';
 
 
 class App extends PureComponent {
   constructor(props) {
     super(props)
-    this.state = {
-
-    }
+    this.state = {}
   }
 
   render() {
     const { prefixCls, taxList=[], taxConfig={} } = this.props
+    const footerConfig = {
+      direction: 'in',
+      ticketType: null,
+      billDate: '2019年11月14日',
+    }
     const dataTr = taxList.map((item, index) => {
       return (
         <tr key={index}>
@@ -176,7 +180,7 @@ class App extends PureComponent {
               </table>
             </div>
           </div>
-          <div className={`${prefixCls}-footer`}></div>
+          <Footer footerConfig={footerConfig} />
         </div>
       </div>
     )
