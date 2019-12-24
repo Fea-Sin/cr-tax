@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Testone from 'cr-tax';
 import '../assets/index.less';
-import { GSTYJD, PTFPJP } from 'cr-tax';
+import { GSTYJD, PTFPJP, HGJKZZS } from 'cr-tax';
 
 const reactContainer = document.getElementById('__react-content');
 const bodyContainer = document.getElementsByTagName('body')
@@ -173,12 +173,14 @@ const taxConfigDZ = {
   sellCompanyBankNumber: '013',
   remark: '014',
 }
+const taxListHG = [{}, {}]
+const taxConfigHG = {}
 
 function render(container) {
   ReactDOM.render(
     <div>
       <div style={boxStyle}>
-        <Testone
+        {/* <Testone
           // ticketType={1}
           // direction='in'
           // taxConfig={taxConfigDZ}
@@ -196,9 +198,10 @@ function render(container) {
           // mode={'JDCXSTYFP'}
           // prefixCls={'cr-tax-c'}
           // taxConfig={taxConfigJDC}
-        />
+        /> */}
         {/* <PTFPJP taxList={taxList} taxConfig={taxConfig} /> */}
         {/* <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} /> */}
+        <HGJKZZS taxList={taxListHG} taxConfig={taxConfigHG} />
       </div>
     </div>, container
   )
