@@ -16,6 +16,7 @@ react component tax and bill styles
 - 增值税电子普通发票（通行费）
 - 海关进口增值税专用缴费书
 - 无票收入
+- 二手车销售统一发票
 
 ## Usage
 

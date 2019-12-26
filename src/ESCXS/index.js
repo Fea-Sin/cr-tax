@@ -1,40 +1,25 @@
-import React, { PureComponent, Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import OuiDom from './utils/ouiDomUtils';
-import { Row, Col, Icon, Select, Radio } from 'antd';
-import 'antd/dist/antd.css';
-import Numeral from './utils/Numeral';
+import { Icon, Row, Col } from 'antd';
+import Footer from '../components/Footer';
 
-const { Option } = Select;
-
-class Comp extends PureComponent {
-
+class App extends PureComponent {
   constructor(props) {
     super(props)
-    this.state = {
-      ticketType: null,
-    }
+    this.state = {}
   }
 
-  radioChange = e => {
-    this.setState({
-      ticketType: e.target.value,
-    })
-  }
-
-  componentDidMount() {
-
-  }
-  componentDidUpdate(prevProps, prevState) {
-    // console.log('component up date', prevState)
-  }
-
-  render () {
+  render() {
     const { prefixCls, taxConfig={} } = this.props
+    const footerConfig = {
+      direction: 'in',
+      ticketType: null,
+      billDate: '2019年11月14日',
+    }
+
     return (
-      <div className={`${prefixCls} ${prefixCls}-con-C`}>
-        <div className={`${prefixCls}-main`}>
+      <div className={`${prefixCls}`}>
+        <div className={`${prefixCls}-container`}>
           <div className={`${prefixCls}-top`}>
             <Row>
               <Col span={8}>
@@ -50,7 +35,7 @@ class Comp extends PureComponent {
               </Col>
               <Col span={8}>
                 <div className={`${prefixCls}-top-titleBox`}>
-                  <div className={`${prefixCls}-top-titleBox-title`}>机动车销售统一发票</div>
+                  <div className={`${prefixCls}-top-titleBox-title`}>二手车销售统一发票</div>
                   <div className={`${prefixCls}-top-titleBox-line`}></div>
                   <div className={`${prefixCls}-top-titleBox-sub`}>发票联</div>
                 </div>
@@ -58,15 +43,15 @@ class Comp extends PureComponent {
               <Col span={8}>
                 <div className={`${prefixCls}-top-right`}>
                   <div className={`${prefixCls}-top-right-box`}>
-                    <span>发票代码:</span>
-                    <span className={`${prefixCls}-top-right-box-input`}>
-                      <input className={`${prefixCls}-input`} value={taxConfig.billCode || ''} disabled />
-                    </span>
-                  </div>
-                  <div className={`${prefixCls}-top-right-box`}>
                     <span>发票号码:</span>
                     <span className={`${prefixCls}-top-right-box-input`}>
                       <input className={`${prefixCls}-input`} value={taxConfig.billNumber || ''} disabled />
+                    </span>
+                  </div>
+                  <div className={`${prefixCls}-top-right-box`}>
+                    <span>发票代码:</span>
+                    <span className={`${prefixCls}-top-right-box-input`}>
+                      <input className={`${prefixCls}-input`} value={taxConfig.billCode || ''} disabled />
                     </span>
                   </div>               
                 </div>
@@ -108,14 +93,14 @@ class Comp extends PureComponent {
               <table className={`${prefixCls}-dataBox-table`}>
                 <tbody>
                   <tr>
-                    <td className={`${prefixCls}-dataBox-dataB-td-one ${prefixCls}-dataBox-dataB-titleA`}>
-                      购买方名称及身份证号码/组织机构代码
+                    <td className={`${prefixCls}-dataBox-dataB-td-one ${prefixCls}-dataBox-dataB-titleC`}>
+                      买方单位/个人
                     </td>
                     <td colSpan='3'>
                       <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.buyNameNumber || ''} disabled />
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleB`}>
-                      纳税人识别号
+                      单位代码/身份证号
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
                       <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.buyTaxpayerNumber || ''} disabled />
@@ -123,79 +108,7 @@ class Comp extends PureComponent {
                   </tr>
                   <tr>
                     <td className={`${prefixCls}-dataBox-dataB-td-one ${prefixCls}-dataBox-dataB-titleC`}>
-                      车辆类型
-                    </td>
-                    <td className={`${prefixCls}-dataBox-dataB-td-two`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.carType || ''} disabled />
-                    </td>
-                    <td className={`${prefixCls}-dataBox-dataB-td-three ${prefixCls}-dataBox-dataB-titleC`}>
-                      厂牌型号
-                    </td>
-                    <td className={`${prefixCls}-dataBox-dataB-td-four`}>
-                      <div className={`${prefixCls}-text`}>
-                        {taxConfig.factoryPlateModel || ''}
-                      </div>
-                    </td>
-                    <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
-                      产地
-                    </td>
-                    <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.producingArea || ''} disabled />
-                    </td>
-                  </tr> 
-                  <tr>
-                    <td className={`${prefixCls}-dataBox-dataB-td-one ${prefixCls}-dataBox-dataB-titleC`}>
-                      合格证号
-                    </td>
-                    <td className={`${prefixCls}-dataBox-dataB-td-two`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.qualifyCardNumber || ''} disabled />
-                    </td>
-                    <td className={`${prefixCls}-dataBox-dataB-td-three ${prefixCls}-dataBox-dataB-titleC`}>
-                      进口证明书号
-                    </td>
-                    <td className={`${prefixCls}-dataBox-dataB-td-four`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.importCardNumber || ''} disabled />
-                    </td>
-                    <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
-                      商检单号
-                    </td>
-                    <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.commodityInspectionNumber || ''} disabled />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className={`${prefixCls}-dataBox-dataB-td-one ${prefixCls}-dataBox-dataB-titleC`}>
-                      发动机号码
-                    </td>
-                    <td colSpan='3'>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.engineNumber || ''} disabled />
-                    </td>
-                    <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
-                      车牌识别号/车架号码
-                    </td>
-                    <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.vehicleIdentificationNumber || ''} disabled />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className={`${prefixCls}-dataBox-dataB-td-one ${prefixCls}-dataBox-dataB-titleC`}>
-                      价税合计（大写）
-                    </td>
-                    <td colSpan='3'>
-                      <input className={`${prefixCls}-dataBox-dataA-input ${prefixCls}-dataBox-dataA-input-disable`} value={taxConfig.billTaxPriceUpper || ''} disabled />
-                    </td>
-                    <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
-                      小写
-                    </td>
-                    <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input ${prefixCls}-dataBox-dataA-input-disable`} 
-                        // value={taxConfig.billTaxPriceLower && Numeral(taxConfig.billTaxPriceLower).format()} disabled />
-                        value={`¥${taxConfig.billTaxPriceLower && Numeral(taxConfig.billTaxPriceLower).format('0,0.00')}`} disabled />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className={`${prefixCls}-dataBox-dataB-td-one ${prefixCls}-dataBox-dataB-titleC`}>
-                      销货单位名称
+                      买方单位/个人住址
                     </td>
                     <td colSpan='3'>
                       <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.sellCompanyName || ''} disabled />
@@ -209,13 +122,13 @@ class Comp extends PureComponent {
                   </tr>
                   <tr>
                     <td className={`${prefixCls}-dataBox-dataB-td-one ${prefixCls}-dataBox-dataB-titleC`}>
-                      纳税人识别号
+                      卖方单位/个人
                     </td>
                     <td colSpan='3'>
                       <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.sellTaxpayerNumber || ''} disabled />
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
-                      账号
+                      单位代码/身份证号
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
                       <div className={`${prefixCls}-text`}>
@@ -225,13 +138,13 @@ class Comp extends PureComponent {
                   </tr>
                   <tr>
                     <td className={`${prefixCls}-dataBox-dataB-td-one ${prefixCls}-dataBox-dataB-titleC`}>
-                      地址
+                      卖方单位/个人住址
                     </td>
                     <td colSpan='3'>
                       <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.sellCompanyAddr || ''} disabled />
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
-                      开户银行
+                      电话
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
                       <div className={`${prefixCls}-text`}>
@@ -241,64 +154,151 @@ class Comp extends PureComponent {
                   </tr>
                   <tr>
                     <td className={`${prefixCls}-dataBox-dataB-td-one ${prefixCls}-dataBox-dataB-titleC`}>
-                      增值税税率或征收率
+                      车牌照号
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-two`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.taxRate || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.carType || ''} disabled />
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-three ${prefixCls}-dataBox-dataB-titleC`}>
-                      增值税税额
+                      登记证号
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-four`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} 
-                      // value={taxConfig.billTaxValue && Numeral(taxConfig.billTaxValue).format()} disabled />
-                      value={`¥${taxConfig.billTaxValue && Numeral(taxConfig.billTaxValue).format('0,0.00')}`} disabled />
+                      <div className={`${prefixCls}-text`}>
+                        {taxConfig.factoryPlateModel || ''}
+                      </div>
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
-                      主管税务机关及代码
+                      车辆类型
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <div className={`${prefixCls}-text`}>
-                        {taxConfig.taxAuthoritiesCode || ''}
-                      </div>
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.producingArea || ''} disabled />
+                    </td>
+                  </tr> 
+                  <tr>
+                    <td className={`${prefixCls}-dataBox-dataB-td-one ${prefixCls}-dataBox-dataB-titleC`}>
+                      车架号/车辆识别代码
+                    </td>
+                    <td className={`${prefixCls}-dataBox-dataB-td-two`}>
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.qualifyCardNumber || ''} disabled />
+                    </td>
+                    <td className={`${prefixCls}-dataBox-dataB-td-three ${prefixCls}-dataBox-dataB-titleC`}>
+                      厂牌型号
+                    </td>
+                    <td className={`${prefixCls}-dataBox-dataB-td-four`}>
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.importCardNumber || ''} disabled />
+                    </td>
+                    <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
+                      转入地车辆管理所名称
+                    </td>
+                    <td className={`${prefixCls}-dataBox-dataB-td-six`}>
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.commodityInspectionNumber || ''} disabled />
                     </td>
                   </tr>
                   <tr>
                     <td className={`${prefixCls}-dataBox-dataB-td-one ${prefixCls}-dataBox-dataB-titleC`}>
-                      不含税价
+                      价税合计（大写）
                     </td>
-                    <td className={`${prefixCls}-dataBox-dataB-td-two`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} 
-                        // value={taxConfig.billNoTaxValue && Numeral(taxConfig.billNoTaxValue).format()} disabled />
-                        value={`¥${taxConfig.billNoTaxValue && Numeral(taxConfig.billNoTaxValue).format('0,0.00')}`} disabled />
+                    <td colSpan='3'>
+                      <input className={`${prefixCls}-dataBox-dataA-input ${prefixCls}-dataBox-dataA-input-disable`} value={taxConfig.billTaxPriceUpper || ''} disabled />
                     </td>
-                    <td className={`${prefixCls}-dataBox-dataB-td-three ${prefixCls}-dataBox-dataB-titleC`}>
-                      完税凭证号码
-                    </td>
-                    <td colSpan='2'>
-                      <div className={`${prefixCls}-dataBox-dataB-cell ${prefixCls}-dataBox-dataB-cellA`}>
-                        <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.taxPaymentCardNumber || ''} disabled />
-                      </div>
-                      <div className={`${prefixCls}-dataBox-dataB-cell ${prefixCls}-dataBox-dataB-cellB`}>吨位</div>
+                    <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
+                      小写
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <div className={`${prefixCls}-dataBox-dataB-cell ${prefixCls}-dataBox-dataB-cellC ${prefixCls}-dataBox-dataB-cellC-border`}>
-                        <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.tonnage || ''} disabled />
-                      </div>
-                      <div className={`${prefixCls}-dataBox-dataB-cell ${prefixCls}-dataBox-dataB-cellC ${prefixCls}-dataBox-dataB-cellC-border`}>限乘人数</div>
-                      <div className={`${prefixCls}-dataBox-dataB-cell ${prefixCls}-dataBox-dataB-cellC`}>
-                        <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.limitedPeopleNumber || ''} disabled />
-                      </div>
+                      <input className={`${prefixCls}-dataBox-dataA-input`} 
+                        value={``} disabled />
                     </td>
-                  </tr>                                   
+                  </tr>
+                  <tr>
+                    <td className={`${prefixCls}-dataBox-dataB-td-one ${prefixCls}-dataBox-dataB-titleC`}>
+                      经营、拍卖单位
+                    </td>
+                    <td colSpan='5' className={`${prefixCls}-dataBox-dataB-td-two`}>
+                      <input className={`${prefixCls}-dataBox-dataA-input`} 
+                        value={``} disabled />
+                    </td>
+                  </tr> 
+                  <tr>
+                    <td className={`${prefixCls}-dataBox-dataB-td-one ${prefixCls}-dataBox-dataB-titleC`}>
+                      经营、拍卖单位地址
+                    </td>
+                    <td colSpan='3'>
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.engineNumber || ''} disabled />
+                    </td>
+                    <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
+                      纳税人识别号
+                    </td>
+                    <td className={`${prefixCls}-dataBox-dataB-td-six`}>
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.vehicleIdentificationNumber || ''} disabled />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className={`${prefixCls}-dataBox-dataB-td-one ${prefixCls}-dataBox-dataB-titleC`}>
+                      开户行、账号
+                    </td>
+                    <td colSpan='3'>
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.engineNumber || ''} disabled />
+                    </td>
+                    <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
+                      电话
+                    </td>
+                    <td className={`${prefixCls}-dataBox-dataB-td-six`}>
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.vehicleIdentificationNumber || ''} disabled />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td rowSpan='2' className={`${prefixCls}-dataBox-dataB-td-one ${prefixCls}-dataBox-dataB-titleC`}>
+                      二手市场
+                    </td>
+                    <td colSpan='3' rowSpan='2'>
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.engineNumber || ''} disabled />
+                    </td>
+                    <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
+                      纳税人识别号
+                    </td>
+                    <td className={`${prefixCls}-dataBox-dataB-td-six`}>
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.vehicleIdentificationNumber || ''} disabled />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
+                      地址
+                    </td>
+                    <td className={`${prefixCls}-dataBox-dataB-td-six`}>
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.vehicleIdentificationNumber || ''} disabled />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className={`${prefixCls}-dataBox-dataB-td-one ${prefixCls}-dataBox-dataB-titleC`}>
+                      开户行、账号
+                    </td>
+                    <td colSpan='3'>
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.engineNumber || ''} disabled />
+                    </td>
+                    <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
+                      电话
+                    </td>
+                    <td className={`${prefixCls}-dataBox-dataB-td-six`}>
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.vehicleIdentificationNumber || ''} disabled />
+                    </td>
+                  </tr>                                
                 </tbody>
               </table>
             </div>
           </div>
+          <Footer footerConfig={footerConfig} />    
         </div>
       </div>
     )
   }
 }
 
-export default Comp
+App.propTypes = {
+  prefixCls: PropTypes.string,
+}
+
+App.defaultProps = {
+  prefixCls: 'tax-escxs'
+}
+
+export default App

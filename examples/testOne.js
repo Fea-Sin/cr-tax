@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Testone from 'cr-tax';
 import '../assets/index.less';
-import { GSTYJD, PTFPJP, HGJKZZS, WPSR } from 'cr-tax';
+import { GSTYJD, PTFPJP, HGJKZZS, WPSR, ESCXS } from 'cr-tax';
 
 const reactContainer = document.getElementById('__react-content');
 const bodyContainer = document.getElementsByTagName('body')
@@ -191,20 +191,21 @@ function render(container) {
 
           // mode={'ZZSPTFP'}
           
-          taxDataList={taxDataListB}
-          taxConfig={taxConfigDZ}
+          // taxDataList={taxDataListB}
+          // taxConfig={taxConfigDZ}
           // mode={'ZZSDZPTFP'}
 
-          mode={'ZZSDZTXF'}
+          // mode={'ZZSDZTXF'}
           
-          // mode={'JDCXSTYFP'}
-          // prefixCls={'cr-tax-c'}
-          // taxConfig={taxConfigJDC}
+          mode={'JDCXSTYFP'}
+          prefixCls={'cr-tax-c'}
+          taxConfig={taxConfigJDC}
         /> */}
         {/* <PTFPJP taxList={taxList} taxConfig={taxConfig} /> */}
         {/* <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} /> */}
         {/* <HGJKZZS taxList={taxListHG} taxConfig={taxConfigHG} /> */}
-        <WPSR taxList={taxListWP} taxConfig={taxConfigWP} />
+        {/* <WPSR taxList={taxListWP} taxConfig={taxConfigWP} /> */}
+        <ESCXS />
       </div>
     </div>, container
   )

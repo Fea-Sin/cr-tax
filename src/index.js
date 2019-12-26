@@ -9,6 +9,7 @@ import PTFPJP from './PTFPJP';
 import ZZSDZTXF from './zzsdzptfptxf';
 import HGJKZZS from './HGJKZZS';
 import WPSR from './WPSR';
+import ESCXS from './ESCXS';
 
 
 class Comp extends PureComponent {
@@ -109,5 +110,6 @@ export {
   PTFPJP,
   HGJKZZS,
   WPSR,
+  ESCXS,
 }
 export default Comp
