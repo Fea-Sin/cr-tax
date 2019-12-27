@@ -3,7 +3,7 @@
 react component tax and bill styles
 
 ## Example View
-<img src="./github/example2.png" alt="example" />
+<img src="http://39.107.35.212/images/cr-tax/example2.png" alt="example" />
 
 ## All TaxTemplate
 
