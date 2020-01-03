@@ -1,7 +1,5 @@
 import React, { PureComponent, Component } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import OuiDom from './utils/ouiDomUtils';
 import { Row, Col, Icon, Select, Radio } from 'antd';
 import 'antd/dist/antd.css';
 import { Scrollbars } from 'react-custom-scrollbars';

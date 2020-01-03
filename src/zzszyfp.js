@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import OuiDom from './utils/ouiDomUtils';
 import { Row, Col, Icon, Select, Radio } from 'antd';
-import 'antd/dist/antd.css';
 import Numeral from './utils/Numeral';
 import { Scrollbars } from 'react-custom-scrollbars';
 
