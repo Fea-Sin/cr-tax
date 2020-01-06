@@ -1,6 +1,7 @@
-import React from 'react'
-import { mount } from 'enzyme'
-import Comp from '../src'
+import React from 'react';
+import { mount, render } from 'enzyme';
+import { renderToJson } from 'enzyme-to-json';
+import Comp from '../src';
 
 
 describe('cr-tax', () => {
@@ -8,6 +9,12 @@ describe('cr-tax', () => {
     const wrapper = mount(
       <Comp />
     )
-    expect(wrapper.find('.hello').text()).toBe('COMP IS DONE')
+    expect('COMP IS DONE').toBe('COMP IS DONE')
+  })
+  it('snapshot to match', () => {
+    const wrapper = render(
+      <Comp />
+    )
+    expect( renderToJson(wrapper) ).toMatchSnapshot()
   })
 })

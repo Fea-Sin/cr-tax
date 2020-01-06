@@ -1,7 +1,6 @@
 import React, { PureComponent, Component } from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col, Icon, Select, Radio } from 'antd';
-import 'antd/dist/antd.css';
 import { Scrollbars } from 'react-custom-scrollbars';
 import Numeral from './utils/Numeral';
 

@@ -197,9 +197,9 @@ function render(container) {
 
           // mode={'ZZSDZTXF'}
           
-          // mode={'JDCXSTYFP'}
-          // prefixCls={'cr-tax-c'}
-          // taxConfig={taxConfigJDC}
+          mode={'JDCXSTYFP'}
+          prefixCls={'cr-tax-c'}
+          taxConfig={taxConfigJDC}
         /> */}
         {/* <PTFPJP taxList={taxList} taxConfig={taxConfig} /> */}
         {/* <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} /> */}
