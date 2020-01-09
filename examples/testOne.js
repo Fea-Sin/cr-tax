@@ -163,15 +163,19 @@ const taxConfigDZ = {
   billCode: '003',
   buyCompanyName: '004',
   buyTaxpayerNumber: '005',
-  buyCompanyAddrAphone: '006',
-  buyCompanyBankNumber: '007',
+  buy_addr_and_tel: '006',
+  buy_bank_addr_and_account: '007',
   billTaxPriceUpper: '008',
-  billTaxPriceLower: '-7894',
+  billTaxPrice: '-7894',
   sellCompanyName: '010',
   sellTaxpayerNumber: '011',
-  sellCompanyAddrPhone: '012',
-  sellCompanyBankNumber: '013',
-  remark: '014',
+  sell_addr_and_tel: '012',
+  sell_bank_addr_and_account: '013',
+  remark: '01479797979879797979879879879879878979879878979797房间看得见经典款减肥福建跨境电商电视剧风口浪尖的大姐夫空间',
+  make_type: 0,
+  direction: 0,
+  status_of_certification: 1,
+  date_of_certification_date: '2020-01-09',
 }
 const taxListHG = [{}, {}]
 const taxConfigHG = {}
@@ -183,14 +187,13 @@ function render(container) {
     <div>
       <div style={boxStyle}>
         {/* <Testone
-          // ticketType={1}
-          // direction='in'
           // taxConfig={taxConfigDZ}
           // taxDataList={taxDataList}
           // mode={'ZZSZYFP'}
 
           // mode={'ZZSPTFP'}
           
+          // 电子普通发票
           // taxDataList={taxDataListB}
           // taxConfig={taxConfigDZ}
           // mode={'ZZSDZPTFP'}
@@ -202,11 +205,11 @@ function render(container) {
           taxConfig={taxConfigJDC}
         /> */}
         {/* <PTFPJP taxList={taxList} taxConfig={taxConfig} /> */}
-        {/* <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} /> */}
+        <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} />
         {/* <HGJKZZS taxList={taxListHG} taxConfig={taxConfigHG} /> */}
         {/* <WPSR taxList={taxListWP} taxConfig={taxConfigWP} /> */}
         {/* <ESCXS taxConfig={taxConfigJDC} /> */}
-        <LKYS taxDataList={taxDataListB} taxConfig={taxConfigDZ} />
+        {/* <LKYS taxDataList={taxDataListB} taxConfig={taxConfigDZ} /> */}
       </div>
     </div>, container
   )

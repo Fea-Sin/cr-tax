@@ -108,7 +108,7 @@ class App extends PureComponent {
                       <span className={`${prefixCls}-tableBox-title`}>机器编码</span>
                     </td>
                     <td>
-                      <input value={taxConfig.machineId} disabled className={`${prefixCls}-tableBox-inputB`} />
+                      <input value={taxConfig.otherMessage && taxConfig.otherMessage.machineNumber} disabled className={`${prefixCls}-tableBox-inputB`} />
                     </td>
                   </tr>
                   <tr>
