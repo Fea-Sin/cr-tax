@@ -120,7 +120,7 @@ class Comp extends PureComponent {
                               地址、电话
                             </span>
                             <span>
-                              <input className={`${prefixCls}-dataBox-input`} value={taxConfig.buy_addr_and_tel} disabled />
+                              <input className={`${prefixCls}-dataBox-input`} value={taxConfig.buyAddrAndTel} disabled />
                             </span>
                           </div> 
                           <div className={`${prefixCls}-dataBox-table-cellBox`}>
@@ -128,7 +128,7 @@ class Comp extends PureComponent {
                               开户行及账户
                             </span>
                             <span>
-                              <input className={`${prefixCls}-dataBox-input ${prefixCls}-dataBox-noLine`} value={taxConfig.buy_bank_addr_and_account} disabled />
+                              <input className={`${prefixCls}-dataBox-input ${prefixCls}-dataBox-noLine`} value={taxConfig.buyBankAddrAndAccount} disabled />
                             </span>
                           </div>                                                                  
                         </div>                                                                                
@@ -205,7 +205,7 @@ class Comp extends PureComponent {
                               地址、电话
                             </span>
                             <span>
-                              <input className={`${prefixCls}-dataBox-input`} value={taxConfig.sell_addr_and_tel} disabled />
+                              <input className={`${prefixCls}-dataBox-input`} value={taxConfig.sellAddrAndTel} disabled />
                             </span>
                           </div> 
                           <div className={`${prefixCls}-dataBox-table-cellBox`}>
@@ -213,7 +213,7 @@ class Comp extends PureComponent {
                               开户行及账户
                             </span>
                             <span>
-                              <input className={`${prefixCls}-dataBox-input ${prefixCls}-dataBox-noLine`} value={taxConfig.sell_bank_addr_and_account} disabled />
+                              <input className={`${prefixCls}-dataBox-input ${prefixCls}-dataBox-noLine`} value={taxConfig.sellBankAddrAndAccount} disabled />
                             </span>
                           </div>                                                                  
                         </div>                                                                                
@@ -236,7 +236,7 @@ class Comp extends PureComponent {
               <div>
                 <span>认证状态:</span>
                 <span style={{ marginLeft: 8 }}>
-                  <Radio.Group value={taxConfig.status_of_certification || 0} onChange={this.radioChange}>
+                  <Radio.Group value={taxConfig.statusOfCertification || 0} onChange={this.radioChange}>
                     <Radio value={0} disabled>已认证</Radio>
                     <Radio value={1} style={{ marginLeft: 0 }} disabled>未认证</Radio>
                   </Radio.Group>
@@ -244,7 +244,7 @@ class Comp extends PureComponent {
                 <span className={`${prefixCls}-footer-ticketDate`}>
                   <span>认证日期:</span>
                   <span className={`${prefixCls}-top-right-box-input`}>
-                    <input className={`${prefixCls}-input ${prefixCls}-footer-input`} value={taxConfig.date_of_certification_date || ''} disabled />
+                    <input className={`${prefixCls}-input ${prefixCls}-footer-input`} value={taxConfig.dateOfCertificationDate || ''} disabled />
                     <Icon className={`${prefixCls}-top-right-box-calender`} type="calendar" />
                   </span>                  
                 </span>
@@ -254,7 +254,7 @@ class Comp extends PureComponent {
               <div>
                 <span>开票类型:</span>
                 <span style={{ marginLeft: 8 }}>
-                  <Radio.Group value={taxConfig.make_type || 0} onChange={this.radioChange}>
+                  <Radio.Group value={taxConfig.makeType || 0} onChange={this.radioChange}>
                     <Radio value={1} disabled>代开发票</Radio>
                     <Radio value={0} style={{ marginLeft: 0 }} disabled>自开发票</Radio>
                   </Radio.Group>
