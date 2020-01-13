@@ -43,7 +43,7 @@ class Comp extends PureComponent {
           <td>
             {
               item.taxRate
-              ? (<div>{item.taxRate}%</div>)
+              ? (<div>{item.taxRate * 100}%</div>)
               : (<div>&nbsp;</div>)
             }
           </td>

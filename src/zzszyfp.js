@@ -51,7 +51,7 @@ class Comp extends PureComponent {
           <td>
           {
               this.getTaxRate(item.taxRate)
-              ? (<div>{item.taxRate}%</div>)
+              ? (<div>{item.taxRate * 100}%</div>)
               : (<div>&nbsp;</div>)
             }
           </td>
