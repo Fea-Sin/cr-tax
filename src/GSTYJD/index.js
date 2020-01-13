@@ -26,7 +26,7 @@ class App extends PureComponent {
             }
           </td>
           <td>{item.modelPrice}</td>
-          <td>{item.billPrice && Numeral(item.billPrice).format('0,0.00')}</td>
+          <td>{item.billTaxValue && item.billPrice && Numeral(item.billTaxValue + item.billPrice).format('0,0.00')}</td>
         </tr>
       )
     })
@@ -62,7 +62,7 @@ class App extends PureComponent {
                       <div className={`${prefixCls}-header-middle-cellBox-cell`}>
                         <span className={`${prefixCls}-header-cell-title`}>行业分类：</span>
                         <span className={`${prefixCls}-header-cell-span`}>
-                          <input value={taxConfig.industryType} disabled className={`${prefixCls}-header-cell-input`} />
+                          <input value={taxConfig.otherMessage && taxConfig.otherMessage.industry} disabled className={`${prefixCls}-header-cell-input`} />
                         </span>
                       </div>
                     </div>
@@ -102,7 +102,7 @@ class App extends PureComponent {
                       <span className={`${prefixCls}-tableBox-title`}>机打代码</span>
                     </td>
                     <td className={`${prefixCls}-tableBox-tableA-two`}>
-                      <input value={taxConfig.billNumber} disabled className={`${prefixCls}-tableBox-inputA`} />
+                      <input value={taxConfig.otherMessage && taxConfig.otherMessage.machineCode} disabled className={`${prefixCls}-tableBox-inputA`} />
                     </td>
                     <td className={`${prefixCls}-tableBox-tableA-three`}>
                       <span className={`${prefixCls}-tableBox-title`}>机器编码</span>
@@ -116,7 +116,7 @@ class App extends PureComponent {
                       <span className={`${prefixCls}-tableBox-title`}>机打号码</span>
                     </td>
                     <td className={`${prefixCls}-tableBox-tableA-two`}>
-                      <input value={taxConfig.billNumber} disabled className={`${prefixCls}-tableBox-inputA`} />
+                      <input value={taxConfig.otherMessage && taxConfig.otherMessage.machineNo} disabled className={`${prefixCls}-tableBox-inputA`} />
                     </td>
                     <td className={`${prefixCls}-tableBox-tableA-three`}>
                       <span className={`${prefixCls}-tableBox-title`}>税控码</span>

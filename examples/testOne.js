@@ -110,7 +110,7 @@ const taxConfigGS = {
   taxControlCode: '008',
   payCompany: '009',
   upperSum: '010',
-  lowerSum: '-7895',
+  billTaxPrice: '-7895',
   receivingCompany: '012',
   receivingCompanyTaxNumber: '013',
   remark: '014',
