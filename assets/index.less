@@ -34,9 +34,6 @@
     // max-height: 675px;
     // overflow-y: auto;
   }
-  &-footer {
-
-  }
   &-input {
     outline: none;
     border: none;
@@ -266,6 +263,7 @@
     line-height: 60px;
     font-size: 14px;
     color: #666666;
+    .clearfix();
 
     &-ticketDate {
       // display: inline-block;
@@ -277,6 +275,13 @@
     }
     &-status {
       pointer-events: none;
+    }
+
+    &-inline {
+      display: inline-block;
+    }
+    &-right {
+      float: right;
     }
   }
 
@@ -317,9 +322,6 @@
     background-color: rgba(246,249,255,0.59);
     border:4px solid rgba(227,231,240,1);
     padding-bottom: 61px;
-  }
-  &-footer {
-
   }
   &-text {
     text-indent: 10px;
@@ -603,9 +605,6 @@
     background-color: rgba(246,249,255,0.59);
     border:4px solid rgba(227,231,240,1);
     padding-bottom: 61px;
-  }
-  &-footer {
-
   }
   &-text {
     // text-indent: 10px;

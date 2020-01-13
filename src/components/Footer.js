@@ -5,9 +5,7 @@ import { Radio, Icon } from 'antd';
 class Footer extends PureComponent {
   constructor(props) {
     super(props)
-    this.state = {
-      ticketType: null,
-    }
+    this.state = {}
   }
 
   render() {
@@ -18,10 +16,10 @@ class Footer extends PureComponent {
         {
           footerConfig.direction === 'in'
           ? (
-            <div>
+            <div className={`${prefixCls}-footer-inline`}>
               <span>认证状态:</span>
               <span style={{ marginLeft: 8 }}>
-                <Radio.Group value={this.state.ticketType || footerConfig.ticketType}>
+                <Radio.Group value={footerConfig.ticketType}>
                   <Radio value={1} disabled>已认证</Radio>
                   <Radio value={2} style={{ marginLeft: 0 }} disabled>未认证</Radio>
                 </Radio.Group>
@@ -36,14 +34,29 @@ class Footer extends PureComponent {
             </div>
           )
           : (
-            <div>
+            <div className={`${prefixCls}-footer-inline`}>
               <span>开票类型:</span>
               <span style={{ marginLeft: 8 }}>
-                <Radio.Group value={this.state.ticketType || footerConfig.ticketType}>
+                <Radio.Group value={footerConfig.ticketType}>
                   <Radio value={1} disabled>代开发票</Radio>
                   <Radio value={2} style={{ marginLeft: 0 }} disabled>自开发票</Radio>
                 </Radio.Group>
               </span>                
+            </div>
+          )
+        }
+        {
+          footerConfig.right &&
+          (
+            <div className={`${prefixCls}-footer-inline ${prefixCls}-footer-right`}>
+              <span>业务类型:</span>
+              <span style={{ marginLeft: 8 }}>
+                <Radio.Group value={footerConfig.ticketType}>
+                  <Radio value={1} disabled>非生加工</Radio>
+                  <Radio value={2} disabled>原材料</Radio>
+                  <Radio value={3} disabled>委托加工物资</Radio>
+                </Radio.Group>
+              </span>  
             </div>
           )
         }

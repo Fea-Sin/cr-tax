@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Row, Col, Icon, Select, Radio } from 'antd';
 import { Scrollbars } from 'react-custom-scrollbars';
 import Numeral from '../utils/Numeral';
+import Footer from '../components/Footer';
 
 const { Option } = Select;
 
@@ -22,6 +23,12 @@ class App extends PureComponent {
 
   render () {
     const { prefixCls, taxDataList=[], taxConfig={} } = this.props
+    const footerConfig = {
+      direction: 'in',
+      ticketType: null,
+      billDate: '2019年11月14日',
+      right: true,
+    }
     const dataTr = taxDataList.map((item, index) => {
       return (
         <tr className={`${prefixCls}-dataBox-data-dataTr`} key={index}>
@@ -61,7 +68,7 @@ class App extends PureComponent {
                 </Col>
                 <Col span={8}>
                   <div className={`${prefixCls}-top-titleBoxA`}>
-                    <div className={`${prefixCls}-top-titleBoxA-title`}>增值税电子普通发票(旅客运输)</div>
+                    <div className={`${prefixCls}-top-titleBoxA-title`}>增值税电子普通发票农产品</div>
                     <div className={`${prefixCls}-top-titleBoxA-line`}></div>
                     <div className={`${prefixCls}-top-titleBoxA-sub`}>发票联</div>
                   </div>
@@ -222,6 +229,7 @@ class App extends PureComponent {
               </div>
             </div>
           </div>
+          <Footer footerConfig={footerConfig} /> 
       </div>
     )
   }

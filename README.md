@@ -18,6 +18,7 @@ react component tax and bill styles
 - 无票收入
 - 二手车销售统一发票
 - 增值税电子普通发票（旅客运输）
+- 增值税电子普通发票农产品
 
 ## Usage
 

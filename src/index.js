@@ -11,7 +11,7 @@ import HGJKZZS from './HGJKZZS';
 import WPSR from './WPSR';
 import ESCXS from './ESCXS';
 import LKYS from './LKYS';
-
+import NCP from './NCP';
 
 class Comp extends PureComponent {
 
@@ -30,7 +30,7 @@ class Comp extends PureComponent {
   }
 
   render () {
-    const { prefixCls, taxDataList, ticketType, mode, direction, taxConfig } = this.props
+    const { prefixCls, taxDataList, mode, taxConfig } = this.props
 
     if (mode === 'ZZSZYFP') {
       return (
@@ -38,8 +38,6 @@ class Comp extends PureComponent {
           prefixCls={prefixCls}
           taxConfig={taxConfig}
           taxDataList={taxDataList}
-          ticketType={ticketType}
-          direction={direction}
         />
       )
     } else if (mode === 'ZZSDZPTFP') {
@@ -48,8 +46,6 @@ class Comp extends PureComponent {
           prefixCls={prefixCls}
           taxConfig={taxConfig}
           taxDataList={taxDataList}
-          ticketType={ticketType}
-          direction={direction}
         />        
       )
     } else if (mode === 'JDCXSTYFP') {
@@ -65,8 +61,6 @@ class Comp extends PureComponent {
           prefixCls={prefixCls}
           taxConfig={taxConfig}
           taxDataList={taxDataList}
-          ticketType={ticketType}
-          direction={direction}
         />         
       )
     } else if (mode === 'ZZSDZTXF') {
@@ -75,8 +69,6 @@ class Comp extends PureComponent {
           prefixCls={prefixCls}
           taxConfig={taxConfig}
           taxDataList={taxDataList}
-          ticketType={ticketType}
-          direction={direction}
         />         
       )
     } else {
@@ -84,7 +76,6 @@ class Comp extends PureComponent {
           prefixCls={prefixCls}
           taxConfig={taxConfig}
           taxDataList={taxDataList}
-          ticketType={ticketType}
         />      
     }
   }
@@ -94,16 +85,13 @@ Comp.propTypes = {
   prefixCls: PropTypes.string,
   taxConfig: PropTypes.object,
   taxDataList: PropTypes.arrayOf(PropTypes.object),
-  ticketType: PropTypes.number,
   mode: PropTypes.oneOf(['ZZSZYFP', 'ZZSDZPTFP', 'JDCXSTYFP', 'ZZSPTFP', 'ZZSDZTXF']),
-  direction: PropTypes.oneOf(['in', 'out']),
 }
 Comp.defaultProps = {
   prefixCls: 'cr-tax',
   taxDataList: [{}],
-  ticketType: 2,
+  taxConfig: {},
   mode: 'ZZSZYFP',
-  direction: 'in',
 }
 
 export {
@@ -113,5 +101,6 @@ export {
   WPSR,
   ESCXS,
   LKYS,
+  NCP,
 }
 export default Comp
