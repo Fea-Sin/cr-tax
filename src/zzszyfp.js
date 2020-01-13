@@ -51,7 +51,7 @@ class Comp extends PureComponent {
           <td>
           {
               this.getTaxRate(item.taxRate)
-              ? (<div>{Numeral(item.taxRate).format('0,0.00')}</div>)
+              ? (<div>{item.taxRate}%</div>)
               : (<div>&nbsp;</div>)
             }
           </td>
@@ -229,7 +229,7 @@ class Comp extends PureComponent {
                         </div>                                                                                
                       </td>
                       <td className={`${prefixCls}-dataBox-table-title`}>备注</td>
-                      <td className={`${prefixCls}-dataBox-table-BZ`}>
+                      <td className={`${prefixCls}-dataBox-table-BZ`} valign="top">
                         <span style={{color: '#3E7AFA'}}>{taxConfig.remark || ''}</span>
                       </td>
                     </tr> 

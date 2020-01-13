@@ -52,7 +52,7 @@ class Comp extends PureComponent {
           <td>
             {
               this.getTaxRate(item.taxRate)
-              ? (<div>{Numeral(item.taxRate).format('0,0.00')}</div>)
+              ? (<div>{item.taxRate}%</div>)
               : (<div>&nbsp;</div>)
             }
           </td>

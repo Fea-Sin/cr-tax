@@ -112,7 +112,7 @@ class App extends PureComponent {
                     机器编码
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    <input value={taxConfig.billCode} disabled className={`${prefixCls}-columBox-cellBox-input2`} />
+                    <input value={taxConfig.otherMessage && taxConfig.otherMessage.machineNumber} disabled className={`${prefixCls}-columBox-cellBox-input2`} />
                   </div>
                 </div>
                 <div className={`${prefixCls}-columBox-cellBox ${prefixCls}-columBox-cellTop`}>

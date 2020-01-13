@@ -243,7 +243,7 @@ class Comp extends PureComponent {
                       增值税税率或征收率
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-two`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.taxRateOrCharge) || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && `${taxConfig.otherMessage.taxRateOrCharge}%`) || ''} disabled />
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-three ${prefixCls}-dataBox-dataB-titleC`}>
                       增值税税额
