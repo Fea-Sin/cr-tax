@@ -203,7 +203,7 @@ class Comp extends PureComponent {
                       电话
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.sellTelephone) || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.sellTelephone || ''} disabled />
                     </td>
                   </tr>
                   <tr>
@@ -234,7 +234,7 @@ class Comp extends PureComponent {
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
                       <div className={`${prefixCls}-text`}>
-                        {(taxConfig.otherMessage && taxConfig.otherMessage.sellBankAddress) || ''}
+                        {taxConfig.sellBankAddress || ''}
                       </div>
                     </td>
                   </tr>
