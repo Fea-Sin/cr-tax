@@ -241,12 +241,12 @@ class Comp extends PureComponent {
         </Scrollbars>
         <div className={`${prefixCls}-footer`}>
           {
-            taxConfig.direction === 0
+            Number(taxConfig.direction) === 0
             ? (
               <div>
                 <span>认证状态:</span>
                 <span style={{ marginLeft: 8 }} className={`${prefixCls}-footer-status`}>
-                  <Radio.Group value={taxConfig.statusOfCertification || 0} onChange={this.radioChange}>
+                  <Radio.Group value={ Number(taxConfig.statusOfCertification) || 0} onChange={this.radioChange}>
                     <Radio value={0} disabled>已认证</Radio>
                     <Radio value={1} style={{ marginLeft: 0 }} disabled>未认证</Radio>
                   </Radio.Group>
