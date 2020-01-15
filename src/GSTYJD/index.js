@@ -184,7 +184,7 @@ class App extends PureComponent {
                       </span>
                     </td>
                     <td className={`${prefixCls}-tableBox-tableA-two`}>
-                      <input value={taxConfig.receivingCompany} disabled className={`${prefixCls}-tableBox-inputB`} />
+                      <input value={taxConfig.sellName} disabled className={`${prefixCls}-tableBox-inputB`} />
                     </td>
                     <td className={`${prefixCls}-tableBox-tableA-three`}>
                       <span className={`${prefixCls}-tableBox-title`}>收款单位税号</span>

@@ -191,7 +191,7 @@ function render(container) {
   ReactDOM.render(
     <div>
       <div style={boxStyle}>
-        <Testone
+        {/* <Testone
           // taxConfig={taxConfigDZ}
           // taxDataList={taxDataList}
           // mode={'ZZSZYFP'}
@@ -208,9 +208,9 @@ function render(container) {
           mode={'JDCXSTYFP'}
           prefixCls={'cr-tax-c'}
           taxConfig={taxConfigJDC}
-        />
+        /> */}
         {/* <PTFPJP taxList={taxList} taxConfig={taxConfig} /> */}
-        {/* <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} /> */}
+        <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} />
         {/* <HGJKZZS taxList={taxListHG} taxConfig={taxConfigHG} /> */}
         {/* <WPSR taxList={taxListWP} taxConfig={taxConfigWP} /> */}
         {/* <ESCXS taxConfig={taxConfigJDC} /> */}
