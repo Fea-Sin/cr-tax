@@ -98,6 +98,7 @@ const taxConfig = {
   buyTaxpayerNumber: '009',
   lowerSum: '-1600',
   upperSum: '101',
+  billTaxPrice: 300,
 }
 const taxConfigGS = {
   billCode: '001',
@@ -191,12 +192,12 @@ function render(container) {
   ReactDOM.render(
     <div>
       <div style={boxStyle}>
-        {/* <Testone
-          // taxConfig={taxConfigDZ}
-          // taxDataList={taxDataList}
+        <Testone
+          taxConfig={taxConfigDZ}
+          taxDataList={taxDataList}
           // mode={'ZZSZYFP'}
 
-          // mode={'ZZSPTFP'}
+          mode={'ZZSPTFP'}
           
           // 电子普通发票
           // taxDataList={taxDataListB}
@@ -205,12 +206,12 @@ function render(container) {
 
           // mode={'ZZSDZTXF'}
           
-          mode={'JDCXSTYFP'}
-          prefixCls={'cr-tax-c'}
-          taxConfig={taxConfigJDC}
-        /> */}
+          // mode={'JDCXSTYFP'}
+          // prefixCls={'cr-tax-c'}
+          // taxConfig={taxConfigJDC}
+        />
         {/* <PTFPJP taxList={taxList} taxConfig={taxConfig} /> */}
-        <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} />
+        {/* <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} /> */}
         {/* <HGJKZZS taxList={taxListHG} taxConfig={taxConfigHG} /> */}
         {/* <WPSR taxList={taxListWP} taxConfig={taxConfigWP} /> */}
         {/* <ESCXS taxConfig={taxConfigJDC} /> */}

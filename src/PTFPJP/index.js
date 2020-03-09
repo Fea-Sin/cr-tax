@@ -120,7 +120,7 @@ class App extends PureComponent {
                     收款员
                   </div>
                   <div className={`${prefixCls}-columBox-cellBox-cell2`}>
-                    <input value={taxConfig.receivingTeller} disabled className={`${prefixCls}-columBox-cellBox-input2`} />
+                    <input value={taxConfig.otherMessage && taxConfig.otherMessage.cashierName} disabled className={`${prefixCls}-columBox-cellBox-input2`} />
                   </div>
                 </div>                                
               </div>
