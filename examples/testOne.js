@@ -83,7 +83,9 @@ const taxList = [{
   name: '餐饮费0',
   modelPrice: '300.00',
   modelCount: '847',
-  sum: '1300'
+  sum: '1300',
+  billPrice: 300,
+  billTaxValue: null,
 }, {}]
 const taxConfig = {
   billCode: '001',
@@ -99,6 +101,7 @@ const taxConfig = {
   lowerSum: '-1600',
   upperSum: '101',
   billTaxPrice: 300,
+  billTaxValue: null,
 }
 const taxConfigGS = {
   billCode: '001',

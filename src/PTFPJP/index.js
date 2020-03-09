@@ -24,7 +24,13 @@ class App extends PureComponent {
               : (<div>&nbsp;</div>)
             }
           </td>
-          <td className={`${prefixCls}-tableBox-table-borderRight`}>{item.billTaxValue && item.billPrice && Numeral(item.billTaxValue + item.billPrice).format('0,0.00')}</td>
+          <td className={`${prefixCls}-tableBox-table-borderRight`}>
+            {
+              item.billPrice && item.billTaxValue
+              ? Numeral(item.billTaxValue + item.billPrice).format('0,0.00')
+              : item.billPrice && Numeral(item.billPrice).format('0,0.00')
+            }
+          </td>
         </tr>
       )
     })
