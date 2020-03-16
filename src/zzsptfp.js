@@ -265,7 +265,7 @@ class Comp extends PureComponent {
               <div>
                 <span>开票类型:</span>
                 <span style={{ marginLeft: 8 }}>
-                  <Radio.Group value={taxConfig.makeType || 0} onChange={this.radioChange}>
+                  <Radio.Group value={Number(taxConfig.makeType) || 0} onChange={this.radioChange}>
                     <Radio value={1} disabled>代开发票</Radio>
                     <Radio value={0} style={{ marginLeft: 0 }} disabled>自开发票</Radio>
                   </Radio.Group>

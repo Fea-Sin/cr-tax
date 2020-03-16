@@ -70,19 +70,19 @@ class App extends PureComponent {
                     </td>
                     <td>
                       <div className={`${prefixCls}-dataBox-dataA-text`}>
-                        <input className={`${prefixCls}-dataBox-dataA-input ${prefixCls}-dataBox-dataA-input-disable`} value={taxConfig.machineCode || ''} disabled />
+                        <input className={`${prefixCls}-dataBox-dataA-input ${prefixCls}-dataBox-dataA-input-disable`} value={(taxConfig.otherMessage && taxConfig.otherMessage.machineCode) || taxConfig.billNumber || ''} disabled />
                       </div>  
                       <div className={`${prefixCls}-dataBox-dataA-text`}>
-                        <input className={`${prefixCls}-dataBox-dataA-input ${prefixCls}-dataBox-dataA-input-disable`} value={taxConfig.machineNumber || ''} disabled />
-                      </div>  
+                        <input className={`${prefixCls}-dataBox-dataA-input ${prefixCls}-dataBox-dataA-input-disable`} value={(taxConfig.otherMessage && taxConfig.otherMessage.machineNo) || taxConfig.billNumber || ''} disabled />
+                      </div>
                       <div className={`${prefixCls}-dataBox-dataA-text ${prefixCls}-dataBox-dataA-text-last`}>
-                        <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.machineId || ''} disabled />
+                        <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.machineNumber) || ''} disabled />
                       </div>                                                                                                    
                     </td>
                     <td className={`${prefixCls}-dataBox-table-title`}>税控码</td>
                     <td className={`${prefixCls}-dataBox-table-blank`}>
                       <div className={`${prefixCls}-text`}>
-                        {taxConfig.taxControlCode || ''}
+                        {taxConfig.otherMessage.fiscalCode || ''}
                       </div>
                     </td>
                   </tr>   
@@ -97,7 +97,7 @@ class App extends PureComponent {
                       买方单位/个人
                     </td>
                     <td colSpan='3'>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.buyNameNumber || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.buyName || ''} disabled />
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleB`}>
                       单位代码/身份证号
@@ -111,13 +111,13 @@ class App extends PureComponent {
                       买方单位/个人住址
                     </td>
                     <td colSpan='3'>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.sellCompanyName || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.buyAddress || ''} disabled />
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
                       电话
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.sellCompanyAddrPhone || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.buyTelephone || ''} disabled />
                     </td>
                   </tr>
                   <tr>
@@ -125,14 +125,14 @@ class App extends PureComponent {
                       卖方单位/个人
                     </td>
                     <td colSpan='3'>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.sellTaxpayerNumber || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.sellName || ''} disabled />
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
                       单位代码/身份证号
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
                       <div className={`${prefixCls}-text`}>
-                        {(taxConfig.sellCompanyCode && taxConfig.sellCompanyCode) || ''}
+                        {taxConfig.sellTaxpayerNumber || ''}
                       </div>
                     </td>
                   </tr>
@@ -141,14 +141,14 @@ class App extends PureComponent {
                       卖方单位/个人住址
                     </td>
                     <td colSpan='3'>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.sellCompanyAddr || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.sellAddress || ''} disabled />
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
                       电话
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
                       <div className={`${prefixCls}-text`}>
-                        {(taxConfig.sellCompanyBankNumber && taxConfig.sellCompanyBankNumber) || ''}
+                        { taxConfig.sellAddrAndTel || ''}
                       </div>
                     </td>
                   </tr>
@@ -157,21 +157,21 @@ class App extends PureComponent {
                       车牌照号
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-two`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.carType || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.carNumber) || ''} disabled />
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-three ${prefixCls}-dataBox-dataB-titleC`}>
                       登记证号
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-four`}>
                       <div className={`${prefixCls}-text`}>
-                        {taxConfig.factoryPlateModel || ''}
+                        {(taxConfig.otherMessage && taxConfig.otherMessage.registrationNumber) || ''}
                       </div>
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
                       车辆类型
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.producingArea || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.catType) || ''} disabled />
                     </td>
                   </tr> 
                   <tr>
@@ -179,19 +179,19 @@ class App extends PureComponent {
                       车架号/车辆识别代码
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-two`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.qualifyCardNumber || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.vin) || ''} disabled />
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-three ${prefixCls}-dataBox-dataB-titleC`}>
                       厂牌型号
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-four`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.importCardNumber || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.brandAndModelNo) || ''} disabled />
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
                       转入地车辆管理所名称
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.commodityInspectionNumber || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.shiftToVehicleName) || ''} disabled />
                     </td>
                   </tr>
                   <tr>
@@ -206,7 +206,7 @@ class App extends PureComponent {
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
                       <input className={`${prefixCls}-dataBox-dataA-input`} 
-                        value={``} disabled />
+                        value={taxConfig.billTaxPrice || ''} disabled />
                     </td>
                   </tr>
                   <tr>
@@ -215,7 +215,7 @@ class App extends PureComponent {
                     </td>
                     <td colSpan='5' className={`${prefixCls}-dataBox-dataB-td-two`}>
                       <input className={`${prefixCls}-dataBox-dataA-input`} 
-                        value={``} disabled />
+                        value={(taxConfig.otherMessage && taxConfig.otherMessage.manageName) || ''} disabled />
                     </td>
                   </tr> 
                   <tr>
@@ -223,13 +223,13 @@ class App extends PureComponent {
                       经营、拍卖单位地址
                     </td>
                     <td colSpan='3'>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.engineNumber || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.manageAddress) || ''} disabled />
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
                       纳税人识别号
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.vehicleIdentificationNumber || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.manageTaxpayerNumber) || ''} disabled />
                     </td>
                   </tr>
                   <tr>
@@ -237,13 +237,13 @@ class App extends PureComponent {
                       开户行、账号
                     </td>
                     <td colSpan='3'>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.engineNumber || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.manageBankAddrAndAccount) || ''} disabled />
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
                       电话
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.vehicleIdentificationNumber || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.manageTelephone) || ''} disabled />
                     </td>
                   </tr>
                   <tr>
@@ -251,13 +251,13 @@ class App extends PureComponent {
                       二手市场
                     </td>
                     <td colSpan='3' rowSpan='2'>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.engineNumber || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.usedCarName) || ''} disabled />
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
                       纳税人识别号
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.vehicleIdentificationNumber || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.usedCarTaxpayerNumber) || ''} disabled />
                     </td>
                   </tr>
                   <tr>
@@ -265,7 +265,7 @@ class App extends PureComponent {
                       地址
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.vehicleIdentificationNumber || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.usedCarAddress) || ''} disabled />
                     </td>
                   </tr>
                   <tr>
@@ -273,20 +273,20 @@ class App extends PureComponent {
                       开户行、账号
                     </td>
                     <td colSpan='3'>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.engineNumber || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.usedCarBankAddrAndAccount) || ''} disabled />
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-five ${prefixCls}-dataBox-dataB-titleC`}>
                       电话
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.vehicleIdentificationNumber || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.usedCarTelephone) || ''} disabled />
                     </td>
                   </tr>                                
                 </tbody>
               </table>
             </div>
           </div>
-          <Footer footerConfig={footerConfig} />    
+          <Footer footerConfig={taxConfig} />    
         </div>
       </div>
     )

@@ -134,6 +134,7 @@ const taxConfigJDC = {
   machineCode: '004',
   machineNumber: '005',
   machineId: '006',
+  machineNo: '机打号码',
   taxControlCode: 'wNr749ZfMwFjYxzAcpRRJNiYYaOR8liHt+cD5OkIDXuUC2f2DoxvMNTbXH0Vg7UCB/n418AVkt1bAmuAhAK43jBl92OL1biemixeo4sc5lbsFDWYFmatdPiSrRAoX6AmKMSmPh9q+V/Xa5w4wVzm9EeixtW6IJfMEhqJlwnH6rlzgfuJIk88e9CIhCT5gxZPG0z+tnVd80fAtZRhuF/eDqtrPwUzHWK2VDsx7U1ASbO4I2hu6e4iKJ0Vqyb5nD4',
   buyNameNumber: '008',
   buyTaxpayerNumber: '009',
@@ -196,18 +197,18 @@ function render(container) {
     <div>
       <div style={boxStyle}>
         <Testone
-          taxConfig={taxConfigDZ}
-          taxDataList={taxDataList}
+          // taxConfig={taxConfigDZ}
+          // taxDataList={taxDataList}
           // mode={'ZZSZYFP'}
 
-          mode={'ZZSPTFP'}
+          // mode={'ZZSPTFP'}
           
           // 电子普通发票
-          // taxDataList={taxDataListB}
-          // taxConfig={taxConfigDZ}
+          taxDataList={taxDataListB}
+          taxConfig={taxConfigDZ}
           // mode={'ZZSDZPTFP'}
 
-          // mode={'ZZSDZTXF'}
+          mode={'ZZSDZTXF'}
           
           // mode={'JDCXSTYFP'}
           // prefixCls={'cr-tax-c'}

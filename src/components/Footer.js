@@ -14,36 +14,36 @@ class Footer extends PureComponent {
     return (
       <div className={`${prefixCls}-footer`}>
         {
-          footerConfig.direction === 'in'
-          ? (
-            <div className={`${prefixCls}-footer-inline`}>
-              <span>认证状态:</span>
-              <span style={{ marginLeft: 8 }}>
-                <Radio.Group value={footerConfig.ticketType}>
-                  <Radio value={1} disabled>已认证</Radio>
-                  <Radio value={2} style={{ marginLeft: 0 }} disabled>未认证</Radio>
-                </Radio.Group>
-              </span>
-              <span className={`${prefixCls}-footer-ticketDate`}>
-                <span>认证日期:</span>
-                <span className={`${prefixCls}-top-right-box-input`}>
-                  <input className={`${prefixCls}-input ${prefixCls}-footer-input`} value={footerConfig.billDate || ''} disabled />
-                  <Icon className={`${prefixCls}-top-right-box-calender`} type="calendar" />
-                </span>                  
-              </span>
-            </div>
-          )
-          : (
-            <div className={`${prefixCls}-footer-inline`}>
-              <span>开票类型:</span>
-              <span style={{ marginLeft: 8 }}>
-                <Radio.Group value={footerConfig.ticketType}>
-                  <Radio value={1} disabled>代开发票</Radio>
-                  <Radio value={2} style={{ marginLeft: 0 }} disabled>自开发票</Radio>
-                </Radio.Group>
-              </span>                
-            </div>
-          )
+          footerConfig.direction === 0
+            ? (
+              <div>
+                <span>认证状态:</span>
+                <span style={{ marginLeft: 8 }}>
+                  <Radio.Group value={Number(footerConfig.statusOfCertification) || 0} onChange={this.radioChange}>
+                    <Radio value={0} disabled>已认证</Radio>
+                    <Radio value={1} style={{ marginLeft: 0 }} disabled>未认证</Radio>
+                  </Radio.Group>
+                </span>
+                <span className={`${prefixCls}-footer-ticketDate`}>
+                  <span>认证日期:</span>
+                  <span className={`${prefixCls}-top-right-box-input`}>
+                    <input className={`${prefixCls}-input ${prefixCls}-footer-input`} value={footerConfig.dateOfCertificationDate || ''} disabled />
+                    <Icon className={`${prefixCls}-top-right-box-calender`} type="calendar" />
+                  </span>                  
+                </span>
+              </div>
+            )
+            : (
+              <div>
+                <span>开票类型:</span>
+                <span style={{ marginLeft: 8 }}>
+                  <Radio.Group value={Number(footerConfig.makeType) || 0} onChange={this.radioChange}>
+                    <Radio value={1} disabled>代开发票</Radio>
+                    <Radio value={0} style={{ marginLeft: 0 }} disabled>自开发票</Radio>
+                  </Radio.Group>
+                </span>                
+              </div>
+            )
         }
         {
           footerConfig.right &&
