@@ -82,7 +82,7 @@ class App extends PureComponent {
                     <td className={`${prefixCls}-dataBox-table-title`}>税控码</td>
                     <td className={`${prefixCls}-dataBox-table-blank`}>
                       <div className={`${prefixCls}-text`}>
-                        {taxConfig.otherMessage.fiscalCode || ''}
+                        {(taxConfig.otherMessage && taxConfig.otherMessage.fiscalCode) || ''}
                       </div>
                     </td>
                   </tr>   
