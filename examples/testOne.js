@@ -165,7 +165,8 @@ const taxConfigJDC = {
     billNoTaxValue: '-2946',
     billTaxValue: '-2700',
     taxRateOrCharge: '0.06',
-  }
+  },
+  sellTelephone: '0536-111111'
 }
 const taxConfigDZ = {
   billNumber: '001',
@@ -196,7 +197,7 @@ function render(container) {
   ReactDOM.render(
     <div>
       <div style={boxStyle}>
-        <Testone
+        {/* <Testone
           // taxConfig={taxConfigDZ}
           // taxDataList={taxDataList}
           // mode={'ZZSZYFP'}
@@ -213,12 +214,12 @@ function render(container) {
           // mode={'JDCXSTYFP'}
           // prefixCls={'cr-tax-c'}
           // taxConfig={taxConfigJDC}
-        />
+        /> */}
         {/* <PTFPJP taxList={taxList} taxConfig={taxConfig} /> */}
         {/* <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} /> */}
         {/* <HGJKZZS taxList={taxListHG} taxConfig={taxConfigHG} /> */}
         {/* <WPSR taxList={taxListWP} taxConfig={taxConfigWP} /> */}
-        {/* <ESCXS taxConfig={taxConfigJDC} /> */}
+        <ESCXS taxConfig={taxConfigJDC} />
         {/* <LKYS taxDataList={taxDataListB} taxConfig={taxConfigDZ} /> */}
         {/* <NCP taxDataList={taxDataListB} taxConfig={taxConfigDZ} /> */}
       </div>

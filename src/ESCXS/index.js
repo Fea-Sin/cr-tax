@@ -149,9 +149,10 @@ class App extends PureComponent {
                       电话
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <div className={`${prefixCls}-text`}>
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.sellTelephone || ''} disabled />
+                      {/* <div className={`${prefixCls}-text`}>
                         { taxConfig.sellTelephone || ''}
-                      </div>
+                      </div> */}
                     </td>
                   </tr>
                   <tr>

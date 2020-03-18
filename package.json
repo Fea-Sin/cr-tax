@@ -1,6 +1,6 @@
 {
   "name": "cr-tax",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "invoice template of react component",
   "scripts": {
     "start": "rc-tools run server",
