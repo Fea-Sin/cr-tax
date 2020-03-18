@@ -150,7 +150,7 @@ class App extends PureComponent {
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
                       <div className={`${prefixCls}-text`}>
-                        { taxConfig.otherMessage && taxConfig.otherMessage.sellTelephone || ''}
+                        { taxConfig.sellTelephone || ''}
                       </div>
                     </td>
                   </tr>
