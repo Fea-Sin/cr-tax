@@ -67,7 +67,7 @@ class App extends PureComponent {
                     <td className={`${prefixCls}-dataBox-table-titleB`}>
                       <div className={`${prefixCls}-dataBox-dataA-title`}>机打代码</div>
                       <div className={`${prefixCls}-dataBox-dataA-title`}>机打号码</div>
-                      <div className={`${prefixCls}-dataBox-dataA-title ${prefixCls}-dataBox-dataA-title-last`}>机器编码</div>
+                      <div className={`${prefixCls}-dataBox-dataA-title ${prefixCls}-dataBox-dataA-title-last`}>机器编号</div>
                     </td>
                     <td>
                       <div className={`${prefixCls}-dataBox-dataA-text`}>
@@ -150,7 +150,7 @@ class App extends PureComponent {
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
                       <div className={`${prefixCls}-text`}>
-                        { taxConfig.sellAddrAndTel || ''}
+                        { taxConfig.otherMessage && taxConfig.otherMessage.sellTelephone || ''}
                       </div>
                     </td>
                   </tr>
@@ -245,7 +245,7 @@ class App extends PureComponent {
                       电话
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.sellTelephone) || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.manageTelephone) || ''} disabled />
                     </td>
                   </tr>
                   <tr>
