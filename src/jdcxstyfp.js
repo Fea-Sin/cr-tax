@@ -80,7 +80,7 @@ class Comp extends PureComponent {
                     <td className={`${prefixCls}-dataBox-table-titleB`}>
                       <div className={`${prefixCls}-dataBox-dataA-title`}>机打代码</div>
                       <div className={`${prefixCls}-dataBox-dataA-title`}>机打号码</div>
-                      <div className={`${prefixCls}-dataBox-dataA-title ${prefixCls}-dataBox-dataA-title-last`}>机器编码</div>
+                      <div className={`${prefixCls}-dataBox-dataA-title ${prefixCls}-dataBox-dataA-title-last`}>机器编号</div>
                     </td>
                     <td>
                       <div className={`${prefixCls}-dataBox-dataA-text`}>

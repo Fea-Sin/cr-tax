@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Icon, Row, Col } from 'antd';
 import Footer from '../components/Footer';
+import Numeral from '../utils/Numeral';
 
 class App extends PureComponent {
   constructor(props) {
@@ -131,9 +132,10 @@ class App extends PureComponent {
                       单位代码/身份证号
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <div className={`${prefixCls}-text`}>
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={taxConfig.sellTaxpayerNumber || ''} disabled />
+                      {/* <div className={`${prefixCls}-text`}>
                         {taxConfig.sellTaxpayerNumber || ''}
-                      </div>
+                      </div> */}
                     </td>
                   </tr>
                   <tr>
@@ -206,7 +208,7 @@ class App extends PureComponent {
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
                       <input className={`${prefixCls}-dataBox-dataA-input`} 
-                        value={taxConfig.billTaxPrice || ''} disabled />
+                        value={`¥${taxConfig.billTaxPrice && Numeral(taxConfig.billTaxPrice).format('0,0.00')}`} disabled />
                     </td>
                   </tr>
                   <tr>
@@ -234,7 +236,7 @@ class App extends PureComponent {
                   </tr>
                   <tr>
                     <td className={`${prefixCls}-dataBox-dataB-td-one ${prefixCls}-dataBox-dataB-titleC`}>
-                      开户行、账号
+                      开户银行、账号
                     </td>
                     <td colSpan='3'>
                       <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.manageBankAddrAndAccount) || ''} disabled />
@@ -243,12 +245,12 @@ class App extends PureComponent {
                       电话
                     </td>
                     <td className={`${prefixCls}-dataBox-dataB-td-six`}>
-                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.manageTelephone) || ''} disabled />
+                      <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.sellTelephone) || ''} disabled />
                     </td>
                   </tr>
                   <tr>
                     <td rowSpan='2' className={`${prefixCls}-dataBox-dataB-td-one ${prefixCls}-dataBox-dataB-titleC`}>
-                      二手市场
+                      二手车市场
                     </td>
                     <td colSpan='3' rowSpan='2'>
                       <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.usedCarName) || ''} disabled />
@@ -270,7 +272,7 @@ class App extends PureComponent {
                   </tr>
                   <tr>
                     <td className={`${prefixCls}-dataBox-dataB-td-one ${prefixCls}-dataBox-dataB-titleC`}>
-                      开户行、账号
+                      开户银行、账号
                     </td>
                     <td colSpan='3'>
                       <input className={`${prefixCls}-dataBox-dataA-input`} value={(taxConfig.otherMessage && taxConfig.otherMessage.usedCarBankAddrAndAccount) || ''} disabled />
