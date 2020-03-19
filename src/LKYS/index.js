@@ -95,7 +95,7 @@ class App extends PureComponent {
                         <div style={{ marginTop: '5px' }}>
                           <div className={`${prefixCls}-dataBox-table-cellBox`}>
                             <span className={`${prefixCls}-dataBox-table-cellBox-title`}>
-                              <span className={`${prefixCls}-dataBox-table-cellBox-star`}>名</span>称
+                              <span style={{marginRight: 40}} className={`${prefixCls}-dataBox-table-cellBox-star`}>名</span>称
                             </span>
                             <span>
                               <input className={`${prefixCls}-dataBox-input`} value={taxConfig.buyCompanyName} disabled />
@@ -180,7 +180,7 @@ class App extends PureComponent {
                         <div style={{ marginTop: '5px' }}>
                           <div className={`${prefixCls}-dataBox-table-cellBox`}>
                             <span className={`${prefixCls}-dataBox-table-cellBox-title`}>
-                              <span className={`${prefixCls}-dataBox-table-cellBox-star`}>名</span>称
+                              <span style={{marginRight: 40}} className={`${prefixCls}-dataBox-table-cellBox-star`}>名</span>称
                             </span>
                             <span>
                               <input className={`${prefixCls}-dataBox-input`} value={taxConfig.sellCompanyName} disabled />

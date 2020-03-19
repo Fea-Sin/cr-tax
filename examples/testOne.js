@@ -197,29 +197,29 @@ function render(container) {
   ReactDOM.render(
     <div>
       <div style={boxStyle}>
-        {/* <Testone
-          // taxConfig={taxConfigDZ}
-          // taxDataList={taxDataList}
-          // mode={'ZZSZYFP'}
+        <Testone
+          taxConfig={taxConfigDZ}
+          taxDataList={taxDataList}
+          mode={'ZZSZYFP'}
 
           // mode={'ZZSPTFP'}
           
           // 电子普通发票
-          taxDataList={taxDataListB}
-          taxConfig={taxConfigDZ}
+          // taxDataList={taxDataListB}
+          // taxConfig={taxConfigDZ}
           // mode={'ZZSDZPTFP'}
 
-          mode={'ZZSDZTXF'}
+          // mode={'ZZSDZTXF'}
           
           // mode={'JDCXSTYFP'}
           // prefixCls={'cr-tax-c'}
           // taxConfig={taxConfigJDC}
-        /> */}
+        />
         {/* <PTFPJP taxList={taxList} taxConfig={taxConfig} /> */}
         {/* <GSTYJD taxList={taxListGS} taxConfig={taxConfigGS} /> */}
         {/* <HGJKZZS taxList={taxListHG} taxConfig={taxConfigHG} /> */}
         {/* <WPSR taxList={taxListWP} taxConfig={taxConfigWP} /> */}
-        <ESCXS taxConfig={taxConfigJDC} />
+        {/* <ESCXS taxConfig={taxConfigJDC} /> */}
         {/* <LKYS taxDataList={taxDataListB} taxConfig={taxConfigDZ} /> */}
         {/* <NCP taxDataList={taxDataListB} taxConfig={taxConfigDZ} /> */}
       </div>
